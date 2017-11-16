@@ -28,6 +28,7 @@ int edge;
 int num_threads;
 pthread_t *threads;
 int *ID;
+char *output_file;
 
 int valid_size;
 
@@ -40,9 +41,12 @@ pthread_barrier_t barr;
 struct Map{
     int *data;
     int **ptr;
-
+    
     Map(){}
-    ~Map(){ delete [] data; delete [] ptr;}
+    ~Map(){ 
+        delete [] data;
+        delete [] ptr;
+    }
 
     inline void init(const int &v){
         data = new int[v*v];
@@ -53,6 +57,8 @@ struct Map{
             ptr[i] = &data[i*v];
             ptr[i][i] = 0;
         }
+
+        
     }
 
     inline int* operator[](const size_t &index){
@@ -123,6 +129,10 @@ void *task(void* var){
         pthread_barrier_wait(&barr);
     }
     
+#ifdef parallel_output
+    parallel_dump_to_file();
+#endif
+
     return NULL;    
 }
 
@@ -146,6 +156,8 @@ int main(int argc, char **argv){
             ID[i] = i;
             pthread_create(&threads[i], NULL, task, (void*)&ID[i]);
         }
+
+        
 
         for(int i=0;i<valid_size;++i){
             pthread_join(threads[i], NULL);
