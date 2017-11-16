@@ -21,6 +21,7 @@
 #define MAX(x, y) ((x)>(y)?(x):(y))
 
 
+
 int vert;
 int edge;
 
@@ -28,7 +29,6 @@ int edge;
 int num_threads;
 pthread_t *threads;
 int *ID;
-char *output_file;
 
 int valid_size;
 
@@ -41,16 +41,19 @@ pthread_barrier_t barr;
 struct Map{
     int *data;
     int **ptr;
+    std::stringstream *oss;
     
     Map(){}
     ~Map(){ 
         delete [] data;
         delete [] ptr;
+        delete [] oss;
     }
 
     inline void init(const int &v){
         data = new int[v*v];
         ptr = new int*[v];
+        oss = new std::stringstream[v];
         std::fill(data, data+v*v, UNK);
 
         for(int i=0;i<vert;++i){
@@ -58,7 +61,6 @@ struct Map{
             ptr[i][i] = 0;
         }
 
-        
     }
 
     inline int* operator[](const size_t &index){
@@ -103,6 +105,24 @@ inline void dump_to_file(char *file){
 
     fout << ss.rdbuf();
     fout.close();
+}
+
+template <typename Iterator>
+void toStringStream(Iterator beg, Iterator end, std::stringstream &buf){
+    char a[32];
+    const char *fmt = "%d ";
+    std::for_each(beg, end, [&buf, &a, &fmt](const int value){
+        sprintf(a, fmt, value);
+        buf << a;
+    });
+}
+
+inline void parallel_dump_to_file(const int &id){
+    for(int i=id;i<vert;i+=valid_size){
+        for(int j=0;j<vert;++j){
+            map.oss[i] << map[i][j] << " ";
+        }
+    }
 }
 
 
@@ -167,8 +187,11 @@ int main(int argc, char **argv){
 
     pthread_barrier_destroy(&barr);
 
+#ifdef parallel_output
 
+#else
     dump_to_file(argv[2]);
+#endif
 
     delete [] threads;
     delete [] ID;
