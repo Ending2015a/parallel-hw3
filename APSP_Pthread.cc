@@ -4,6 +4,7 @@
 #include <fstream>
 #include <algorithm>
 #include <string>
+#include <streambuf>
 
 //c header
 #include <stdio.h>
@@ -20,6 +21,7 @@
 #define MIN(x, y) ((x)<(y)?(x):(y))
 #define MAX(x, y) ((x)>(y)?(x):(y))
 
+#define parallel_output
 
 
 int vert;
@@ -32,8 +34,6 @@ int *ID;
 
 int valid_size;
 
-
-int all_task_done = 0;
 
 pthread_barrier_t barr;
 
@@ -75,24 +75,28 @@ Map map;
 inline void dump_from_file(char *file){
 
     std::ifstream fin(file);
+    std::stringstream ss;
 
-    fin >> vert >> edge;
+    ss << fin.rdbuf();
+
+    ss >> vert >> edge;
 
     map.init(vert);
 
     for (int e=0;e<edge;++e){
         int i,j,w;
-        fin >> i >> j >> w;
+        ss >> i >> j >> w;
         map[i][j] = map[j][i] = w;
     }
 }
 
+
+/*
 inline void dump_to_file(char *file){
 
     std::stringstream ss;
 
     int *iter=map.data;
-    
     for(int i=0;i<vert;++i){
         for(int j=0;j<vert;++j){
             ss << *iter << ' ';
@@ -100,28 +104,20 @@ inline void dump_to_file(char *file){
         }
         ss << '\n';
     }
+    
 
     std::ofstream fout(file);
 
     fout << ss.rdbuf();
     fout.close();
-}
-
-template <typename Iterator>
-void toStringStream(Iterator beg, Iterator end, std::stringstream &buf){
-    char a[32];
-    const char *fmt = "%d ";
-    std::for_each(beg, end, [&buf, &a, &fmt](const int value){
-        sprintf(a, fmt, value);
-        buf << a;
-    });
-}
+}*/
 
 inline void parallel_dump_to_file(const int &id){
     for(int i=id;i<vert;i+=valid_size){
         for(int j=0;j<vert;++j){
-            map.oss[i] << map[i][j] << " ";
+            map.oss[i] << map[i][j] << ' ';
         }
+        map.oss[i] << '\n';
     }
 }
 
@@ -150,7 +146,7 @@ void *task(void* var){
     }
     
 #ifdef parallel_output
-    parallel_dump_to_file();
+    parallel_dump_to_file(id);
 #endif
 
     return NULL;    
@@ -188,7 +184,13 @@ int main(int argc, char **argv){
     pthread_barrier_destroy(&barr);
 
 #ifdef parallel_output
+    std::ofstream fout(argv[2]);
+    for(int i=1;i<vert;++i){
+        map.oss[0] << map.oss[i].rdbuf();
+    }
 
+    fout << map.oss[0].rdbuf();
+    fout.close();
 #else
     dump_to_file(argv[2]);
 #endif
