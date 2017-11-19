@@ -17,7 +17,7 @@
 
 #define INF 999999999
 
-#define _DEBUG_
+//#define _DEBUG_
 #define _MEASURE_TIME
 
 #ifdef _MEASURE_TIME
@@ -553,6 +553,7 @@ inline void listen_(){
                     break;
                 case done:
                     map.not_done = 0;
+                    send_tag_to_child(done);
                     break;
                 default:
 #ifdef _DEBUG_
