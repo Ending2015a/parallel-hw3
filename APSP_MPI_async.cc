@@ -204,9 +204,9 @@ inline int Map::check_all_neig_no_update(){
 }
 
 inline int Map::check_all_child_term(){
-    int tm=0;
+    int tm=1;
     for(int i=0;i<chds.size();++i){
-        tm |= term[i];
+        tm &= term[i];
     }
     return tm;
 }
@@ -468,8 +468,8 @@ inline void do_no_update(const MPI_Status &status){
 
 #ifdef _DEBUG_
     std::stringstream ss;
-    for(int i=0;i<map.term.size();++i){
-        ss << map.term[i] << ", ";
+    for(int i=0;i<map.nb;++i){
+        ss << map.node_update[map.neig[i]] << ", ";
     }
     printf("Rank %d/%03d: mark: %s\n", graph_rank, print_step++, ss.str().c_str());
 #endif
