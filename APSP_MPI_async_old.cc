@@ -1,7 +1,9 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <string>
 #include <algorithm>
+#include <map>
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -15,77 +17,157 @@
 
 #define INF 999999999
 
+//#define _DEBUG_
+#define _MEASURE_TIME
 
-#define _DEBUG_
+#ifdef _MEASURE_TIME
+    double __temp_time=0;
+    #define TIC     __temp_time = MPI_Wtime()
+    #define TOC(X)  X = (MPI_Wtime() - __temp_time)
+    #define TOC_P(X) X += (MPI_Wtime() - __temp_time)
+    #define TIME(X) X = MPI_Wtime()
+
+    double total_exetime=0;
+    double total_calctime=0;
+    double total_iotime=0;
+    double total_commtime=0;
+    double exe_st=0;
+    double exe_ed=0;
+    #define ST exe_st
+    #define ED exe_ed
+    #define EXE total_exetime
+    #define CALC total_calctime
+    #define IO total_calctime
+    #define COMM total_commtime
+
+#else
+    #define TIC
+    #define TOC(X)
+    #define TOC_P(X)
+    #define TIME(X)
+
+    #define ST
+    #define ED
+    #define EXE
+    #define CALC
+    #define IO
+    #define COMM
+#endif
+
+
 
 int world_size;
 int world_rank;
-int graph_rank;
 
 int vert;
 int edge;
 
-MPI_Comm graph_comm;
 
+MPI_Comm COMM_GRAPH;
+int graph_size;
+int graph_rank;
 
+const int NOTHING = 0;
+
+enum tags { invt=1, rej, join, upd, nupd, term };
+
+//=v==v==v==v==v=   MAP   =v==v==v==v==v=//
 struct Map{
-    int *full;
+
+    //allocate 
     int *data;
-    int **ptr;
-    int *index;
-    int *edge;
-    int *neighbor;
+    int *buf;
+
+    //map info
+    int parent;
+    std::vector<int> neig;
+    int *neig_update;
+    std::vector<int> chds;
+    std::vector<MPI_Request> reqs;
     int vt;
-    int eg;
-    Map(){}
+    int nb;
+
+    //flag
+    int not_done;
+    int has_update;
+    
+    //----functions----
+    Map(){
+        parent=-1;
+        not_done = 1;
+        has_update=1;
+    }
+
     ~Map(){
-        delete [] full;
-        delete [] ptr;
-        delete [] index;
-        delete [] edge;
+        delete [] data;
+        delete [] buf;
+        delete [] neig_update;
     }
 
     inline void init(int v){
-        vt = v; eg = 0;
-        full = new int[v*v];
-        std::fill(full, full+v*v, INF);
-        data = full + world_rank*v;
-        data[world_rank]=0;
+        vt = v;
+        data = new int[v];
+        buf = new int[v];
+        neig_update = new int[v];
 
-        ptr = new int*[v];
-        for(int i=0;i<v;++i){
-            ptr[i] = &full[i*v]; 
+        neig.reserve(vt);
+        chds.reserve(vt);
+        reqs.resize(vt);
+
+        std::fill(data, data+v, INF);
+        data[world_rank]=0;
+    }
+
+    //find neighbors
+    inline void calc(){
+        for(int i=0;i<vt; ++i){
+            if(i != world_rank && data[i] != INF)
+                neig.push_back(i);
+        }
+
+        nb = neig.size();
+        neig_update.resize(nb);
+
+        std::fill(neig_update, neig_update+vt, 1);
+
+#ifdef _DEBUG_
+        printf("Rank %d neig: ", world_rank);
+        for(int i=0;i<nb;++i){
+            printf("%d, ", neig[i]);
+        }
+        printf("\n");
+#endif
+    }
+
+    //update map
+    inline int update(const int id){
+        int up = 0;
+        for(int i=0;i<vt;++i){
+            if(data[i] > data[id] + buf[i]){
+                data[i] = data[id] + buf[i];
+                up = 1;
+            }
+        }
+        return up;
+    }
+
+    inline void mark(const int id, const int mk){
+        neig_update[id] = mk;
+    }
+
+    inline void mark_all(const int mk){
+        for(int i=0;i<nb;++i){
+            neig_update[neig[i]] = mk;
         }
         
-        index = new int[vt]();
-        edge = new int[vt*vt]();
     }
 
-    inline void print_map(){
-        std::stringstream ss;
-    
-        ss << "Rank " << world_rank << ": \n";
-        for(int i=0;i<vt;++i){
-            for(int j=0;j<vt;++j){
-                ss << ptr[i][j] << " "; 
-            }
-            ss << "\n";
+    inline int check_all_neig_no_update(){
+        int up=0;
+        for(int i=0;i<nb;++i){
+            up |= neig_update[neig[i]];
         }
-
-        std::cout << ss.rdbuf();
-    }
-
-    inline void calc_list(){
-        for(int i=0;i<vt;++i){
-            if(i>0)index[i] = index[i-1];
-            for(int j=0;j<vt;++j){
-                if(i!=j && ptr[i][j] != INF){
-                    edge[index[i]]=j;
-                    ++eg;
-                    ++index[i];
-                }
-            }
-        }
+        return up;
     }
 
     inline int &operator[](const int &index){
@@ -93,15 +175,38 @@ struct Map{
     }
 };
 
+//=^==^==^==^==^=   MAP   =^==^==^==^==^=//
+
 Map map;
 
-int done=0;
+//=v==v==v==v==   File IO   ==v==v==v==v=//
 
-void dump_from_file(char *file){
+/*
+inline void read_from_file(const char *file){
+    std::ifstream fin(file);
+
+    TIC;{
+        fin >> vert >> edge;
+        map.init(vert);
+        int i, j, w;
+        for(int e=0;e<edge;++e){
+            fin >> i >> j >> w;
+            if(i==world_rank)map.data[j]=w;
+            else if(j==world_rank)map.data[i]=w;
+        }
+
+    }TOC_P(IO);
+}*/
+
+inline void dump_from_file(const char *file){
+
     std::ifstream fin(file);
     std::stringstream ss;
 
+    TIC;{
     ss << fin.rdbuf();
+
+    }TOC_P(IO);
 
     ss >> vert >> edge;
 
@@ -110,47 +215,231 @@ void dump_from_file(char *file){
     int i, j, w;
     for(int e=0;e<edge;++e){
         ss >> i >> j >> w;
-        map.ptr[i][j] = map.ptr[j][i] = w;
+        if(i==world_rank)map.data[j]=w;
+        else if(j==world_rank)map.data[i]=w;
     }
 }
 
-void create_graph(){
 
-    map.calc_list();
+inline void dump_to_file(const char *file){
+    std::stringstream ss;
+    for(int i=0;i<map.vt;++i){
+        ss << map.data[i] << ' ';
+    }
+    ss << '\n';
+
+    std::string str = ss.str();
+    int *len = new int[map.vt]();
+    len[world_rank] = str.size();
+
+    MPI_File fout;
+    MPI_File_open(MPI_COMM_WORLD, file, MPI_MODE_WRONLY | MPI_MODE_CREATE, MPI_INFO_NULL, &fout);
+
+
+    TIC;{
+    MPI_Allreduce(MPI_IN_PLACE, len, map.vt, MPI_INT, MPI_SUM, MPI_COMM_WORLD);
+    }TOC_P(COMM);
+
+    int offset=0;
+    for(int i=0;i<world_rank;++i){
+        offset += len[i];
+    }
+
+    TIC;{
+
+    MPI_File_set_view(fout, offset, MPI_CHAR, MPI_CHAR, "native", MPI_INFO_NULL);
+    MPI_File_write_all(fout, str.c_str(), len[world_rank], MPI_CHAR, MPI_STATUS_IGNORE);
+
+    MPI_File_close(&fout);
+
+    }TOC_P(IO);
+
+    delete [] len;
+}
+
+//=^==^==^==^==   File IO   ==^==^==^==^=//
+
+
+
+
+//=v==v==v==v==v=  Utils  =v==v==v==v==v=//
+
+inline void discard_msg(const MPI_Status &status, const int size){
+    MPI_Recv(map.buf, size, MPI_INT, status.MPI_SOURCE, status.MPI_TAG, COMM_GRAPH, MPI_STATUS_IGNORE);
+}
+
+inline void send_update_all(){
+    for(int i=0;i<map.nb;++i){
+        MPI_Isend(map.data, map.vt, map.neig[i], tags.upd, COMM_GRAPH, &map.reqs[map.neig[i]]);
+    }
+}
+
+inline void send_noupdate_all(){
+    for(int i=0;i<map.nb;++i){
+        MPI_Isend(&NOTHING, 1, map.neig[i], tags.nupd, COMM_GRAPH, &map.reqs[map.neig[i]]);
+    }
+}
+
+inline void send_termiate_all_child(){
+    for(int i=0;i<map.chds.size();++i){
+        MPI_Isend(&NOTHING, 1, map.chds[i], tags.term, COMM_GRAPH, &map.reqs[map.chds[i]]);
+    }
+}
+
+inline void send_terminate_parent(){
+    MPI_Isend(&NOTHING, 1, map.parent, tags.term, COMM_GRAPH, &map.reqs[map.parent]);
+}
+
+//=^==^==^==^==^=  Utils  =^==^==^==^==^=//
+
+
+
+//=v==v==v==v== Initialize  ==v==v==v==v=//
+
+inline void create_graph(){
+    MPI_Dist_graph_create(MPI_COMM_WORLD, 1, &world_rank, &map.nb, map.neig.data(),
+                                MPI_UNWEIGHTED, MPI_INFO_NULL, false, &COMM_GRAPH);
+    MPI_Comm_rank(COMM_GRAPH, &graph_rank);
+    assert(graph_rank == world_rank);
+}
+
+//only rank 0
+inline void construct_tree_root(){
+    map.parent = 0;
+
+    map.reqs.resize(map.nb);
+
+    for(int i=0;i<map.nb;++i){
+        MPI_Isend(&NOTHING, 1, MPI_INT, map.neig[i], tags.invt, COMM_GRAPH, &map.reqs[i]);
+        //MPI_Request_free(&map.reqs[i]);
+    }
+    /*
+    MPI_Status status;
+
+    for(int i=0;i<map.nb;++i){
+        MPI_Recv(map.buf, 1, MPI_INT, MPI_ANY_SOURCE, MPI_ANY_TAG, COMM_GRAPH, &status);
+        do_construct_tree(status);
+    }
+    */
 
 #ifdef _DEBUG_
-    printf("Rank %d index: ", world_rank);
-    for(int i=0;i<map.vt;++i){
-        printf("%d, ", map.index[i]);
-    }
-    printf("\nRank %d edge: ", world_rank);
-    for(int i=0;i<map.eg;++i){
-        printf("%d, ", map.edge[i]);
-    }
-    printf("\n");
+    printf("Rank %d: tree root created\n", graph_rank);
 #endif
 
+    
+}
 
-    MPI_Graph_create(MPI_COMM_WORLD, world_size, map.index, map.edge, true, &graph_comm);
+//=^==^==^==^== Initialize  ==^==^==^==^=//
 
-    int topo_t;
-    MPI_Topo_test(graph_comm, &topo_t);
 
-    if(topo_t == MPI_GRAPH){
-        printf("Rank %d: Graph created!!\n", world_rank);
-        MPI_Comm_rank(graph_comm, &graph_rank);
-        printf("Rank %d: new rank is %d\n", world_rank, graph_rank);
-        MPI_Graph_neighbors(graph_comm, graph_rank, map.vt, map.neighbor);
+//=v==v==v==v==v=  Tasks  =v==v==v==v==v=//
+
+inline void do_construct_tree(const MPI_Status &status){
+    //if get invitation
+    if(status.MPI_TAG == tags.invt){
+
+#ifdef _DEBUG_
+        printf("Rank %d: get invitation from rank %d\n", graph_rank, status.MPI_SOURCE);
+#endif
+        
+        discard_msg(status, 1);
+
+        //check if already joined to another party
+        if(map.parent != -1){
+
+#ifdef _DEBUG_
+            printf("Rank %d: reject %d / parent=%d\n", graph_rank, status.MPI_SOURCE, map.parent);
+#endif
+            //send reject
+            MPI_Isend(&NOTHING, 1, MPI_INT, status.MPI_SOURCE, tags.rej, 
+                                COMM_GRAPH, &map.reqs[status.MPI_SOURCE]);
+        }else{
+
+            printf("Rank %d: join %d\n", graph_rank, status.MPI_SOURCE);
+
+            //send join request
+            map.parent = status.MPI_SOURCE;
+            MPI_Isend(&NOTHING, 1, MPI_INT, status.MPI_SOURCE, tags.join, 
+                                COMM_GRAPH, &map.reqs[status.MPI_SOURCE]);
+            //send invitation to all neighbors
+            for(int i=0;i<map.nb;++i){
+                if(map.neig[i] != map.parent)
+                    MPI_Isend(&NOTHING, 1, MPI_INT, map.neig[i], tags.invt, COMM_GRAPH, &map.reqs[i]);
+            }
+        }
+
+    }else if(status.MPI_TAG == tags.join){
+        //get request
+        discard_msg(status, 1);
+        map.chds.push_back(status.MPI_SOURCE);
+    }else if(status.MPI_TAG == tags.rej){
+        //get reject
+        discard_msg(status, 1);
     }
 }
 
-void floyd_graph(){
-    int not_done = 1;
-    while(not_done){
-        not_done = 0;
+inline void do_update(const MPI_Status &status){
+    MPI_Recv(map.buf, map.vt, MPI_INT, status.MPI_SOURCE, status.MPI_TAG, COMM_GRAPH, MPI_STATUS_IGNORE);
+    map.has_update |= map.update(status.MPI_SOURCE);
+    if(!map.has_update){
+        send_noupdate_all();
+    }
+}
+
+inline void do_no_update(const MPI_Status &status){
+    discard_msg(status, 1);
+    map.mark(status.MPI_SOURCE, 0);
+
+    if(graph_rank == 0 && map.check_all_neig_no_update()){
+        //TODO: send termination message
         
     }
 }
+
+inline void do_terminate(const MPI_Status &status){
+
+}
+
+inline void listen_(){
+
+    MPI_Status status;
+    int flag=0;
+    while(map.not_done){
+        MPI_Iprobe(MPI_ANY_SOURCE, MPI_ANY_TAG, COMM_GRAPH, &flag, &status);
+        if(flag){
+            switch(status.MPI_TAG){
+                case tags.invt:
+                case tags.join:
+                case tags.rej:
+                    do_construct_tree(status);
+                    break;
+                case tags.upd:
+                    do_update(status);
+                    break;
+                case tags.nupd:
+                    do_no_update(status);
+                    break;
+                case tags.term:
+                    do_terminate(status):
+                    break;
+                default:
+#ifdef _DEBUG_
+                    printf("Rank %d: Unrecognized Tags Received: [%d]\n", graph_rank, status.MPI_TAG);
+#endif
+                    break;
+            }
+        }else{
+            if(map.has_update){
+                send_update_all();
+                map.mark_all(1);
+                map.has_update = 0;
+            }
+        }
+    }
+}
+
+//=^==^==^==^==^=  Tasks  =^==^==^==^==^=//
+
 
 int main(int argc, char **argv){
 
@@ -158,14 +447,34 @@ int main(int argc, char **argv){
 
     MPI_Init(&argc, &argv);
     MPI_Comm_size(MPI_COMM_WORLD, &world_size);
-    MPI_Comm_rank(MPI_COMM_WORLD, &world_rank);    
+    MPI_Comm_rank(MPI_COMM_WORLD, &world_rank);
 
+    
+    TIME(ST);
     dump_from_file(argv[1]);
+
+#ifdef _DEBUG_
+    printf("Rank %d: file read\n", world_rank);
+#endif
+
+    map.calc();
 
     create_graph();
 
-    floyd_graph();
+    if(graph_rank ==0)
+        construct_tree_root();
+
+    listen_();
     
+    dump_to_file(argv[2]);
+
+
+#ifdef _MEASURE_TIME
+    TIME(ED);
+    EXE = ED - ST;
+    //rank, EXE, CALC, IO, COMM, PROC
+    printf("%d, %lf, %lf, %lf, %lf, %lf\n", world_rank, EXE, CALC, IO, COMM, EXE-CALC-IO-COMM);
+#endif
 
     MPI_Finalize();
     return 0;
