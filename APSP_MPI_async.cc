@@ -444,6 +444,9 @@ inline void do_update(const MPI_Status &status){
 
     int has_update = map.update(status.MPI_SOURCE);
     if(!has_update){
+#ifdef _DEBUG_
+        printf("Rank %d/%03d: send no update to %d\n", graph_rank, print_step++, status.MPI_SOURCE);
+#endif
         map.isend_tag(status.MPI_SOURCE, nupd);
         map.mark(status.MPI_SOURCE, 0);
     }
