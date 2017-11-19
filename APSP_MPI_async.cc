@@ -368,13 +368,13 @@ inline void construct_tree_root(){
     map.parent = 0;
 
 #ifdef _DEBUG_
-    printf("Rank %d/%d: send invitation to all\n", graph_rank, print_step++);
+    printf("Rank %d/%03d: send invitation to all\n", graph_rank, print_step++);
 #endif
 
     send_tag_to_all(invt);
 
 #ifdef _DEBUG_
-    printf("Rank %d/%d: tree root created\n", graph_rank, print_step++);
+    printf("Rank %d/%03d: tree root created\n", graph_rank, print_step++);
 #endif
 }
 
@@ -389,7 +389,7 @@ inline void do_construct_tree(const MPI_Status &status){
     if(status.MPI_TAG == invt){
 
 #ifdef _DEBUG_
-        printf("Rank %d/%d: get invitation from rank %d\n", graph_rank, print_step++, status.MPI_SOURCE);
+        printf("Rank %d/%03d: get invitation from rank %d\n", graph_rank, print_step++, status.MPI_SOURCE);
 #endif
         
         discard_tag(status);
@@ -398,7 +398,7 @@ inline void do_construct_tree(const MPI_Status &status){
         if(map.parent != -1){
 
 #ifdef _DEBUG_
-            printf("Rank %d/%d: reject %d / parent=%d\n", graph_rank, print_step++, status.MPI_SOURCE, map.parent);
+            printf("Rank %d/%03d: reject %d / parent=%d\n", graph_rank, print_step++, status.MPI_SOURCE, map.parent);
 #endif
             //send reject
             map.isend_tag(status.MPI_SOURCE, rej);
@@ -406,7 +406,7 @@ inline void do_construct_tree(const MPI_Status &status){
         }else{
 
 #ifdef _DEBUG_
-            printf("Rank %d/%d: join %d\n", graph_rank, print_step++, status.MPI_SOURCE);
+            printf("Rank %d/%03d: join %d\n", graph_rank, print_step++, status.MPI_SOURCE);
 #endif
 
             //send join request
@@ -424,7 +424,7 @@ inline void do_construct_tree(const MPI_Status &status){
         //get request
         discard_tag(status);
 #ifdef _DEBUG_
-        printf("Rank %d/%d: %d join to me\n", graph_rank, print_step++, status.MPI_SOURCE);
+        printf("Rank %d/%03d: %d join to me\n", graph_rank, print_step++, status.MPI_SOURCE);
 #endif
 
         map.chds.push_back(status.MPI_SOURCE);
@@ -433,7 +433,7 @@ inline void do_construct_tree(const MPI_Status &status){
         //get reject
         discard_tag(status);
 #ifdef _DEBUG_
-        printf("Rank %d/%d: %d reject me\n", graph_rank, print_step++, status.MPI_SOURCE);
+        printf("Rank %d/%03d: %d reject me\n", graph_rank, print_step++, status.MPI_SOURCE);
 #endif
 
     }
@@ -449,7 +449,7 @@ inline void do_update(const MPI_Status &status){
     }
 
 #ifdef _DEBUG_
-    printf("Rank %d/%d: recv update from %d : update %d\n", graph_rank, print_step++, status.MPI_SOURCE, has_update);
+    printf("Rank %d/%03d: recv update from %d : update %d\n", graph_rank, print_step++, status.MPI_SOURCE, has_update);
 #endif
 
     map.has_update |= has_update;
@@ -461,7 +461,7 @@ inline void do_no_update(const MPI_Status &status){
     discard_tag(status);
 
 #ifdef _DEBUG_
-    printf("Rank %d/%d: recv no update from %d\n", graph_rank, print_step++,  status.MPI_SOURCE); 
+    printf("Rank %d/%03d: recv no update from %d\n", graph_rank, print_step++,  status.MPI_SOURCE); 
 #endif
 
     map.mark(status.MPI_SOURCE, 0);
@@ -471,13 +471,13 @@ inline void do_no_update(const MPI_Status &status){
     for(int i=0;i<map.term.size();++i){
         ss << map.term[i] << ", ";
     }
-    printf("Rank %d/%d: mark: %s\n", graph_rank, print_step++, ss.str().c_str());
+    printf("Rank %d/%03d: mark: %s\n", graph_rank, print_step++, ss.str().c_str());
 #endif
 
     if(graph_rank == 0){
         if(map.check_all_neig_no_update()){
 #ifdef _DEBUG_
-            printf("Rank %d/%d: send teriminate to child\n", graph_rank, print_step++);
+            printf("Rank %d/%03d: send teriminate to child\n", graph_rank, print_step++);
 #endif
             send_tag_to_child(termi);
         }
@@ -491,14 +491,14 @@ inline void do_terminate(const MPI_Status &status){
     if(status.MPI_SOURCE == map.parent){
 
 #ifdef _DEBUG_
-        printf("Rank %d/%d: recv terminate from parent %d\n", graph_rank, print_step++, map.parent);
+        printf("Rank %d/%03d: recv terminate from parent %d\n", graph_rank, print_step++, map.parent);
 #endif
 
         map.term_flag = fwd;
     }else{
 
 #ifdef _DEBUG_
-        printf("Rank %d/%d: recv terminate from child %d\n", graph_rank, print_step++, status.MPI_SOURCE);
+        printf("Rank %d/%03d: recv terminate from child %d\n", graph_rank, print_step++, status.MPI_SOURCE);
 #endif
 
         map.mark_term(status.MPI_SOURCE, 1);
@@ -507,7 +507,7 @@ inline void do_terminate(const MPI_Status &status){
                 send_tag_to_child(done);
                 map.not_done = 0;
 #ifdef _DEBUG_
-                printf("Rank %d/%d: done\n", graph_rank, print_step++);
+                printf("Rank %d/%03d: done\n", graph_rank, print_step++);
 #endif
             }
             else
@@ -543,7 +543,7 @@ inline void listen_(){
                     break;
                 default:
 #ifdef _DEBUG_
-                    printf("Rank %d/%d: Unrecognized Tags Received: [%d]\n", graph_rank, print_step++, status.MPI_TAG);
+                    printf("Rank %d/%03d: Unrecognized Tags Received: [%d]\n", graph_rank, print_step++, status.MPI_TAG);
 #endif
                     break;
             }
@@ -551,7 +551,7 @@ inline void listen_(){
             if(map.has_update){
 
 #ifdef _DEBUG_
-                printf("Rank %d/%d: send update to all\n", graph_rank, print_step++);
+                printf("Rank %d/%03d: send update to all\n", graph_rank, print_step++);
 #endif
 
                 send_update_to_all();
@@ -559,7 +559,7 @@ inline void listen_(){
                 map.has_update = 0;
             }else if(map.term_flag == fwd && map.check_all_neig_no_update()){
 #ifdef _DEBUG_
-                printf("Rank %d/%d: send terminate to child\n", graph_rank, print_step++);
+                printf("Rank %d/%03d: send terminate to child\n", graph_rank, print_step++);
 #endif
                 if(map.chds.size() == 0)
                     map.term_flag = back;
@@ -569,7 +569,7 @@ inline void listen_(){
                 }
             }else if(map.term_flag == back && map.check_all_neig_no_update()){
 #ifdef _DEBUG_
-                printf("Rank %d/%d: send terminate to parent\n", graph_rank, print_step++);
+                printf("Rank %d/%03d: send terminate to parent\n", graph_rank, print_step++);
 #endif
                 send_term_to_parent();
                 map.term_flag = none;
