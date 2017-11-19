@@ -485,7 +485,7 @@ inline void do_no_update(const MPI_Status &status){
     for(int i=0;i<map.nb;++i){
         ss << map.node_update[map.neig[i]] << ", ";
     }
-    printf("Rank %d/%03d: mark: %s\n", graph_rank, print_step++, ss.str().c_str());
+    printf("Rank %d/%03d: mark update: %s\n", graph_rank, print_step++, ss.str().c_str());
 #endif
 }
 
@@ -506,6 +506,15 @@ inline void do_terminate(const MPI_Status &status){
 #endif
 
         map.mark_term(status.MPI_SOURCE, 1);
+
+#ifdef _DEBUG_
+        std::stringstream ss;
+        for(int i=0;i<map.chds.size();++i){
+            ss << map.term[i] << ", ";
+        }
+        printf("Rank %d/%03d: mark term: %s\n", graph_rank, print_step++, ss.str().c_str());
+#endif
+
         if(map.check_all_child_term()){
             if(graph_rank == 0){
                 send_tag_to_child(done);
