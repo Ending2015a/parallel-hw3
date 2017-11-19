@@ -3,7 +3,7 @@
 #include <sstream>
 #include <string>
 #include <algorithm>
-#include <map>
+#include <iterator>
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -72,36 +72,35 @@ const int NOTHING = 0;
 enum tags { invt=1, rej, join, upd, nupd, term };
 
 //=v==v==v==v==v=   MAP   =v==v==v==v==v=//
-struct Map{
 
-    //allocate 
+struct Map{
+    //allocate
     int *data;
     int *buf;
+    int *neig_update;
 
     //map info
     int parent;
     std::vector<int> neig;
-    int *neig_update;
     std::vector<int> chds;
     std::vector<MPI_Request> reqs;
     int vt;
     int nb;
 
-    //flag
-    int not_done;
+    //flags
+    int not_dine;
     int has_update;
-    
-    //----functions----
+
     Map(){
         parent=-1;
-        not_done = 1;
+        not_done=1;
         has_update=1;
     }
 
     ~Map(){
-        delete [] data;
-        delete [] buf;
-        delete [] neig_update;
+        delete[] data;
+        delete[] buf;
+        delete[] neig_update;
     }
 
     inline void init(int v){
@@ -110,15 +109,15 @@ struct Map{
         buf = new int[v];
         neig_update = new int[v];
 
-        neig.reserve(vt);
-        chds.reserve(vt);
-        reqs.resize(vt);
+        neig.reserve(v);
+        chds.reserve(v);
+        reqs.resize(v);
 
         std::fill(data, data+v, INF);
         data[world_rank]=0;
     }
 
-    //find neighbors
+    //calc neighbor
     inline void calc(){
         for(int i=0;i<vt; ++i){
             if(i != world_rank && data[i] != INF)
@@ -139,7 +138,6 @@ struct Map{
 #endif
     }
 
-    //update map
     inline int update(const int id){
         int up = 0;
         for(int i=0;i<vt;++i){
@@ -159,7 +157,6 @@ struct Map{
         for(int i=0;i<nb;++i){
             neig_update[neig[i]] = mk;
         }
-        
     }
 
     inline int check_all_neig_no_update(){
@@ -167,36 +164,26 @@ struct Map{
         for(int i=0;i<nb;++i){
             up |= neig_update[neig[i]];
         }
-        return up;
+        return !up;
+    }
+
+    inline void wait(const int id, MPI_Status *sts){
+        if(sts == NULL)
+            MPI_Wait(reqs[id], MPI_STATUS_IGNORE);
+        else
+            MPI_Wait(reqs[id], sts);
     }
 
     inline int &operator[](const int &index){
         return data[index];
     }
-};
+}
 
 //=^==^==^==^==^=   MAP   =^==^==^==^==^=//
 
 Map map;
 
 //=v==v==v==v==   File IO   ==v==v==v==v=//
-
-/*
-inline void read_from_file(const char *file){
-    std::ifstream fin(file);
-
-    TIC;{
-        fin >> vert >> edge;
-        map.init(vert);
-        int i, j, w;
-        for(int e=0;e<edge;++e){
-            fin >> i >> j >> w;
-            if(i==world_rank)map.data[j]=w;
-            else if(j==world_rank)map.data[i]=w;
-        }
-
-    }TOC_P(IO);
-}*/
 
 inline void dump_from_file(const char *file){
 
@@ -223,9 +210,9 @@ inline void dump_from_file(const char *file){
 
 inline void dump_to_file(const char *file){
     std::stringstream ss;
-    for(int i=0;i<map.vt;++i){
-        ss << map.data[i] << ' ';
-    }
+
+    std::ostream_iterator<int> out(ss, ' ');
+    std::copy(map.data, map.data+map.vt, out);
     ss << '\n';
 
     std::string str = ss.str();
@@ -259,9 +246,6 @@ inline void dump_to_file(const char *file){
 
 //=^==^==^==^==   File IO   ==^==^==^==^=//
 
-
-
-
 //=v==v==v==v==v=  Utils  =v==v==v==v==v=//
 
 inline void discard_msg(const MPI_Status &status, const int size){
@@ -292,8 +276,6 @@ inline void send_terminate_parent(){
 
 //=^==^==^==^==^=  Utils  =^==^==^==^==^=//
 
-
-
 //=v==v==v==v== Initialize  ==v==v==v==v=//
 
 inline void create_graph(){
@@ -307,30 +289,16 @@ inline void create_graph(){
 inline void construct_tree_root(){
     map.parent = 0;
 
-    map.reqs.resize(map.nb);
-
     for(int i=0;i<map.nb;++i){
-        MPI_Isend(&NOTHING, 1, MPI_INT, map.neig[i], tags.invt, COMM_GRAPH, &map.reqs[i]);
-        //MPI_Request_free(&map.reqs[i]);
+        MPI_Isend(&NOTHING, 1, MPI_INT, map.neig[i], tags.invt, COMM_GRAPH, &map.reqs[map.neig[i]]);
     }
-    /*
-    MPI_Status status;
-
-    for(int i=0;i<map.nb;++i){
-        MPI_Recv(map.buf, 1, MPI_INT, MPI_ANY_SOURCE, MPI_ANY_TAG, COMM_GRAPH, &status);
-        do_construct_tree(status);
-    }
-    */
 
 #ifdef _DEBUG_
     printf("Rank %d: tree root created\n", graph_rank);
-#endif
-
-    
+#endif    
 }
 
 //=^==^==^==^== Initialize  ==^==^==^==^=//
-
 
 //=v==v==v==v==v=  Tasks  =v==v==v==v==v=//
 
@@ -380,20 +348,16 @@ inline void do_construct_tree(const MPI_Status &status){
 
 inline void do_update(const MPI_Status &status){
     MPI_Recv(map.buf, map.vt, MPI_INT, status.MPI_SOURCE, status.MPI_TAG, COMM_GRAPH, MPI_STATUS_IGNORE);
-    map.has_update |= map.update(status.MPI_SOURCE);
-    if(!map.has_update){
-        send_noupdate_all();
+    int has_update = map.update(status.MPI_SOURCE);
+    if(!has_update){
+        MPI_Isend(&NOTHING, 1, MPI_INT, status.MPI_SOURCE, tags.nupd, COMM_GRAPH, map.reqs[status.MPI_SOURCE]);
+        map.mark(status.MPI_SOURCE, 0);
     }
 }
 
 inline void do_no_update(const MPI_Status &status){
     discard_msg(status, 1);
     map.mark(status.MPI_SOURCE, 0);
-
-    if(graph_rank == 0 && map.check_all_neig_no_update()){
-        //TODO: send termination message
-        
-    }
 }
 
 inline void do_terminate(const MPI_Status &status){
