@@ -69,7 +69,6 @@ struct Map{
     int *data;
     std::vector<int> neig;
     int vt;
-    int eg;
     int nb;
     Map(){}
     ~Map(){
@@ -77,7 +76,7 @@ struct Map{
     }
 
     inline void init(int v){
-        vt = v; eg = 0;
+        vt = v;
         data = new int[v];
         std::fill(data, data+v, INF);
         data[world_rank]=0;
@@ -120,6 +119,23 @@ struct Map{
 Map map;
 
 int done=0;
+
+/*
+inline void read_from_file(const char *file){
+    std::ifstream fin(file);
+
+    TIC;{
+        fin >> vert >> edge;
+        map.init(vert);
+        int i, j, w;
+        for(int e=0;e<edge;++e){
+            fin >> i >> j >> w;
+            if(i==world_rank)map.data[j]=w;
+            else if(j==world_rank)map.data[i]=w;
+        }
+
+    }TOC_P(IO);
+}*/
 
 inline void dump_from_file(const char *file){
 
@@ -228,6 +244,9 @@ int main(int argc, char **argv){
     TIME(ST);
     dump_from_file(argv[1]);
 
+#ifdef _DEBUG_
+    printf("Rank %d: file read\n", world_rank);
+#endif
 
     map.calc();
 

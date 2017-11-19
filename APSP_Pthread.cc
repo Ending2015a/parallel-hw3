@@ -16,10 +16,12 @@
 //const
 #define UNK 999999999
 #define MAX_VERTEX 2000
+#define PTHREAD_LIMIT 2000
 
 //func
 #define MIN(x, y) ((x)<(y)?(x):(y))
 #define MAX(x, y) ((x)>(y)?(x):(y))
+
 
 #define parallel_output
 
@@ -157,7 +159,7 @@ int main(int argc, char **argv){
     // check for argument count
     assert(argc == 4);
 
-    num_threads = atoi(argv[3]);
+    num_threads = MIN(atoi(argv[3]), PTHREAD_LIMIT);
     threads = new pthread_t[num_threads];
     ID = new int[num_threads];
 

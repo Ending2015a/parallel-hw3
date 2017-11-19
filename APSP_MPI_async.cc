@@ -3,6 +3,7 @@
 #include <sstream>
 #include <string>
 #include <algorithm>
+#include <map>
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -57,33 +58,67 @@
 
 int world_size;
 int world_rank;
-int graph_rank;
 
 int vert;
 int edge;
 
-MPI_Comm graph_comm;
 
+MPI_Comm COMM_GRAPH;
+int graph_size;
+int graph_rank;
 
+const int NOTHING = 0;
+
+enum tags { invt=1, rej, join, upd, nupd, term };
+
+//=v==v==v==v==v=   MAP   =v==v==v==v==v=//
 struct Map{
+
+    //allocate 
     int *data;
+    int *buf;
+
+    //map info
+    int parent;
     std::vector<int> neig;
+    int *neig_update;
+    std::vector<int> chds;
+    std::vector<MPI_Request> reqs;
     int vt;
-    int eg;
     int nb;
-    Map(){}
+
+    //flag
+    int not_done;
+    int has_update;
+    
+    //----functions----
+    Map(){
+        parent=-1;
+        not_done = 1;
+        has_update=1;
+    }
+
     ~Map(){
         delete [] data;
+        delete [] buf;
+        delete [] neig_update;
     }
 
     inline void init(int v){
-        vt = v; eg = 0;
+        vt = v;
         data = new int[v];
+        buf = new int[v];
+        neig_update = new int[v];
+
+        neig.reserve(vt);
+        chds.reserve(vt);
+        reqs.resize(vt);
+
         std::fill(data, data+v, INF);
         data[world_rank]=0;
-        neig.reserve(vt);
     }
 
+    //find neighbors
     inline void calc(){
         for(int i=0;i<vt; ++i){
             if(i != world_rank && data[i] != INF)
@@ -91,6 +126,9 @@ struct Map{
         }
 
         nb = neig.size();
+        neig_update.resize(nb);
+
+        std::fill(neig_update, neig_update+vt, 1);
 
 #ifdef _DEBUG_
         printf("Rank %d neig: ", world_rank);
@@ -101,7 +139,8 @@ struct Map{
 #endif
     }
 
-    inline int update(int id, int *buf){
+    //update map
+    inline int update(const int id){
         int up = 0;
         for(int i=0;i<vt;++i){
             if(data[i] > data[id] + buf[i]){
@@ -112,14 +151,52 @@ struct Map{
         return up;
     }
 
+    inline void mark(const int id, const int mk){
+        neig_update[id] = mk;
+    }
+
+    inline void mark_all(const int mk){
+        for(int i=0;i<nb;++i){
+            neig_update[neig[i]] = mk;
+        }
+        
+    }
+
+    inline int check_all_neig_no_update(){
+        int up=0;
+        for(int i=0;i<nb;++i){
+            up |= neig_update[neig[i]];
+        }
+        return up;
+    }
+
     inline int &operator[](const int &index){
         return data[index];
     }
 };
 
+//=^==^==^==^==^=   MAP   =^==^==^==^==^=//
+
 Map map;
 
-int done=0;
+//=v==v==v==v==   File IO   ==v==v==v==v=//
+
+/*
+inline void read_from_file(const char *file){
+    std::ifstream fin(file);
+
+    TIC;{
+        fin >> vert >> edge;
+        map.init(vert);
+        int i, j, w;
+        for(int e=0;e<edge;++e){
+            fin >> i >> j >> w;
+            if(i==world_rank)map.data[j]=w;
+            else if(j==world_rank)map.data[i]=w;
+        }
+
+    }TOC_P(IO);
+}*/
 
 inline void dump_from_file(const char *file){
 
@@ -143,42 +220,6 @@ inline void dump_from_file(const char *file){
     }
 }
 
-inline void floyd(){
-
-    MPI_Request *send_req = new MPI_Request[map.nb];
-    int *buf = new int[map.vt];
-
-    int not_done = 1;
-    while(not_done){
-        not_done = 0;
-        for(int i=0;i<map.nb;++i){
-            MPI_Isend(map.data, map.vt, MPI_INT, map.neig[i], 1, MPI_COMM_WORLD, &send_req[i]);
-
-#ifdef _DEBUG_
-            printf("Rank %d: send to %d\n", world_rank, map.neig[i]);
-#endif
-
-        }
-        for(int i=0;i<map.nb;++i){
-            TIC;{
-
-            MPI_Recv(buf, map.vt, MPI_INT, map.neig[i], 1, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
- 
-            }TOC_P(COMM);
-            TIC;{
-
-            not_done |= map.update( map.neig[i], buf );
-
-            }TOC_P(CALC);
-        }
-        TIC;{
-        MPI_Allreduce(MPI_IN_PLACE, &not_done, 1, MPI_INT, MPI_LOR, MPI_COMM_WORLD);
-        }TOC_P(COMM);
-    }
-
-    delete [] send_req;
-    delete [] buf;
-}
 
 inline void dump_to_file(const char *file){
     std::stringstream ss;
@@ -190,7 +231,7 @@ inline void dump_to_file(const char *file){
     std::string str = ss.str();
     int *len = new int[map.vt]();
     len[world_rank] = str.size();
-    
+
     MPI_File fout;
     MPI_File_open(MPI_COMM_WORLD, file, MPI_MODE_WRONLY | MPI_MODE_CREATE, MPI_INFO_NULL, &fout);
 
@@ -210,11 +251,195 @@ inline void dump_to_file(const char *file){
     MPI_File_write_all(fout, str.c_str(), len[world_rank], MPI_CHAR, MPI_STATUS_IGNORE);
 
     MPI_File_close(&fout);
-    
+
     }TOC_P(IO);
 
     delete [] len;
 }
+
+//=^==^==^==^==   File IO   ==^==^==^==^=//
+
+
+
+
+//=v==v==v==v==v=  Utils  =v==v==v==v==v=//
+
+inline void discard_msg(const MPI_Status &status, const int size){
+    MPI_Recv(map.buf, size, MPI_INT, status.MPI_SOURCE, status.MPI_TAG, COMM_GRAPH, MPI_STATUS_IGNORE);
+}
+
+inline void send_update_all(){
+    for(int i=0;i<map.nb;++i){
+        MPI_Isend(map.data, map.vt, map.neig[i], tags.upd, COMM_GRAPH, &map.reqs[map.neig[i]]);
+    }
+}
+
+inline void send_noupdate_all(){
+    for(int i=0;i<map.nb;++i){
+        MPI_Isend(&NOTHING, 1, map.neig[i], tags.nupd, COMM_GRAPH, &map.reqs[map.neig[i]]);
+    }
+}
+
+inline void send_termiate_all_child(){
+    for(int i=0;i<map.chds.size();++i){
+        MPI_Isend(&NOTHING, 1, map.chds[i], tags.term, COMM_GRAPH, &map.reqs[map.chds[i]]);
+    }
+}
+
+inline void send_terminate_parent(){
+    MPI_Isend(&NOTHING, 1, map.parent, tags.term, COMM_GRAPH, &map.reqs[map.parent]);
+}
+
+//=^==^==^==^==^=  Utils  =^==^==^==^==^=//
+
+
+
+//=v==v==v==v== Initialize  ==v==v==v==v=//
+
+inline void create_graph(){
+    MPI_Dist_graph_create(MPI_COMM_WORLD, 1, &world_rank, &map.nb, map.neig.data(),
+                                MPI_UNWEIGHTED, MPI_INFO_NULL, false, &COMM_GRAPH);
+    MPI_Comm_rank(COMM_GRAPH, &graph_rank);
+    assert(graph_rank == world_rank);
+}
+
+//only rank 0
+inline void construct_tree_root(){
+    map.parent = 0;
+
+    map.reqs.resize(map.nb);
+
+    for(int i=0;i<map.nb;++i){
+        MPI_Isend(&NOTHING, 1, MPI_INT, map.neig[i], tags.invt, COMM_GRAPH, &map.reqs[i]);
+        //MPI_Request_free(&map.reqs[i]);
+    }
+    /*
+    MPI_Status status;
+
+    for(int i=0;i<map.nb;++i){
+        MPI_Recv(map.buf, 1, MPI_INT, MPI_ANY_SOURCE, MPI_ANY_TAG, COMM_GRAPH, &status);
+        do_construct_tree(status);
+    }
+    */
+
+#ifdef _DEBUG_
+    printf("Rank %d: tree root created\n", graph_rank);
+#endif
+
+    
+}
+
+//=^==^==^==^== Initialize  ==^==^==^==^=//
+
+
+//=v==v==v==v==v=  Tasks  =v==v==v==v==v=//
+
+inline void do_construct_tree(const MPI_Status &status){
+    //if get invitation
+    if(status.MPI_TAG == tags.invt){
+
+#ifdef _DEBUG_
+        printf("Rank %d: get invitation from rank %d\n", graph_rank, status.MPI_SOURCE);
+#endif
+        
+        discard_msg(status, 1);
+
+        //check if already joined to another party
+        if(map.parent != -1){
+
+#ifdef _DEBUG_
+            printf("Rank %d: reject %d / parent=%d\n", graph_rank, status.MPI_SOURCE, map.parent);
+#endif
+            //send reject
+            MPI_Isend(&NOTHING, 1, MPI_INT, status.MPI_SOURCE, tags.rej, 
+                                COMM_GRAPH, &map.reqs[status.MPI_SOURCE]);
+        }else{
+
+            printf("Rank %d: join %d\n", graph_rank, status.MPI_SOURCE);
+
+            //send join request
+            map.parent = status.MPI_SOURCE;
+            MPI_Isend(&NOTHING, 1, MPI_INT, status.MPI_SOURCE, tags.join, 
+                                COMM_GRAPH, &map.reqs[status.MPI_SOURCE]);
+            //send invitation to all neighbors
+            for(int i=0;i<map.nb;++i){
+                if(map.neig[i] != map.parent)
+                    MPI_Isend(&NOTHING, 1, MPI_INT, map.neig[i], tags.invt, COMM_GRAPH, &map.reqs[i]);
+            }
+        }
+
+    }else if(status.MPI_TAG == tags.join){
+        //get request
+        discard_msg(status, 1);
+        map.chds.push_back(status.MPI_SOURCE);
+    }else if(status.MPI_TAG == tags.rej){
+        //get reject
+        discard_msg(status, 1);
+    }
+}
+
+inline void do_update(const MPI_Status &status){
+    MPI_Recv(map.buf, map.vt, MPI_INT, status.MPI_SOURCE, status.MPI_TAG, COMM_GRAPH, MPI_STATUS_IGNORE);
+    map.has_update |= map.update(status.MPI_SOURCE);
+    if(!map.has_update){
+        send_noupdate_all();
+    }
+}
+
+inline void do_no_update(const MPI_Status &status){
+    discard_msg(status, 1);
+    map.mark(status.MPI_SOURCE, 0);
+
+    if(graph_rank == 0 && map.check_all_neig_no_update()){
+        //TODO: send termination message
+        
+    }
+}
+
+inline void do_terminate(const MPI_Status &status){
+
+}
+
+inline void listen_(){
+
+    MPI_Status status;
+    int flag=0;
+    while(map.not_done){
+        MPI_Iprobe(MPI_ANY_SOURCE, MPI_ANY_TAG, COMM_GRAPH, &flag, &status);
+        if(flag){
+            switch(status.MPI_TAG){
+                case tags.invt:
+                case tags.join:
+                case tags.rej:
+                    do_construct_tree(status);
+                    break;
+                case tags.upd:
+                    do_update(status);
+                    break;
+                case tags.nupd:
+                    do_no_update(status);
+                    break;
+                case tags.term:
+                    do_terminate(status):
+                    break;
+                default:
+#ifdef _DEBUG_
+                    printf("Rank %d: Unrecognized Tags Received: [%d]\n", graph_rank, status.MPI_TAG);
+#endif
+                    break;
+            }
+        }else{
+            if(map.has_update){
+                send_update_all();
+                map.mark_all(1);
+                map.has_update = 0;
+            }
+        }
+    }
+}
+
+//=^==^==^==^==^=  Tasks  =^==^==^==^==^=//
+
 
 int main(int argc, char **argv){
 
@@ -228,10 +453,18 @@ int main(int argc, char **argv){
     TIME(ST);
     dump_from_file(argv[1]);
 
+#ifdef _DEBUG_
+    printf("Rank %d: file read\n", world_rank);
+#endif
 
     map.calc();
 
-    floyd();
+    create_graph();
+
+    if(graph_rank ==0)
+        construct_tree_root();
+
+    listen_();
     
     dump_to_file(argv[2]);
 
