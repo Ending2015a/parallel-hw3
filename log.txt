@@ -1,658 +1,733 @@
-Rank 6: file read
-Rank 6 neig: 0, 1, 2, 3, 4, 5, 7, 8, 9, 
-Rank 9: file read
-Rank 9 neig: 0, 1, 2, 3, 4, 5, 6, 7, 8, 
 Rank 7: file read
+Rank 7 neig: 0, 1, 2, 3, 4, 5, 6, 8, 9, 
 Rank 8: file read
 Rank 8 neig: 0, 1, 2, 3, 4, 5, 6, 7, 9, 
-Rank 0: file read
-Rank 0 neig: 1, 2, 3, 4, 5, 6, 7, 8, 9, 
-Rank 7 neig: 0, 1, 2, 3, 4, 5, 6, 8, 9, 
-Rank 4: file read
-Rank 4 neig: 0, 1, 2, 3, 5, 6, 7, 8, 9, 
-Rank 2: file read
-Rank 2 neig: 0, 1, 3, 4, 5, 6, 7, 8, 9, 
-Rank 1: file read
-Rank 1 neig: 0, 2, 3, 4, 5, 6, 7, 8, 9, 
-Rank 5: file read
-Rank 5 neig: 0, 1, 2, 3, 4, 6, 7, 8, 9, 
 Rank 3: file read
 Rank 3 neig: 0, 1, 2, 4, 5, 6, 7, 8, 9, 
-Rank 0/0: send invitation to all
-Rank 0/1: tree root created
-Rank 8/0: send update to all
-Rank 8/1: recv update from 9 : update 1
-Rank 8/2: get invitation from rank 0
-Rank 8/3: join 0
-Rank 8/4: recv update from 1 : update 1
-Rank 8/5: recv update from 2 : update 0
-Rank 8/6: get invitation from rank 1
-Rank 8/7: reject 1 / parent=0
-Rank 8/8: get invitation from rank 9
-Rank 6/0: send update to all
-Rank 6/1: recv update from 7 : update 0
-Rank 6/2: get invitation from rank 0
-Rank 6/3: join 0
-Rank 6/4: recv update from 1 : update 1
-Rank 6/5: get invitation from rank 1
-Rank 6/6: reject 1 / parent=0
-Rank 6/7: 7 join to me
-Rank 3/0: send update to all
-Rank 3/1: recv update from 4 : update 1
-Rank 3/2: recv update from 5 : update 1
-Rank 3/3: recv no update from 5
-Rank 3/4: mark: 
-Rank 9/0: send update to all
-Rank 9/1: recv update from 8 : update 1
-Rank 9/2: get invitation from rank 0
-Rank 9/3: join 0
-Rank 9/4: get invitation from rank 8
-Rank 9/5: reject 8 / parent=0
-Rank 9/6: recv update from 1 : update 1
-Rank 9/7: 8 reject me
-Rank 9/8: get invitation from rank 1
-Rank 9/9: reject 1 / parent=0
-Rank 4/0: send update to all
-Rank 4/1: recv update from 3 : update 1
-Rank 4/2: recv update from 5 : update 1
-Rank 4/3: get invitation from rank 0
-Rank 4/4: join 0
-Rank 4/5: get invitation from rank 5
-Rank 4/6: reject 5 / parent=0
-Rank 4/7: recv update from 1 : update 1
-Rank 4/8: 5 reject me
-Rank 4/9: get invitation from rank 1
-Rank 4/10: reject 1 / parent=0
-Rank 4/11: recv update from 2 : update 0
-Rank 4/12: 3 join to me
-Rank 7/0: send update to all
-Rank 7/1: recv update from 6 : update 1
-Rank 7/2: recv no update from 6
-Rank 7/3: mark: 
-Rank 7/4: get invitation from rank 6
-Rank 7/5: join 6
-Rank 7/6: get invitation from rank 0
-Rank 7/7: reject 0 / parent=6
-Rank 7/8: recv update from 1 : update 0
-Rank 7/9: get invitation from rank 1
-Rank 7/10: reject 1 / parent=6
-Rank 7/11: recv update from 2 : update 0
-Rank 7/12: get invitation from rank 2
-Rank 7/13: reject 2 / parent=6
-Rank 7/14: recv update from 3 : update 1
-Rank 8/9: reject 9 / parent=0
-Rank 8/10: 9 reject me
-Rank 8/11: get invitation from rank 2
-Rank 8/12: reject 2 / parent=0
-Rank 8/13: recv update from 3 : update 0
-Rank 8/14: recv update from 4 : update 0
-Rank 8/15: get invitation from rank 4
-Rank 8/16: reject 4 / parent=0
-Rank 8/17: get invitation from rank 3
-Rank 8/18: reject 3 / parent=0
-Rank 8/19: recv update from 5 : update 1
-Rank 8/20: get invitation from rank 5
-Rank 1/0: send update to all
-Rank 1/1: recv update from 2 : update 0
-Rank 1/2: get invitation from rank 0
-Rank 1/3: join 0
-Rank 6/8: recv update from 2 : update 0
-Rank 6/9: get invitation from rank 2
-Rank 6/10: reject 2 / parent=0
-Rank 6/11: recv update from 3 : update 1
-Rank 6/12: get invitation from rank 3
-Rank 6/13: reject 3 / parent=0
-Rank 6/14: recv update from 4 : update 1
-Rank 6/15: get invitation from rank 4
-Rank 6/16: reject 4 / parent=0
-Rank 6/17: recv no update from 0
-Rank 9/10: recv update from 2 : update 0
-Rank 9/11: get invitation from rank 2
-Rank 9/12: reject 2 / parent=0
-Rank 9/13: recv update from 3 : update 0
-Rank 9/14: get invitation from rank 3
-Rank 9/15: reject 3 / parent=0
-Rank 9/16: recv update from 4 : update 0
-Rank 9/17: get invitation from rank 4
-Rank 9/18: reject 4 / parent=0
-Rank 9/19: recv update from 5 : update 0
-Rank 9/20: get invitation from rank 5
-Rank 9/21: reject 5 / parent=0
-Rank 2/0: send update to all
-Rank 2/1: recv update from 1 : update 0
-Rank 2/2: get invitation from rank 0
-Rank 2/3: join 0
-Rank 5/0: send update to all
-Rank 5/1: recv update from 3 : update 0
-Rank 5/2: recv update from 4 : update 1
-Rank 5/3: get invitation from rank 0
-Rank 5/4: join 0
-Rank 5/5: get invitation from rank 4
-Rank 5/6: reject 4 / parent=0
-Rank 5/7: 4 reject me
-Rank 5/8: recv update from 1 : update 1
-Rank 5/9: get invitation from rank 1
-Rank 5/10: reject 1 / parent=0
-Rank 5/11: recv update from 2 : update 0
-Rank 5/12: get invitation from rank 3
-Rank 5/13: reject 3 / parent=0
-Rank 5/14: get invitation from rank 2
-Rank 5/15: reject 2 / parent=0
-Rank 5/16: recv update from 6 : update 1
-Rank 5/17: 3 reject me
-Rank 5/18: get invitation from rank 6
-Rank 7/15: get invitation from rank 3
-Rank 7/16: reject 3 / parent=6
-Rank 7/17: recv update from 4 : update 1
-Rank 7/18: get invitation from rank 4
-Rank 7/19: reject 4 / parent=6
-Rank 7/20: recv no update from 0
-Rank 7/21: mark: 
-Rank 7/22: recv no update from 4
-Rank 7/23: mark: 
-Rank 7/24: 0 reject me
-Rank 7/25: recv update from 5 : update 0
-Rank 7/26: get invitation from rank 5
-Rank 7/27: reject 5 / parent=6
-Rank 7/28: recv no update from 5
-Rank 7/29: mark: 
-Rank 8/21: reject 5 / parent=0
-Rank 8/22: recv update from 6 : update 1
-Rank 8/23: get invitation from rank 6
-Rank 8/24: reject 6 / parent=0
-Rank 8/25: recv update from 7 : update 1
-Rank 8/26: get invitation from rank 7
-Rank 8/27: reject 7 / parent=0
-Rank 8/28: send update to all
-Rank 8/29: 5 reject me
-Rank 8/30: recv no update from 9
-Rank 8/31: mark: 
-Rank 0/2: recv update from 1 : update 1
-Rank 0/3: recv update from 2 : update 0
-Rank 3/5: get invitation from rank 4
-Rank 3/6: join 4
-Rank 3/7: get invitation from rank 5
-Rank 3/8: reject 5 / parent=4
-Rank 3/9: 5 reject me
-Rank 3/10: get invitation from rank 0
-Rank 3/11: reject 0 / parent=4
-Rank 3/12: 0 reject me
-Rank 3/13: recv update from 1 : update 1
-Rank 3/14: get invitation from rank 1
-Rank 3/15: reject 1 / parent=4
-Rank 3/16: 1 reject me
-Rank 6/18: mark: 0, 
-Rank 6/19: 4 reject me
-Rank 6/20: recv update from 5 : update 1
-Rank 6/21: 1 reject me
-Rank 6/22: get invitation from rank 5
-Rank 6/23: reject 5 / parent=0
-Rank 6/24: 3 reject me
-Rank 6/25: recv update from 0 : update 0
-Rank 6/26: recv no update from 2
-Rank 6/27: mark: 0, 
-Rank 6/28: 5 reject me
-Rank 6/29: 2 reject me
-Rank 6/30: recv update from 8 : update 1
-Rank 9/22: recv update from 6 : update 1
-Rank 9/23: get invitation from rank 6
-Rank 9/24: reject 6 / parent=0
-Rank 9/25: recv update from 7 : update 1
-Rank 9/26: recv update from 8 : update 0
-Rank 9/27: recv no update from 0
-Rank 9/28: mark: 
-Rank 9/29: recv no update from 5
-Rank 9/30: mark: 
-Rank 1/4: recv no update from 2
-Rank 1/5: mark: 
-Rank 4/13: get invitation from rank 2
-Rank 4/14: reject 2 / parent=0
-Rank 4/15: recv update from 6 : update 1
-Rank 4/16: get invitation from rank 6
-Rank 4/17: reject 6 / parent=0
-Rank 4/18: recv update from 7 : update 0
-Rank 4/19: 6 reject me
-Rank 4/20: recv no update from 2
-Rank 7/30: 5 reject me
-Rank 7/31: recv update from 8 : update 1
-Rank 7/32: recv no update from 1
-Rank 7/33: mark: 
-Rank 7/34: recv update from 0 : update 1
-Rank 7/35: get invitation from rank 8
-Rank 7/36: reject 8 / parent=6
-Rank 7/37: 1 reject me
-Rank 7/38: 3 reject me
-Rank 7/39: 4 reject me
-Rank 7/40: 8 reject me
-Rank 7/41: recv update from 8 : update 1
-Rank 7/42: recv no update from 2
-Rank 7/43: mark: 
-Rank 7/44: recv update from 9 : update 1
-Rank 7/45: 2 reject me
-Rank 7/46: get invitation from rank 9
-Rank 8/32: recv update from 0 : update 0
-Rank 8/33: 7 reject me
-Rank 8/34: recv no update from 5
-Rank 8/35: mark: 
-Rank 8/36: 4 reject me
-Rank 8/37: 3 reject me
-Rank 2/4: recv no update from 1
-Rank 2/5: mark: 
-Rank 2/6: get invitation from rank 1
-Rank 2/7: reject 1 / parent=0
-Rank 2/8: recv no update from 0
-Rank 5/19: reject 6 / parent=0
-Rank 5/20: recv update from 7 : update 0
-Rank 5/21: get invitation from rank 7
-Rank 5/22: reject 7 / parent=0
-Rank 5/23: recv update from 8 : update 1
-Rank 5/24: get invitation from rank 8
-Rank 5/25: reject 8 / parent=0
-Rank 5/26: 8 reject me
-Rank 5/27: 1 reject me
-Rank 5/28: recv update from 9 : update 0
-Rank 5/29: recv no update from 7
-Rank 5/30: mark: 
-Rank 6/31: get invitation from rank 8
-Rank 6/32: reject 8 / parent=0
-Rank 6/33: 8 reject me
-Rank 6/34: recv update from 8 : update 0
-Rank 6/35: recv update from 9 : update 1
-Rank 6/36: get invitation from rank 9
-Rank 6/37: reject 9 / parent=0
-Rank 6/38: 9 reject me
-Rank 6/39: recv update from 9 : update 0
-Rank 6/40: send update to all
-Rank 9/31: recv update from 0 : update 0
-Rank 9/32: get invitation from rank 7
-Rank 9/33: reject 7 / parent=0
-Rank 9/34: send update to all
-Rank 9/35: 5 reject me
-Rank 9/36: recv no update from 8
-Rank 9/37: mark: 
-Rank 0/4: 2 join to me
-Rank 0/5: 1 join to me
-Rank 0/6: recv update from 3 : update 1
-Rank 0/7: get invitation from rank 3
-Rank 0/8: reject 3 / parent=0
-Rank 0/9: recv update from 4 : update 1
-Rank 0/10: 4 join to me
-Rank 0/11: recv update from 5 : update 1
-Rank 0/12: 5 join to me
-Rank 0/13: recv update from 6 : update 0
-Rank 0/14: 6 join to me
-Rank 3/17: recv update from 2 : update 0
-Rank 3/18: get invitation from rank 2
-Rank 3/19: reject 2 / parent=4
-Rank 3/20: 2 reject me
-Rank 3/21: recv update from 6 : update 1
-Rank 3/22: get invitation from rank 6
-Rank 3/23: reject 6 / parent=4
-Rank 3/24: 6 reject me
-Rank 3/25: recv update from 0 : update 0
-Rank 3/26: recv update from 7 : update 1
-Rank 3/27: get invitation from rank 7
-Rank 3/28: reject 7 / parent=4
-Rank 3/29: 7 reject me
-Rank 3/30: recv update from 8 : update 1
-Rank 3/31: get invitation from rank 8
-Rank 3/32: reject 8 / parent=4
-Rank 3/33: recv no update from 8
-Rank 8/38: recv update from 9 : update 0
-Rank 8/39: 1 reject me
-Rank 8/40: 6 reject me
-Rank 8/41: recv no update from 1
-Rank 8/42: mark: 
-Rank 8/43: recv no update from 6
-Rank 8/44: mark: 
-Rank 1/6: get invitation from rank 2
-Rank 1/7: reject 2 / parent=0
-Rank 1/8: 2 reject me
-Rank 1/9: recv update from 3 : update 1
-Rank 1/10: get invitation from rank 3
-Rank 1/11: reject 3 / parent=0
-Rank 1/12: recv update from 4 : update 1
-Rank 1/13: get invitation from rank 4
-Rank 1/14: reject 4 / parent=0
-Rank 1/15: 4 reject me
-Rank 1/16: recv update from 5 : update 1
-Rank 4/21: mark: 0, 
-Rank 4/22: 1 reject me
-Rank 4/23: 2 reject me
-Rank 4/24: recv update from 0 : update 1
-Rank 4/25: get invitation from rank 7
-Rank 4/26: reject 7 / parent=0
-Rank 4/27: 7 reject me
-Rank 4/28: recv update from 8 : update 1
-Rank 4/29: get invitation from rank 8
-Rank 4/30: reject 8 / parent=0
-Rank 4/31: recv no update from 8
-Rank 4/32: mark: 0, 
-Rank 4/33: 8 reject me
-Rank 4/34: recv update from 8 : update 1
-Rank 4/35: recv update from 9 : update 0
-Rank 4/36: get invitation from rank 9
-Rank 4/37: reject 9 / parent=0
-Rank 9/38: recv no update from 1
-Rank 9/39: mark: 
-Rank 9/40: recv no update from 5
-Rank 9/41: mark: 
-Rank 9/42: 1 reject me
-Rank 2/9: mark: 
-Rank 2/10: 1 reject me
-Rank 2/11: recv update from 3 : update 1
-Rank 2/12: get invitation from rank 3
-Rank 2/13: reject 3 / parent=0
-Rank 2/14: recv update from 4 : update 0
-Rank 2/15: get invitation from rank 4
-Rank 2/16: reject 4 / parent=0
-Rank 2/17: recv no update from 4
-Rank 2/18: mark: 
-Rank 2/19: 4 reject me
-Rank 2/20: recv update from 5 : update 1
-Rank 2/21: get invitation from rank 5
-Rank 2/22: reject 5 / parent=0
-Rank 5/31: 2 reject me
-Rank 5/32: recv update from 0 : update 0
-Rank 5/33: 6 reject me
-Rank 5/34: 7 reject me
-Rank 5/35: recv update from 8 : update 0
-Rank 5/36: get invitation from rank 9
-Rank 5/37: reject 9 / parent=0
-Rank 5/38: recv no update from 9
-Rank 5/39: mark: 
-Rank 5/40: 9 reject me
-Rank 5/41: recv update from 9 : update 0
-Rank 5/42: send update to all
-Rank 5/43: recv no update from 4
-Rank 5/44: mark: 
-Rank 5/45: recv no update from 3
-Rank 5/46: mark: 
-Rank 8/45: recv no update from 3
-Rank 8/46: mark: 
-Rank 8/47: 2 reject me
-Rank 8/48: recv update from 5 : update 0
-Rank 8/49: recv update from 6 : update 0
-Rank 8/50: recv update from 7 : update 0
-Rank 0/15: recv update from 7 : update 0
-Rank 0/16: 3 reject me
-Rank 0/17: get invitation from rank 7
-Rank 0/18: reject 7 / parent=0
-Rank 0/19: 7 reject me
-Rank 0/20: recv update from 8 : update 1
-Rank 0/21: 8 join to me
-Rank 0/22: recv update from 8 : update 1
-Rank 0/23: recv update from 9 : update 0
-Rank 0/24: 9 join to me
-Rank 0/25: send update to all
-Rank 3/34: mark: 
-Rank 3/35: 8 reject me
-Rank 3/36: recv update from 8 : update 0
-Rank 3/37: recv update from 9 : update 0
-Rank 3/38: get invitation from rank 9
-Rank 3/39: reject 9 / parent=4
-Rank 3/40: recv update from 5 : update 0
-Rank 3/41: recv update from 6 : update 0
-Rank 3/42: recv update from 7 : update 0
-Rank 3/43: recv no update from 9
-Rank 3/44: mark: 
-Rank 3/45: 9 reject me
-Rank 3/46: recv update from 9 : update 0
-Rank 3/47: recv update from 1 : update 0
-Rank 3/48: send update to all
-Rank 7/47: reject 9 / parent=6
-Rank 7/48: 9 reject me
-Rank 7/49: recv update from 9 : update 0
-Rank 7/50: send update to all
-Rank 7/51: recv update from 6 : update 0
-Rank 7/52: recv no update from 6
-Rank 7/53: mark: 
-Rank 9/43: recv no update from 3
-Rank 9/44: mark: 
-Rank 9/45: recv no update from 1
-Rank 9/46: mark: 
-Rank 9/47: 3 reject me
-Rank 9/48: recv no update from 4
-Rank 9/49: mark: 
-Rank 9/50: 4 reject me
-Rank 1/17: get invitation from rank 5
-Rank 1/18: reject 5 / parent=0
-Rank 1/19: 3 reject me
-Rank 1/20: 5 reject me
-Rank 1/21: recv update from 6 : update 1
-Rank 1/22: get invitation from rank 6
-Rank 1/23: reject 6 / parent=0
-Rank 1/24: 6 reject me
-Rank 1/25: recv update from 7 : update 0
-Rank 1/26: recv update from 0 : update 0
-Rank 1/27: get invitation from rank 7
-Rank 1/28: reject 7 / parent=0
-Rank 1/29: recv no update from 7
-Rank 4/38: recv update from 5 : update 0
-Rank 4/39: recv update from 7 : update 0
-Rank 4/40: recv update from 6 : update 0
-Rank 4/41: recv no update from 9
-Rank 4/42: mark: 0, 
-Rank 4/43: 9 reject me
-Rank 4/44: recv update from 9 : update 0
-Rank 4/45: send update to all
-Rank 4/46: recv update from 1 : update 0
-Rank 4/47: recv update from 3 : update 0
-Rank 4/48: recv no update from 3
-Rank 6/41: recv update from 7 : update 0
-Rank 6/42: recv no update from 7
-Rank 6/43: mark: 0, 
-Rank 6/44: recv no update from 1
-Rank 6/45: mark: 0, 
-Rank 6/46: recv no update from 2
-Rank 8/51: recv no update from 2
-Rank 8/52: mark: 
-Rank 8/53: recv update from 1 : update 0
-Rank 2/23: recv no update from 3
-Rank 2/24: mark: 
-Rank 2/25: 3 reject me
-Rank 2/26: recv no update from 5
-Rank 2/27: mark: 
-Rank 2/28: recv update from 0 : update 0
-Rank 2/29: 5 reject me
-Rank 2/30: recv update from 6 : update 0
-Rank 2/31: get invitation from rank 6
-Rank 2/32: reject 6 / parent=0
-Rank 2/33: recv no update from 6
-Rank 2/34: mark: 
-Rank 2/35: 6 reject me
-Rank 5/47: recv no update from 0
-Rank 5/48: mark: 
-Rank 5/49: recv no update from 1
-Rank 5/50: mark: 
-Rank 5/51: recv update from 6 : update 0
-Rank 5/52: recv update from 1 : update 0
-Rank 5/53: recv update from 7 : update 0
-Rank 5/54: recv update from 4 : update 0
-Rank 5/55: recv update from 3 : update 0
-Rank 5/56: recv no update from 8
-Rank 5/57: mark: 
-Rank 5/58: recv no update from 9
-Rank 5/59: mark: 
-Rank 5/60: recv no update from 7
-Rank 5/61: mark: 
-Rank 7/54: recv no update from 2
-Rank 7/55: mark: 
-Rank 7/56: recv no update from 1
-Rank 7/57: mark: 
-Rank 7/58: recv no update from 3
-Rank 7/59: mark: 
-Rank 7/60: recv no update from 0
-Rank 7/61: mark: 
-Rank 9/51: recv update from 5 : update 0
-Rank 9/52: recv no update from 2
-Rank 9/53: mark: 
-Rank 9/54: recv no update from 3
-Rank 9/55: mark: 
-Rank 9/56: recv update from 1 : update 1
-Rank 9/57: 2 reject me
-Rank 9/58: recv no update from 4
-Rank 9/59: mark: 
-Rank 0/26: recv no update from 1
-Rank 0/27: mark: 0, 0, 0, 0, 0, 0, 0, 
-Rank 0/28: recv no update from 2
-Rank 0/29: mark: 0, 0, 0, 0, 0, 0, 0, 
-Rank 3/49: recv update from 4 : update 0
-Rank 3/50: recv no update from 4
-Rank 3/51: mark: 
-Rank 3/52: recv no update from 5
-Rank 3/53: mark: 
-Rank 6/47: mark: 0, 
-Rank 6/48: recv no update from 0
-Rank 6/49: mark: 0, 
-Rank 6/50: recv update from 1 : update 0
-Rank 6/51: recv no update from 3
-Rank 6/52: mark: 0, 
-Rank 6/53: recv update from 3 : update 0
-Rank 6/54: recv no update from 4
-Rank 6/55: mark: 0, 
-Rank 6/56: recv update from 4 : update 0
-Rank 8/54: recv update from 4 : update 0
-Rank 8/55: recv update from 3 : update 0
-Rank 8/56: recv terminate from parent 0
-Rank 1/30: mark: 
-Rank 1/31: 7 reject me
-Rank 1/32: recv update from 8 : update 1
-Rank 1/33: get invitation from rank 8
-Rank 1/34: reject 8 / parent=0
-Rank 1/35: 8 reject me
-Rank 1/36: recv update from 8 : update 0
-Rank 1/37: recv update from 9 : update 0
-Rank 1/38: get invitation from rank 9
-Rank 1/39: reject 9 / parent=0
-Rank 4/49: mark: 0, 
-Rank 4/50: recv no update from 5
-Rank 4/51: mark: 0, 
-Rank 4/52: recv no update from 0
-Rank 4/53: mark: 0, 
-Rank 4/54: recv terminate from parent 0
-Rank 4/55: recv no update from 1
-Rank 4/56: mark: 0, 
-Rank 4/57: recv no update from 2
-Rank 4/58: mark: 0, 
-Rank 7/62: recv update from 1 : update 0
-Rank 7/63: recv no update from 4
-Rank 7/64: mark: 
-Rank 7/65: recv update from 4 : update 0
-Rank 7/66: recv update from 3 : update 0
-Rank 7/67: recv update from 5 : update 0
-Rank 7/68: recv no update from 5
-Rank 7/69: mark: 
-Rank 7/70: recv no update from 8
-Rank 7/71: mark: 
-Rank 7/72: recv update from 2 : update 0
-Rank 9/60: recv update from 3 : update 0
-Rank 9/61: recv update from 4 : update 0
-Rank 9/62: recv no update from 2
-Rank 9/63: mark: 
-Rank 9/64: 6 reject me
-Rank 9/65: recv terminate from parent 0
-Rank 9/66: recv no update from 6
-Rank 2/36: recv update from 7 : update 0
-Rank 2/37: get invitation from rank 7
-Rank 2/38: reject 7 / parent=0
-Rank 2/39: recv no update from 7
-Rank 2/40: mark: 
-Rank 2/41: 7 reject me
-Rank 2/42: recv update from 8 : update 1
-Rank 2/43: get invitation from rank 8
-Rank 2/44: reject 8 / parent=0
-Rank 2/45: recv no update from 8
-Rank 2/46: mark: 
-Rank 2/47: recv update from 5 : update 1
-Rank 5/62: recv terminate from parent 0
-Rank 5/63: recv update from 2 : update 0
-Rank 5/64: recv no update from 6
-Rank 5/65: mark: 
-Rank 5/66: send terminate to child
-Rank 6/57: recv terminate from parent 0
-Rank 6/58: recv update from 5 : update 0
-Rank 6/59: recv update from 2 : update 0
-Rank 6/60: recv no update from 5
-Rank 6/61: mark: 0, 
-Rank 8/57: send terminate to child
-Rank 8/58: send terminate to parent
-Rank 8/59: recv update from 2 : update 0
-Rank 0/30: recv no update from 3
-Rank 0/31: mark: 0, 0, 0, 0, 0, 0, 0, 
-Rank 0/32: recv no update from 5
-Rank 0/33: mark: 0, 0, 0, 0, 0, 0, 0, 
-Rank 0/34: recv update from 5 : update 0
-Rank 0/35: recv no update from 6
-Rank 0/36: mark: 0, 0, 0, 0, 0, 0, 0, 
-Rank 0/37: recv update from 6 : update 0
-Rank 0/38: recv update from 7 : update 0
-Rank 3/54: recv no update from 0
-Rank 3/55: mark: 
-Rank 3/56: recv no update from 1
-Rank 3/57: mark: 
-Rank 3/58: recv no update from 2
-Rank 3/59: mark: 
-Rank 3/60: recv update from 2 : update 0
-Rank 3/61: recv no update from 6
-Rank 3/62: mark: 
-Rank 9/67: mark: 
-Rank 9/68: recv no update from 0
-Rank 9/69: mark: 
-Rank 9/70: recv update from 2 : update 0
-Rank 1/40: 9 reject me
-Rank 1/41: recv update from 9 : update 0
-Rank 1/42: recv update from 5 : update 0
-Rank 1/43: recv update from 6 : update 0
-Rank 1/44: recv update from 7 : update 0
-Rank 1/45: send update to all
-Rank 1/46: recv no update from 0
-Rank 1/47: mark: 
-Rank 3/63: recv no update from 7
-Rank 3/64: mark: 
-Rank 3/65: recv no update from 8
-Rank 3/66: mark: 
-Rank 2/48: recv update from 6 : update 0
-Rank 2/49: recv update from 7 : update 0
-Rank 2/50: 8 reject me
-Rank 2/51: recv update from 8 : update 0
-Rank 2/52: recv update from 9 : update 0
-Rank 2/53: recv update from 1 : update 0
-Rank 2/54: get invitation from rank 9
-Rank 2/55: reject 9 / parent=0
-Rank 2/56: recv no update from 9
-Rank 2/57: mark: 
-Rank 2/58: recv update from 4 : update 0
-Rank 2/59: recv update from 3 : update 0
-Rank 3/67: recv no update from 9
-Rank 3/68: mark: 
-Rank 0/39: recv update from 1 : update 0
-Rank 0/40: recv no update from 8
-Rank 0/41: mark: 0, 0, 0, 0, 0, 0, 0, 
-Rank 0/42: recv update from 4 : update 0
-Rank 0/43: recv update from 3 : update 0
-Rank 0/44: recv no update from 9
-Rank 0/45: mark: 0, 0, 0, 0, 0, 0, 0, 
-Rank 0/46: send teriminate to child
-Rank 0/47: recv update from 2 : update 0
-Rank 1/48: recv no update from 2
-Rank 1/49: mark: 
-Rank 1/50: recv no update from 3
-Rank 1/51: mark: 
-Rank 1/52: recv update from 3 : update 0
-Rank 1/53: recv update from 4 : update 0
-Rank 1/54: recv terminate from parent 0
-Rank 1/55: recv update from 2 : update 0
-Rank 1/56: recv no update from 4
-Rank 1/57: mark: 
-Rank 1/58: recv no update from 5
-Rank 1/59: mark: 
-Rank 2/60: 9 reject me
-Rank 2/61: recv update from 9 : update 0
-Rank 2/62: send update to all
-Rank 2/63: recv terminate from parent 0
-Rank 2/64: recv no update from 0
-Rank 2/65: mark: 
-Rank 0/48: recv update from 9 : update 0
-Rank 0/49: recv terminate from child 8
-Rank 0/50: done
+Rank 0: file read
+Rank 0 neig: 1, 2, 3, 4, 5, 6, 7, 8, 9, 
+Rank 4: file read
+Rank 4 neig: 0, 1, 2, 3, 5, 6, 7, 8, 9, 
+Rank 5: file read
+Rank 5 neig: 0, 1, 2, 3, 4, 6, 7, 8, 9, 
+Rank 9: file read
+Rank 9 neig: 0, 1, 2, 3, 4, 5, 6, 7, 8, 
+Rank 6: file read
+Rank 6 neig: 0, 1, 2, 3, 4, 5, 7, 8, 9, 
+Rank 1: file read
+Rank 1 neig: 0, 2, 3, 4, 5, 6, 7, 8, 9, 
+Rank 2: file read
+Rank 2 neig: 0, 1, 3, 4, 5, 6, 7, 8, 9, 
+Rank 3/000: send update to all
+Rank 4/000: send update to all
+Rank 5/000: send update to all
+Rank 6/000: send update to all
+Rank 6/001: recv update from 7 : update 0
+Rank 6/002: recv update from 1 : update 1
+Rank 6/003: recv update from 3 : update 1
+Rank 6/004: recv update from 4 : update 1
+Rank 6/005: recv update from 5 : update 1
+Rank 6/006: get invitation from rank 0
+Rank 6/007: join 0
+Rank 0/000: send invitation to all
+Rank 0/001: tree root created
+Rank 8/000: send update to all
+Rank 8/001: recv update from 1 : update 1
+Rank 8/002: recv update from 9 : update 1
+Rank 8/003: recv update from 3 : update 0
+Rank 8/004: get invitation from rank 0
+Rank 8/005: join 0
+Rank 8/006: get invitation from rank 1
+Rank 8/007: reject 1 / parent=0
+Rank 8/008: get invitation from rank 9
+Rank 8/009: reject 9 / parent=0
+Rank 3/001: recv update from 4 : update 1
+Rank 7/000: send update to all
+Rank 7/001: recv update from 1 : update 0
+Rank 7/002: recv update from 6 : update 1
+Rank 7/003: recv no update from 6
+Rank 7/004: mark: 
+Rank 7/005: get invitation from rank 0
+Rank 7/006: join 0
+Rank 7/007: get invitation from rank 6
+Rank 7/008: reject 6 / parent=0
+Rank 7/009: 6 reject me
+Rank 7/010: recv no update from 1
+Rank 6/008: get invitation from rank 1
+Rank 6/009: reject 1 / parent=0
+Rank 6/010: get invitation from rank 7
+Rank 6/011: reject 7 / parent=0
+Rank 6/012: 7 reject me
+Rank 6/013: get invitation from rank 2
+Rank 6/014: reject 2 / parent=0
+Rank 6/015: get invitation from rank 3
+Rank 6/016: reject 3 / parent=0
+Rank 6/017: get invitation from rank 4
+Rank 6/018: reject 4 / parent=0
+Rank 6/019: get invitation from rank 5
+Rank 6/020: reject 5 / parent=0
+Rank 6/021: recv update from 8 : update 1
+Rank 4/001: recv update from 3 : update 1
+Rank 4/002: recv update from 5 : update 1
+Rank 7/011: mark: 
+Rank 7/012: get invitation from rank 1
+Rank 7/013: reject 1 / parent=0
+Rank 7/014: get invitation from rank 2
+Rank 7/015: reject 2 / parent=0
+Rank 7/016: recv update from 3 : update 1
+Rank 7/017: get invitation from rank 3
+Rank 7/018: reject 3 / parent=0
+Rank 7/019: recv update from 4 : update 1
+Rank 7/020: get invitation from rank 4
+Rank 7/021: reject 4 / parent=0
+Rank 7/022: recv update from 5 : update 0
+Rank 7/023: get invitation from rank 5
+Rank 7/024: reject 5 / parent=0
+Rank 9/000: send update to all
+Rank 9/001: recv update from 8 : update 1
+Rank 9/002: recv update from 1 : update 1
+Rank 9/003: recv update from 3 : update 0
+Rank 9/004: get invitation from rank 0
+Rank 9/005: join 0
+Rank 9/006: get invitation from rank 8
+Rank 9/007: reject 8 / parent=0
+Rank 9/008: get invitation from rank 1
+Rank 9/009: reject 1 / parent=0
+Rank 9/010: 8 reject me
+Rank 9/011: get invitation from rank 2
+Rank 9/012: reject 2 / parent=0
+Rank 9/013: get invitation from rank 3
+Rank 9/014: reject 3 / parent=0
+Rank 9/015: recv update from 4 : update 0
+Rank 5/001: recv update from 3 : update 0
+Rank 5/002: recv update from 4 : update 1
+Rank 5/003: get invitation from rank 0
+Rank 5/004: join 0
+Rank 6/022: get invitation from rank 8
+Rank 6/023: reject 8 / parent=0
+Rank 6/024: recv update from 9 : update 1
+Rank 6/025: get invitation from rank 9
+Rank 6/026: reject 9 / parent=0
+Rank 6/027: recv no update from 0
+Rank 6/028: mark: 
+Rank 6/029: recv no update from 2
+Rank 6/030: mark: 
+Rank 6/031: 3 reject me
+Rank 6/032: 5 reject me
+Rank 6/033: 2 reject me
+Rank 6/034: 8 reject me
+Rank 6/035: 9 reject me
+Rank 6/036: send update to all
+Rank 8/010: 9 reject me
+Rank 8/011: get invitation from rank 2
+Rank 8/012: reject 2 / parent=0
+Rank 8/013: get invitation from rank 3
+Rank 8/014: reject 3 / parent=0
+Rank 8/015: recv update from 4 : update 0
+Rank 8/016: get invitation from rank 4
+Rank 8/017: reject 4 / parent=0
+Rank 8/018: recv update from 5 : update 1
+Rank 8/019: get invitation from rank 5
+Rank 8/020: reject 5 / parent=0
+Rank 8/021: recv update from 6 : update 1
+Rank 8/022: get invitation from rank 6
+Rank 8/023: reject 6 / parent=0
+Rank 8/024: 6 reject me
+Rank 8/025: recv update from 7 : update 1
+Rank 8/026: get invitation from rank 7
+Rank 1/000: send update to all
+Rank 1/001: recv update from 7 : update 0
+Rank 1/002: get invitation from rank 0
+Rank 1/003: join 0
+Rank 1/004: recv no update from 2
+Rank 3/002: recv update from 5 : update 1
+Rank 3/003: recv no update from 5
+Rank 3/004: mark: 
+Rank 3/005: get invitation from rank 4
+Rank 3/006: join 4
+Rank 7/025: recv no update from 0
+Rank 7/026: mark: 
+Rank 7/027: recv no update from 5
+Rank 7/028: mark: 
+Rank 7/029: 5 reject me
+Rank 7/030: recv update from 8 : update 1
+Rank 7/031: get invitation from rank 8
+Rank 7/032: reject 8 / parent=0
+Rank 7/033: recv no update from 2
+Rank 7/034: mark: 
+Rank 7/035: 3 reject me
+Rank 7/036: 2 reject me
+Rank 7/037: recv update from 6 : update 0
+Rank 7/038: recv no update from 4
+Rank 9/016: get invitation from rank 4
+Rank 9/017: reject 4 / parent=0
+Rank 9/018: recv update from 5 : update 0
+Rank 9/019: get invitation from rank 5
+Rank 9/020: reject 5 / parent=0
+Rank 9/021: recv update from 6 : update 1
+Rank 9/022: get invitation from rank 6
+Rank 9/023: reject 6 / parent=0
+Rank 9/024: 6 reject me
+Rank 9/025: recv update from 7 : update 1
+Rank 9/026: get invitation from rank 7
+Rank 9/027: reject 7 / parent=0
+Rank 9/028: recv update from 8 : update 0
+Rank 2/000: recv update from 1 : update 0
+Rank 2/001: get invitation from rank 0
+Rank 2/002: join 0
+Rank 2/003: get invitation from rank 1
+Rank 2/004: reject 1 / parent=0
+Rank 2/005: recv update from 3 : update 1
+Rank 2/006: recv update from 4 : update 0
+Rank 2/007: get invitation from rank 3
+Rank 2/008: reject 3 / parent=0
+Rank 2/009: get invitation from rank 4
+Rank 4/003: get invitation from rank 0
+Rank 4/004: join 0
+Rank 4/005: get invitation from rank 5
+Rank 4/006: reject 5 / parent=0
+Rank 4/007: recv update from 1 : update 1
+Rank 4/008: 3 join to me
+Rank 4/009: 5 reject me
+Rank 4/010: get invitation from rank 1
+Rank 6/037: 4 reject me
+Rank 6/038: recv no update from 7
+Rank 6/039: mark: 
+Rank 6/040: recv update from 0 : update 0
+Rank 6/041: 1 reject me
+Rank 6/042: recv no update from 2
+Rank 6/043: mark: 
+Rank 6/044: recv no update from 3
+Rank 6/045: mark: 
+Rank 6/046: recv no update from 4
+Rank 8/027: reject 7 / parent=0
+Rank 8/028: send update to all
+Rank 8/029: 7 reject me
+Rank 8/030: recv no update from 9
+Rank 8/031: mark: 
+Rank 8/032: recv update from 0 : update 0
+Rank 8/033: 2 reject me
+Rank 8/034: recv update from 9 : update 0
+Rank 8/035: recv no update from 2
+Rank 8/036: mark: 
+Rank 5/005: get invitation from rank 4
+Rank 5/006: reject 4 / parent=0
+Rank 5/007: 4 reject me
+Rank 5/008: recv update from 1 : update 1
+Rank 5/009: get invitation from rank 3
+Rank 5/010: reject 3 / parent=0
+Rank 5/011: get invitation from rank 1
+Rank 5/012: reject 1 / parent=0
+Rank 5/013: 3 reject me
+Rank 7/039: mark: 
+Rank 7/040: recv update from 0 : update 1
+Rank 7/041: 8 reject me
+Rank 7/042: recv update from 8 : update 1
+Rank 7/043: 4 reject me
+Rank 7/044: recv update from 9 : update 1
+Rank 7/045: get invitation from rank 9
+Rank 7/046: reject 9 / parent=0
+Rank 7/047: 9 reject me
+Rank 7/048: recv update from 9 : update 0
+Rank 9/029: recv update from 6 : update 1
+Rank 9/030: recv update from 0 : update 0
+Rank 9/031: send update to all
+Rank 9/032: recv no update from 5
+Rank 9/033: mark: 
+Rank 9/034: recv no update from 8
+Rank 3/007: get invitation from rank 5
+Rank 3/008: reject 5 / parent=4
+Rank 3/009: 5 reject me
+Rank 3/010: get invitation from rank 0
+Rank 3/011: reject 0 / parent=4
+Rank 3/012: 0 reject me
+Rank 3/013: recv update from 1 : update 1
+Rank 3/014: get invitation from rank 1
+Rank 3/015: reject 1 / parent=4
+Rank 3/016: get invitation from rank 2
+Rank 3/017: reject 2 / parent=4
+Rank 6/047: mark: 
+Rank 6/048: recv no update from 5
+Rank 6/049: mark: 
+Rank 6/050: recv update from 8 : update 0
+Rank 6/051: recv update from 9 : update 0
+Rank 6/052: recv update from 7 : update 0
+Rank 8/037: 3 reject me
+Rank 8/038: recv no update from 3
+Rank 8/039: mark: 
+Rank 8/040: 4 reject me
+Rank 8/041: 5 reject me
+Rank 8/042: recv no update from 5
+Rank 8/043: mark: 
+Rank 8/044: 1 reject me
+Rank 8/045: recv update from 5 : update 0
+Rank 4/011: reject 1 / parent=0
+Rank 4/012: get invitation from rank 2
+Rank 4/013: reject 2 / parent=0
+Rank 4/014: recv no update from 2
+Rank 7/049: send update to all
+Rank 7/050: 1 reject me
+Rank 7/051: recv no update from 6
+Rank 7/052: mark: 
+Rank 9/035: mark: 
+Rank 9/036: 2 reject me
+Rank 9/037: recv no update from 3
+Rank 9/038: mark: 
+Rank 9/039: 3 reject me
+Rank 9/040: recv no update from 3
+Rank 9/041: mark: 
+Rank 5/014: get invitation from rank 2
+Rank 5/015: reject 2 / parent=0
+Rank 5/016: recv update from 6 : update 1
+Rank 5/017: get invitation from rank 6
+Rank 5/018: reject 6 / parent=0
+Rank 5/019: 6 reject me
+Rank 5/020: recv update from 7 : update 0
+Rank 5/021: 2 reject me
+Rank 5/022: get invitation from rank 7
+Rank 5/023: reject 7 / parent=0
+Rank 5/024: recv no update from 7
+Rank 5/025: mark: 
+Rank 6/053: recv update from 5 : update 0
+Rank 8/046: recv update from 6 : update 0
+Rank 8/047: recv update from 3 : update 0
+Rank 8/048: recv update from 2 : update 0
+Rank 8/049: recv no update from 1
+Rank 8/050: mark: 
+Rank 8/051: recv no update from 6
+Rank 3/018: 1 reject me
+Rank 3/019: 2 reject me
+Rank 3/020: recv update from 6 : update 1
+Rank 3/021: get invitation from rank 6
+Rank 3/022: reject 6 / parent=4
+Rank 3/023: 6 reject me
+Rank 3/024: recv update from 7 : update 1
+Rank 3/025: get invitation from rank 7
+Rank 3/026: reject 7 / parent=4
+Rank 3/027: 7 reject me
+Rank 3/028: recv update from 8 : update 1
+Rank 3/029: recv no update from 8
+Rank 3/030: mark: 
+Rank 3/031: recv update from 0 : update 0
+Rank 7/053: recv no update from 1
+Rank 7/054: mark: 
+Rank 7/055: recv no update from 2
+Rank 7/056: mark: 
+Rank 7/057: recv no update from 3
+Rank 7/058: mark: 
+Rank 7/059: recv update from 3 : update 0
+Rank 9/042: recv update from 3 : update 0
+Rank 9/043: recv update from 2 : update 0
+Rank 9/044: recv no update from 1
+Rank 9/045: mark: 
+Rank 9/046: recv no update from 4
+Rank 9/047: mark: 
+Rank 0/002: recv update from 1 : update 1
+Rank 0/003: 1 join to me
+Rank 0/004: 2 join to me
+Rank 0/005: recv update from 3 : update 1
+Rank 0/006: get invitation from rank 3
+Rank 0/007: reject 3 / parent=0
+Rank 0/008: recv update from 4 : update 1
+Rank 0/009: 4 join to me
+Rank 0/010: recv update from 5 : update 1
+Rank 0/011: 3 reject me
+Rank 0/012: 5 join to me
+Rank 0/013: recv update from 6 : update 0
+Rank 0/014: 6 join to me
+Rank 4/015: mark: 0, 
+Rank 4/016: 1 reject me
+Rank 4/017: 2 reject me
+Rank 4/018: recv update from 6 : update 1
+Rank 4/019: get invitation from rank 6
+Rank 4/020: reject 6 / parent=0
+Rank 4/021: 6 reject me
+Rank 4/022: recv update from 7 : update 0
+Rank 4/023: recv update from 0 : update 1
+Rank 4/024: recv update from 6 : update 0
+Rank 4/025: get invitation from rank 7
+Rank 4/026: reject 7 / parent=0
+Rank 4/027: 7 reject me
+Rank 4/028: recv update from 8 : update 1
+Rank 6/054: recv update from 3 : update 0
+Rank 6/055: recv update from 2 : update 0
+Rank 6/056: recv no update from 8
+Rank 6/057: mark: 
+Rank 8/052: mark: 
+Rank 8/053: recv update from 4 : update 0
+Rank 8/054: recv update from 7 : update 0
+Rank 1/005: mark: 
+Rank 1/006: get invitation from rank 2
+Rank 1/007: reject 2 / parent=0
+Rank 1/008: 2 reject me
+Rank 1/009: recv update from 3 : update 1
+Rank 1/010: get invitation from rank 3
+Rank 1/011: reject 3 / parent=0
+Rank 1/012: 3 reject me
+Rank 1/013: recv update from 4 : update 1
+Rank 1/014: get invitation from rank 4
+Rank 1/015: reject 4 / parent=0
+Rank 1/016: 4 reject me
+Rank 1/017: recv update from 5 : update 1
+Rank 5/026: 7 reject me
+Rank 5/027: 1 reject me
+Rank 5/028: recv update from 8 : update 1
+Rank 5/029: get invitation from rank 8
+Rank 5/030: reject 8 / parent=0
+Rank 5/031: recv update from 0 : update 0
+Rank 5/032: recv update from 6 : update 0
+Rank 5/033: 8 reject me
+Rank 5/034: recv update from 8 : update 0
+Rank 5/035: recv update from 9 : update 0
+Rank 5/036: get invitation from rank 9
+Rank 5/037: reject 9 / parent=0
+Rank 5/038: recv no update from 9
+Rank 7/060: recv update from 2 : update 0
+Rank 7/061: recv no update from 4
+Rank 7/062: mark: 
+Rank 7/063: recv update from 5 : update 0
+Rank 7/064: recv update from 4 : update 0
+Rank 9/048: 1 reject me
+Rank 9/049: 4 reject me
+Rank 9/050: recv no update from 4
+Rank 9/051: mark: 
+Rank 9/052: recv no update from 1
+Rank 9/053: mark: 
+Rank 9/054: recv update from 4 : update 0
+Rank 9/055: recv update from 1 : update 0
+Rank 2/010: reject 4 / parent=0
+Rank 2/011: 1 reject me
+Rank 2/012: 4 reject me
+Rank 2/013: recv update from 5 : update 1
+Rank 2/014: get invitation from rank 5
+Rank 2/015: reject 5 / parent=0
+Rank 2/016: 5 reject me
+Rank 2/017: 3 reject me
+Rank 2/018: recv update from 6 : update 0
+Rank 2/019: get invitation from rank 6
+Rank 2/020: reject 6 / parent=0
+Rank 2/021: 6 reject me
+Rank 2/022: recv update from 7 : update 0
+Rank 2/023: get invitation from rank 7
+Rank 2/024: reject 7 / parent=0
+Rank 2/025: recv update from 0 : update 0
+Rank 3/032: recv update from 6 : update 0
+Rank 3/033: get invitation from rank 8
+Rank 3/034: reject 8 / parent=4
+Rank 3/035: 8 reject me
+Rank 3/036: recv update from 8 : update 0
+Rank 3/037: recv update from 9 : update 0
+Rank 3/038: recv no update from 9
+Rank 3/039: mark: 
+Rank 3/040: get invitation from rank 9
+Rank 3/041: reject 9 / parent=4
+Rank 3/042: 9 reject me
+Rank 3/043: recv update from 9 : update 0
+Rank 3/044: recv update from 7 : update 0
+Rank 3/045: recv update from 5 : update 0
+Rank 3/046: send update to all
+Rank 6/058: recv update from 4 : update 0
+Rank 6/059: recv no update from 0
+Rank 6/060: mark: 
+Rank 8/055: recv update from 1 : update 0
+Rank 0/015: recv update from 7 : update 0
+Rank 0/016: 7 join to me
+Rank 0/017: recv update from 8 : update 1
+Rank 0/018: 8 join to me
+Rank 0/019: recv update from 9 : update 1
+Rank 0/020: 9 join to me
+Rank 0/021: send update to all
+Rank 0/022: recv no update from 1
+Rank 4/029: get invitation from rank 8
+Rank 4/030: reject 8 / parent=0
+Rank 4/031: recv no update from 8
+Rank 4/032: mark: 0, 
+Rank 4/033: 8 reject me
+Rank 4/034: recv update from 8 : update 1
+Rank 4/035: recv update from 9 : update 0
+Rank 4/036: get invitation from rank 9
+Rank 4/037: reject 9 / parent=0
+Rank 4/038: recv update from 7 : update 0
+Rank 4/039: recv update from 5 : update 0
+Rank 4/040: recv no update from 9
+Rank 4/041: mark: 0, 
+Rank 4/042: recv update from 3 : update 0
+Rank 4/043: 9 reject me
+Rank 4/044: recv update from 2 : update 0
+Rank 7/065: recv no update from 5
+Rank 7/066: mark: 
+Rank 7/067: recv no update from 8
+Rank 7/068: mark: 
+Rank 9/056: 5 reject me
+Rank 9/057: recv no update from 5
+Rank 9/058: mark: 
+Rank 9/059: recv update from 5 : update 0
+Rank 1/018: get invitation from rank 5
+Rank 1/019: reject 5 / parent=0
+Rank 1/020: 5 reject me
+Rank 1/021: recv update from 6 : update 1
+Rank 1/022: recv update from 0 : update 0
+Rank 1/023: get invitation from rank 6
+Rank 1/024: reject 6 / parent=0
+Rank 1/025: 6 reject me
+Rank 1/026: recv update from 6 : update 1
+Rank 1/027: recv no update from 7
+Rank 1/028: mark: 
+Rank 1/029: get invitation from rank 7
+Rank 1/030: reject 7 / parent=0
+Rank 1/031: 7 reject me
+Rank 1/032: recv update from 8 : update 1
+Rank 1/033: recv update from 7 : update 0
+Rank 1/034: get invitation from rank 8
+Rank 1/035: reject 8 / parent=0
+Rank 5/039: mark: 
+Rank 5/040: 9 reject me
+Rank 5/041: recv update from 9 : update 0
+Rank 5/042: send update to all
+Rank 5/043: recv no update from 3
+Rank 5/044: mark: 
+Rank 5/045: recv update from 3 : update 0
+Rank 5/046: recv no update from 4
+Rank 5/047: mark: 
+Rank 5/048: recv no update from 1
+Rank 5/049: mark: 
+Rank 5/050: recv update from 2 : update 0
+Rank 5/051: recv no update from 6
+Rank 5/052: mark: 
+Rank 5/053: recv update from 4 : update 0
+Rank 6/061: recv update from 1 : update 0
+Rank 9/060: recv no update from 0
+Rank 9/061: mark: 
+Rank 9/062: recv no update from 6
+Rank 9/063: mark: 
+Rank 9/064: 7 reject me
+Rank 2/026: recv update from 6 : update 0
+Rank 2/027: 7 reject me
+Rank 2/028: recv update from 8 : update 1
+Rank 2/029: get invitation from rank 8
+Rank 2/030: reject 8 / parent=0
+Rank 2/031: 8 reject me
+Rank 2/032: recv update from 8 : update 0
+Rank 2/033: recv update from 9 : update 1
+Rank 2/034: get invitation from rank 9
+Rank 2/035: reject 9 / parent=0
+Rank 2/036: 9 reject me
+Rank 2/037: recv update from 7 : update 0
+Rank 2/038: recv update from 9 : update 1
+Rank 2/039: send update to all
+Rank 3/047: recv no update from 4
+Rank 3/048: mark: 
+Rank 3/049: recv no update from 5
+Rank 3/050: mark: 
+Rank 3/051: recv no update from 0
+Rank 3/052: mark: 
+Rank 3/053: recv no update from 1
+Rank 3/054: mark: 
+Rank 3/055: recv update from 4 : update 0
+Rank 3/056: recv update from 2 : update 0
+Rank 3/057: recv no update from 6
+Rank 3/058: mark: 
+Rank 3/059: recv no update from 7
+Rank 3/060: mark: 
+Rank 3/061: recv no update from 2
+Rank 3/062: mark: 
+Rank 3/063: recv no update from 8
+Rank 7/069: recv update from 1 : update 0
+Rank 8/056: recv update from 0 : update 0
+Rank 0/023: mark: 0, 0, 0, 0, 0, 0, 0, 0, 
+Rank 0/024: recv no update from 2
+Rank 0/025: mark: 0, 0, 0, 0, 0, 0, 0, 0, 
+Rank 0/026: recv no update from 3
+Rank 0/027: mark: 0, 0, 0, 0, 0, 0, 0, 0, 
+Rank 0/028: recv update from 2 : update 0
+Rank 0/029: recv update from 3 : update 0
+Rank 0/030: recv no update from 5
+Rank 0/031: mark: 0, 0, 0, 0, 0, 0, 0, 0, 
+Rank 0/032: recv update from 5 : update 0
+Rank 0/033: recv update from 4 : update 1
+Rank 0/034: recv update from 6 : update 0
+Rank 4/045: recv update from 9 : update 0
+Rank 4/046: send update to all
+Rank 4/047: recv no update from 5
+Rank 4/048: mark: 0, 
+Rank 4/049: recv no update from 3
+Rank 4/050: mark: 0, 
+Rank 4/051: recv no update from 1
+Rank 4/052: mark: 0, 
+Rank 4/053: recv no update from 6
+Rank 4/054: mark: 0, 
+Rank 4/055: recv no update from 7
+Rank 4/056: mark: 0, 
+Rank 4/057: recv update from 1 : update 0
+Rank 4/058: recv no update from 8
+Rank 6/062: recv update from 0 : update 0
+Rank 9/065: recv no update from 7
+Rank 9/066: mark: 
+Rank 9/067: recv update from 0 : update 0
+Rank 9/068: recv update from 7 : update 0
+Rank 1/036: recv update from 5 : update 0
+Rank 1/037: 8 reject me
+Rank 1/038: recv update from 2 : update 0
+Rank 1/039: recv update from 3 : update 0
+Rank 1/040: recv update from 8 : update 0
+Rank 1/041: recv update from 9 : update 0
+Rank 1/042: get invitation from rank 9
+Rank 1/043: reject 9 / parent=0
+Rank 1/044: recv update from 4 : update 0
+Rank 1/045: 9 reject me
+Rank 1/046: recv update from 9 : update 0
+Rank 1/047: send update to all
+Rank 5/054: recv no update from 0
+Rank 5/055: mark: 
+Rank 5/056: recv update from 7 : update 0
+Rank 5/057: recv no update from 7
+Rank 5/058: mark: 
+Rank 5/059: recv no update from 8
+Rank 5/060: mark: 
+Rank 5/061: recv update from 1 : update 0
+Rank 5/062: recv no update from 2
+Rank 5/063: mark: 
+Rank 7/070: recv update from 0 : update 0
+Rank 7/071: recv no update from 9
+Rank 8/057: recv update from 2 : update 0
+Rank 2/040: recv no update from 0
+Rank 2/041: mark: 
+Rank 2/042: recv no update from 1
+Rank 2/043: mark: 
+Rank 2/044: recv update from 3 : update 0
+Rank 2/045: recv no update from 3
+Rank 2/046: mark: 
+Rank 2/047: recv no update from 4
+Rank 2/048: mark: 
+Rank 2/049: recv update from 1 : update 1
+Rank 2/050: recv update from 4 : update 0
+Rank 3/064: mark: 
+Rank 3/065: recv update from 1 : update 0
+Rank 3/066: recv no update from 9
+Rank 3/067: mark: 
+Rank 7/072: mark: 
+Rank 9/069: recv update from 2 : update 0
+Rank 0/035: recv no update from 6
+Rank 0/036: mark: 0, 0, 0, 0, 0, 0, 0, 0, 
+Rank 0/037: recv update from 7 : update 1
+Rank 0/038: recv update from 8 : update 1
+Rank 0/039: recv update from 1 : update 0
+Rank 0/040: recv no update from 8
+Rank 0/041: mark: 0, 0, 0, 0, 0, 0, 0, 0, 
+Rank 0/042: recv no update from 9
+Rank 0/043: mark: 0, 0, 0, 0, 0, 0, 0, 0, 
+Rank 0/044: recv update from 9 : update 0
+Rank 0/045: send update to all
+Rank 4/059: mark: 0, 
+Rank 4/060: recv no update from 2
+Rank 4/061: mark: 0, 
+Rank 4/062: recv no update from 9
+Rank 4/063: mark: 0, 
+Rank 6/063: recv update from 2 : update 0
+Rank 8/058: recv terminate from parent 0
+Rank 1/048: recv no update from 0
+Rank 1/049: mark: 
+Rank 1/050: recv no update from 3
+Rank 1/051: mark: 
+Rank 1/052: recv no update from 4
+Rank 1/053: mark: 
+Rank 1/054: recv no update from 5
+Rank 1/055: mark: 
+Rank 1/056: recv update from 0 : update 0
+Rank 1/057: recv no update from 6
+Rank 1/058: mark: 
+Rank 1/059: recv no update from 7
+Rank 1/060: mark: 
+Rank 1/061: recv no update from 8
+Rank 5/064: recv no update from 9
+Rank 5/065: mark: 
+Rank 7/073: recv update from 2 : update 0
+Rank 9/070: recv terminate from parent 0
+Rank 9/071: send terminate to child
+Rank 2/051: recv update from 5 : update 0
+Rank 2/052: recv no update from 5
+Rank 2/053: mark: 
+Rank 2/054: recv no update from 6
+Rank 2/055: mark: 
+Rank 2/056: recv no update from 7
+Rank 2/057: mark: 
+Rank 2/058: recv update from 0 : update 0
+Rank 2/059: recv no update from 8
+Rank 2/060: mark: 
+Rank 2/061: recv no update from 9
+Rank 2/062: mark: 
+Rank 2/063: send update to all
+Rank 3/068: recv update from 0 : update 0
+Rank 6/064: recv terminate from parent 0
+Rank 6/065: send terminate to child
+Rank 6/066: send terminate to parent
+Rank 8/059: send terminate to child
+Rank 8/060: send terminate to parent
+Rank 0/046: recv no update from 1
+Rank 0/047: mark: 0, 0, 0, 0, 0, 0, 0, 0, 
+Rank 0/048: recv no update from 2
+Rank 0/049: mark: 0, 0, 0, 0, 0, 0, 0, 0, 
+Rank 0/050: recv update from 2 : update 0
+Rank 0/051: recv no update from 3
+Rank 0/052: mark: 0, 0, 0, 0, 0, 0, 0, 0, 
+Rank 0/053: recv no update from 4
+Rank 0/054: mark: 0, 0, 0, 0, 0, 0, 0, 0, 
+Rank 0/055: recv no update from 5
+Rank 0/056: mark: 0, 0, 0, 0, 0, 0, 0, 0, 
+Rank 0/057: recv no update from 6
+Rank 4/064: recv update from 0 : update 0
+Rank 7/074: recv terminate from parent 0
+Rank 7/075: send terminate to child
+Rank 7/076: send terminate to parent
+Rank 9/072: send terminate to parent
+Rank 1/062: mark: 
+Rank 1/063: recv update from 2 : update 0
+Rank 1/064: recv no update from 9
+Rank 1/065: mark: 
+Rank 5/066: recv update from 0 : update 0
+Rank 2/064: recv no update from 0
+Rank 2/065: mark: 
+Rank 2/066: recv no update from 1
+Rank 2/067: mark: 
+Rank 2/068: recv no update from 3
+Rank 2/069: mark: 
+Rank 2/070: recv no update from 4
+Rank 2/071: mark: 
+Rank 2/072: recv no update from 5
+Rank 2/073: mark: 
+Rank 2/074: recv no update from 6
+Rank 2/075: mark: 
+Rank 2/076: recv no update from 7
+Rank 2/077: mark: 
+Rank 2/078: recv no update from 8
+Rank 3/069: recv update from 2 : update 0
+Rank 0/058: mark: 0, 0, 0, 0, 0, 0, 0, 0, 
+Rank 0/059: recv no update from 7
+Rank 0/060: mark: 0, 0, 0, 0, 0, 0, 0, 0, 
+Rank 0/061: recv no update from 8
+Rank 0/062: mark: 0, 0, 0, 0, 0, 0, 0, 0, 
+Rank 0/063: recv no update from 9
+Rank 0/064: mark: 0, 0, 0, 0, 0, 0, 0, 0, 
+Rank 0/065: send teriminate to child
+Rank 4/065: recv update from 2 : update 0
+Rank 1/066: recv terminate from parent 0
+Rank 1/067: send terminate to child
+Rank 1/068: send terminate to parent
+Rank 5/067: recv update from 2 : update 0
+Rank 2/079: mark: 
+Rank 2/080: recv no update from 9
+Rank 2/081: mark: 
+Rank 2/082: recv terminate from parent 0
+Rank 2/083: send terminate to child
+Rank 2/084: send terminate to parent
+Rank 4/066: recv terminate from parent 0
+Rank 4/067: send terminate to child
+Rank 0/066: recv terminate from child 2
+Rank 0/067: done
+Rank 5/068: recv terminate from parent 0
+Rank 5/069: send terminate to child
+Rank 5/070: send terminate to parent
+Rank 3/070: recv terminate from parent 4
+Rank 3/071: send terminate to child
+Rank 3/072: send terminate to parent
+Rank 4/068: recv terminate from child 3
