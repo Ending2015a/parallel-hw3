@@ -73,7 +73,7 @@ int graph_rank;
 const int NOTHING = 0;
 
 enum tags { invt=1, rej, join, upd, nupd, termi, done };
-enum term_flag { none, fwd, back };
+enum term_flag { none, fwd, back};
 //=v==v==v==v==v=   MAP   =v==v==v==v==v=//
 struct Map{
     //allocate
@@ -145,6 +145,8 @@ inline void Map::init(int vt){
 
     std::fill(data, data+vt, INF);
     data[world_rank] = 0;
+    if(world_rank == 0)
+        term_flag = fwd;
 }
 
 inline void Map::calc(){
@@ -297,6 +299,10 @@ inline void dump_to_file(const char *file){
     MPI_File_open(MPI_COMM_WORLD, file, MPI_MODE_WRONLY | MPI_MODE_CREATE, MPI_INFO_NULL, &fout);
 
 
+#ifdef _DEBUG_
+    printf("Rank %d/%03d: writing file\n", graph_rank, print_step++);
+#endif
+
     TIC;{
     MPI_Allreduce(MPI_IN_PLACE, len, map.vt, MPI_INT, MPI_SUM, MPI_COMM_WORLD);
     }TOC_P(COMM);
@@ -314,6 +320,11 @@ inline void dump_to_file(const char *file){
     MPI_File_close(&fout);
 
     }TOC_P(IO);
+
+#ifdef _DEBUG_
+    printf("Rank %d/%03d: write file done\n", graph_rank, print_step++);
+#endif
+
 
     delete [] len;
 }
@@ -476,15 +487,6 @@ inline void do_no_update(const MPI_Status &status){
     }
     printf("Rank %d/%03d: mark: %s\n", graph_rank, print_step++, ss.str().c_str());
 #endif
-
-    if(graph_rank == 0){
-        if(map.check_all_neig_no_update()){
-#ifdef _DEBUG_
-            printf("Rank %d/%03d: send teriminate to child\n", graph_rank, print_step++);
-#endif
-            send_tag_to_child(termi);
-        }
-    }
 }
 
 
@@ -496,7 +498,6 @@ inline void do_terminate(const MPI_Status &status){
 #ifdef _DEBUG_
         printf("Rank %d/%03d: recv terminate from parent %d\n", graph_rank, print_step++, map.parent);
 #endif
-
         map.term_flag = fwd;
     }else{
 
@@ -572,7 +573,7 @@ inline void listen_(){
                 }
             }else if(map.term_flag == back && map.check_all_neig_no_update()){
 #ifdef _DEBUG_
-                printf("Rank %d/%03d: send terminate to parent\n", graph_rank, print_step++);
+                printf("Rank %d/%03d: send terminate to parent %d\n", graph_rank, print_step++, map.parent);
 #endif
                 send_term_to_parent();
                 map.term_flag = none;
