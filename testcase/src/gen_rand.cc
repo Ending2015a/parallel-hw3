@@ -11,11 +11,19 @@
 #define MIN(x, y) ((x)<(y)?(x):(y))
 #define MAX(x, y) ((x)>(y)?(x):(y))
 
-bool check(int edge[][2], int i){
-    for(int j = 0; j < i; j++){
-        if((edge[i][0] == edge[j][0] && edge[i][1] == edge[j][1]) || (edge[i][0] == edge[j][1] && edge[i][1] == edge[j][0]))
-            return false;
-    }
+#define MAX_VERTEX 2000
+
+int graph[MAX_VERTEX][MAX_VERTEX]={};
+
+
+bool check(int edge[][2], int idx){
+
+    int i = edge[idx][0];
+    int j = edge[idx][1];
+
+    if(graph[i][j] == 1)
+        return false;
+    graph[i][j] = graph[j][i] = 1;
     return true;
 }
 
@@ -135,7 +143,7 @@ int main(int argc, char **argv){
 
     std::cout << "The graph has " << v << " vertexes." << std::endl;
 
-    e = atoi(argv[2]);
+    e = MIN(atoi(argv[2]), (v*(v-1))/2);
     std::cout << "The graph has " << e << " edges." << std::endl;
 
     GenerateRandGraphs(e, v, gen, argv[3]);
