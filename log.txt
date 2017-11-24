@@ -1,580 +1,773 @@
-[Rank 0] Step 00000000: dump from file
-[Rank 27] Step 00000000: dump from file
-[Rank 12] Step 00000000: dump from file
-[Rank 37] Step 00000000: dump from file
-[Rank 1] Step 00000000: dump from file
-[Rank 2] Step 00000000: dump from file
-[Rank 3] Step 00000000: dump from file
-[Rank 6] Step 00000000: dump from file
-[Rank 7] Step 00000000: dump from file
-[Rank 38] Step 00000000: dump from file
-[Rank 28] Step 00000000: dump from file
-[Rank 13] Step 00000000: dump from file
-[Rank 10] Step 00000000: dump from file
-[Rank 39] Step 00000000: dump from file
-[Rank 30] Step 00000000: dump from file
 [Rank 14] Step 00000000: dump from file
-[Rank 11] Step 00000000: dump from file
-[Rank 40] Step 00000000: dump from file
-[Rank 31] Step 00000000: dump from file
+[Rank 26] Step 00000000: dump from file
+[Rank 2] Step 00000000: dump from file
 [Rank 15] Step 00000000: dump from file
-[Rank 9] Step 00000000: dump from file
-[Rank 41] Step 00000000: dump from file
-[Rank 32] Step 00000000: dump from file
-[Rank 16] Step 00000000: dump from file
-[Rank 8] Step 00000000: dump from file
-[Rank 43] Step 00000000: dump from file
-[Rank 33] Step 00000000: dump from file
-[Rank 17] Step 00000000: dump from file
-[Rank 4] Step 00000000: dump from file
-[Rank 45] Step 00000000: dump from file
-[Rank 35] Step 00000000: dump from file
+[Rank 27] Step 00000000: dump from file
+[Rank 37] Step 00000000: dump from file
 [Rank 18] Step 00000000: dump from file
+[Rank 30] Step 00000000: dump from file
+[Rank 19] Step 00000000: dump from file
+[Rank 31] Step 00000000: dump from file
+[Rank 22] Step 00000000: dump from file
+[Rank 33] Step 00000000: dump from file
+[Rank 23] Step 00000000: dump from file
+[Rank 35] Step 00000000: dump from file
+[Rank 12] Step 00000000: dump from file
+[Rank 24] Step 00000000: dump from file
+[Rank 3] Step 00000000: dump from file
+[Rank 20] Step 00000000: dump from file
+[Rank 29] Step 00000000: dump from file
+[Rank 39] Step 00000000: dump from file
+[Rank 6] Step 00000000: dump from file
+[Rank 21] Step 00000000: dump from file
+[Rank 32] Step 00000000: dump from file
+[Rank 41] Step 00000000: dump from file
+[Rank 7] Step 00000000: dump from file
+[Rank 13] Step 00000000: dump from file
+[Rank 34] Step 00000000: dump from file
+[Rank 43] Step 00000000: dump from file
+[Rank 10] Step 00000000: dump from file
+[Rank 17] Step 00000000: dump from file
+[Rank 25] Step 00000000: dump from file
+[Rank 45] Step 00000000: dump from file
+[Rank 11] Step 00000000: dump from file
+[Rank 16] Step 00000000: dump from file
+[Rank 28] Step 00000000: dump from file
+[Rank 47] Step 00000000: dump from file
+[Rank 4] Step 00000000: dump from file
+[Rank 36] Step 00000000: dump from file
+[Rank 8] Step 00000000: dump from file
+[Rank 38] Step 00000000: dump from file
+[Rank 9] Step 00000000: dump from file
+[Rank 40] Step 00000000: dump from file
+[Rank 0] Step 00000000: dump from file
+[Rank 42] Step 00000000: dump from file
+[Rank 1] Step 00000000: dump from file
+[Rank 44] Step 00000000: dump from file
 [Rank 5] Step 00000000: dump from file
 [Rank 46] Step 00000000: dump from file
-[Rank 26] Step 00000000: dump from file
-[Rank 19] Step 00000000: dump from file
-[Rank 47] Step 00000000: dump from file
-[Rank 24] Step 00000000: dump from file
-[Rank 22] Step 00000000: dump from file
-[Rank 36] Step 00000000: dump from file
-[Rank 25] Step 00000000: dump from file
-[Rank 23] Step 00000000: dump from file
-[Rank 44] Step 00000000: dump from file
-[Rank 29] Step 00000000: dump from file
-[Rank 20] Step 00000000: dump from file
-[Rank 42] Step 00000000: dump from file
-[Rank 34] Step 00000000: dump from file
-[Rank 21] Step 00000000: dump from file
-[Rank 12] Step 00000001: my neighbor list: 1, 
-[Rank 12] Step 00000002: create graph
-[Rank 12] Step 00000003: cerate spanning tree
-[Rank 0] Step 00000001: my neighbor list: 4, 22, 
-[Rank 0] Step 00000002: create graph
-[Rank 0] Step 00000003: cerate spanning tree
-[Rank 38] Step 00000001: my neighbor list: 11, 19, 
-[Rank 38] Step 00000002: create graph
-[Rank 38] Step 00000003: cerate spanning tree
-[Rank 14] Step 00000001: my neighbor list: 37, 
-[Rank 14] Step 00000002: create graph
-[Rank 14] Step 00000003: cerate spanning tree
-[Rank 28] Step 00000001: my neighbor list: 7, 17, 
-[Rank 28] Step 00000002: create graph
-[Rank 28] Step 00000003: cerate spanning tree
-[Rank 22] Step 00000001: my neighbor list: 0, 43, 
-[Rank 22] Step 00000002: create graph
-[Rank 22] Step 00000003: cerate spanning tree
-[Rank 8] Step 00000001: my neighbor list: 9, 21, 40, 
-[Rank 8] Step 00000002: create graph
-[Rank 8] Step 00000003: cerate spanning tree
-[Rank 13] Step 00000001: my neighbor list: 18, 31, 
-[Rank 5] Step 00000001: my neighbor list: 43, 
-[Rank 15] Step 00000001: my neighbor list: 23, 46, 
-[Rank 15] Step 00000002: create graph
-[Rank 15] Step 00000003: cerate spanning tree
-[Rank 13] Step 00000002: create graph
-[Rank 13] Step 00000003: cerate spanning tree
-[Rank 40] Step 00000001: my neighbor list: 8, 
-[Rank 40] Step 00000002: create graph
-[Rank 40] Step 00000003: cerate spanning tree
-[Rank 19] Step 00000001: my neighbor list: 36, 38, 44, 47, 
-[Rank 42] Step 00000001: my neighbor list: 35, 45, 
-[Rank 42] Step 00000002: create graph
-[Rank 42] Step 00000003: cerate spanning tree
-[Rank 19] Step 00000002: create graph
-[Rank 19] Step 00000003: cerate spanning tree
-[Rank 37] Step 00000001: my neighbor list: 7, 14, 16, 27, 43, 
-[Rank 33] Step 00000001: my neighbor list: 23, 
-[Rank 33] Step 00000002: create graph
-[Rank 33] Step 00000003: cerate spanning tree
-[Rank 20] Step 00000001: my neighbor list: 25, 
-[Rank 4] Step 00000001: my neighbor list: 0, 
-[Rank 43] Step 00000001: my neighbor list: 5, 22, 37, 
-[Rank 43] Step 00000002: create graph
-[Rank 43] Step 00000003: cerate spanning tree
-[Rank 32] Step 00000001: my neighbor list: 18, 30, 
-[Rank 32] Step 00000002: create graph
-[Rank 32] Step 00000003: cerate spanning tree
-[Rank 20] Step 00000002: create graph
-[Rank 20] Step 00000003: cerate spanning tree
-[Rank 37] Step 00000002: create graph
-[Rank 37] Step 00000003: cerate spanning tree
-[Rank 35] Step 00000001: my neighbor list: 27, 36, 42, 
-[Rank 22] Step 00000004: Recv invite from 0, join
-[Rank 45] Step 00000001: my neighbor list: 39, 42, 
+[Rank 16] Step 00000001: my neighbor list: 2, 9, 37, 
+[Rank 16] Step 00000002: create graph
+[Rank 16] Step 00000003: cerate spanning tree
+[Rank 27] Step 00000001: my neighbor list: 21, 35, 37, 
+[Rank 27] Step 00000002: create graph
+[Rank 27] Step 00000003: cerate spanning tree
+[Rank 30] Step 00000001: my neighbor list: 24, 32, 
+[Rank 30] Step 00000002: create graph
+[Rank 30] Step 00000003: cerate spanning tree
+[Rank 39] Step 00000001: my neighbor list: 25, 45, 
+[Rank 39] Step 00000002: create graph
+[Rank 39] Step 00000003: cerate spanning tree
 [Rank 18] Step 00000001: my neighbor list: 13, 32, 46, 
-[Rank 45] Step 00000002: create graph
-[Rank 45] Step 00000003: cerate spanning tree
 [Rank 18] Step 00000002: create graph
 [Rank 18] Step 00000003: cerate spanning tree
-[Rank 46] Step 00000001: my neighbor list: 15, 18, 
-[Rank 22] Step 00000005: 43 join me
-[Rank 46] Step 00000002: create graph
-[Rank 46] Step 00000003: cerate spanning tree
-[Rank 22] Step 00000006: my child list: 43, 
-[Rank 22] Step 00000007: start task
-[Rank 43] Step 00000004: Recv invite from 22, join
 [Rank 31] Step 00000001: my neighbor list: 6, 10, 13, 
 [Rank 31] Step 00000002: create graph
 [Rank 31] Step 00000003: cerate spanning tree
-[Rank 17] Step 00000001: my neighbor list: 28, 
-[Rank 17] Step 00000002: create graph
+[Rank 22] Step 00000001: my neighbor list: 0, 43, 
+[Rank 22] Step 00000002: create graph
+[Rank 22] Step 00000003: cerate spanning tree
+[Rank 33] Step 00000001: my neighbor list: 23, 
+[Rank 33] Step 00000002: create graph
+[Rank 33] Step 00000003: cerate spanning tree
+[Rank 19] Step 00000001: my neighbor list: 36, 38, 44, 47, 
+[Rank 35] Step 00000001: my neighbor list: 27, 36, 42, 
+[Rank 35] Step 00000002: create graph
+[Rank 35] Step 00000003: cerate spanning tree
+[Rank 43] Step 00000001: my neighbor list: 5, 22, 37, 
+[Rank 43] Step 00000002: create graph
+[Rank 43] Step 00000003: cerate spanning tree
+[Rank 19] Step 00000002: create graph
+[Rank 26] Step 00000001: my neighbor list: 23, 
+[Rank 45] Step 00000001: my neighbor list: 39, 42, 
+[Rank 19] Step 00000003: cerate spanning tree
+[Rank 26] Step 00000002: create graph
+[Rank 26] Step 00000003: cerate spanning tree
+[Rank 45] Step 00000002: create graph
+[Rank 45] Step 00000003: cerate spanning tree
+[Rank 12] Step 00000001: my neighbor list: 1, 
+[Rank 29] Step 00000001: my neighbor list: 3, 41, 
+[Rank 37] Step 00000001: my neighbor list: 7, 14, 16, 27, 43, 
+[Rank 15] Step 00000001: my neighbor list: 23, 46, 
+[Rank 29] Step 00000002: create graph
+[Rank 29] Step 00000003: cerate spanning tree
 [Rank 47] Step 00000001: my neighbor list: 19, 
-[Rank 17] Step 00000003: cerate spanning tree
-[Rank 47] Step 00000002: create graph
-[Rank 47] Step 00000003: cerate spanning tree
-[Rank 23] Step 00000001: my neighbor list: 15, 26, 33, 
-[Rank 37] Step 00000004: Recv invite from 43, join
-[Rank 16] Step 00000001: my neighbor list: 2, 9, 37, 
-[Rank 43] Step 00000005: 37 join me
-[Rank 23] Step 00000002: create graph
-[Rank 23] Step 00000003: cerate spanning tree
-[Rank 44] Step 00000001: my neighbor list: 3, 19, 
-[Rank 44] Step 00000002: create graph
-[Rank 44] Step 00000003: cerate spanning tree
-[Rank 21] Step 00000001: my neighbor list: 1, 8, 27, 
-[Rank 39] Step 00000001: my neighbor list: 25, 45, 
+[Rank 12] Step 00000002: create graph
+[Rank 12] Step 00000003: cerate spanning tree
+[Rank 34] Step 00000001: my neighbor list: 3, 
+[Rank 37] Step 00000002: create graph
+[Rank 37] Step 00000003: cerate spanning tree
+[Rank 15] Step 00000002: create graph
+[Rank 15] Step 00000003: cerate spanning tree
 [Rank 24] Step 00000001: my neighbor list: 30, 
-[Rank 41] Step 00000001: my neighbor list: 29, 
 [Rank 24] Step 00000002: create graph
 [Rank 24] Step 00000003: cerate spanning tree
+[Rank 47] Step 00000002: create graph
+[Rank 47] Step 00000003: cerate spanning tree
+[Rank 5] Step 00000001: my neighbor list: 43, 
+[Rank 5] Step 00000002: create graph
+[Rank 14] Step 00000001: my neighbor list: 37, 
+[Rank 25] Step 00000001: my neighbor list: 20, 39, 
+[Rank 38] Step 00000001: my neighbor list: 11, 19, 
+[Rank 14] Step 00000002: create graph
+[Rank 14] Step 00000003: cerate spanning tree
+[Rank 34] Step 00000002: create graph
+[Rank 34] Step 00000003: cerate spanning tree
+[Rank 38] Step 00000002: create graph
+[Rank 38] Step 00000003: cerate spanning tree
+[Rank 23] Step 00000001: my neighbor list: 15, 26, 33, 
+[Rank 25] Step 00000002: create graph
+[Rank 25] Step 00000003: cerate spanning tree
+[Rank 42] Step 00000001: my neighbor list: 35, 45, 
+[Rank 42] Step 00000002: create graph
+[Rank 42] Step 00000003: cerate spanning tree
+[Rank 23] Step 00000002: create graph
+[Rank 23] Step 00000003: cerate spanning tree
+[Rank 28] Step 00000001: my neighbor list: 7, 17, 
+[Rank 44] Step 00000001: my neighbor list: 3, 19, 
 [Rank 10] Step 00000001: my neighbor list: 31, 36, 
 [Rank 10] Step 00000002: create graph
 [Rank 10] Step 00000003: cerate spanning tree
-[Rank 39] Step 00000002: create graph
-[Rank 39] Step 00000003: cerate spanning tree
-[Rank 27] Step 00000001: my neighbor list: 21, 35, 37, 
-[Rank 21] Step 00000002: create graph
-[Rank 21] Step 00000003: cerate spanning tree
-[Rank 36] Step 00000001: my neighbor list: 10, 19, 35, 
-[Rank 27] Step 00000002: create graph
-[Rank 27] Step 00000003: cerate spanning tree
-[Rank 36] Step 00000002: create graph
-[Rank 36] Step 00000003: cerate spanning tree
-[Rank 37] Step 00000005: 27 join me
-[Rank 11] Step 00000001: my neighbor list: 38, 
-[Rank 11] Step 00000002: create graph
-[Rank 11] Step 00000003: cerate spanning tree
-[Rank 27] Step 00000004: Recv invite from 37, join
-[Rank 21] Step 00000004: Recv invite from 27, join
-[Rank 1] Step 00000001: my neighbor list: 12, 21, 
-[Rank 1] Step 00000002: create graph
-[Rank 1] Step 00000003: cerate spanning tree
-[Rank 25] Step 00000001: my neighbor list: 20, 39, 
-[Rank 21] Step 00000005: 1 join me
+[Rank 21] Step 00000001: my neighbor list: 1, 8, 27, 
+[Rank 28] Step 00000002: create graph
+[Rank 28] Step 00000003: cerate spanning tree
+[Rank 44] Step 00000002: create graph
 [Rank 3] Step 00000001: my neighbor list: 29, 34, 44, 
 [Rank 3] Step 00000002: create graph
 [Rank 3] Step 00000003: cerate spanning tree
-[Rank 26] Step 00000001: my neighbor list: 23, 
-[Rank 14] Step 00000004: Recv invite from 37, join
-[Rank 0] Step 00000004: 22 join me
-[Rank 25] Step 00000002: create graph
-[Rank 25] Step 00000003: cerate spanning tree
-[Rank 1] Step 00000004: Recv invite from 21, join
-[Rank 26] Step 00000002: create graph
-[Rank 26] Step 00000003: cerate spanning tree
+[Rank 13] Step 00000001: my neighbor list: 18, 31, 
+[Rank 32] Step 00000001: my neighbor list: 18, 30, 
+[Rank 44] Step 00000003: cerate spanning tree
+[Rank 5] Step 00000003: cerate spanning tree
+[Rank 17] Step 00000001: my neighbor list: 28, 
+[Rank 32] Step 00000002: create graph
+[Rank 40] Step 00000001: my neighbor list: 8, 
+[Rank 6] Step 00000001: my neighbor list: 31, 
+[Rank 21] Step 00000002: create graph
+[Rank 21] Step 00000003: cerate spanning tree
+[Rank 32] Step 00000003: cerate spanning tree
+[Rank 40] Step 00000002: create graph
+[Rank 40] Step 00000003: cerate spanning tree
+[Rank 6] Step 00000002: create graph
+[Rank 6] Step 00000003: cerate spanning tree
+[Rank 13] Step 00000002: create graph
+[Rank 13] Step 00000003: cerate spanning tree
+[Rank 46] Step 00000001: my neighbor list: 15, 18, 
+[Rank 11] Step 00000001: my neighbor list: 38, 
+[Rank 17] Step 00000002: create graph
+[Rank 17] Step 00000003: cerate spanning tree
+[Rank 46] Step 00000002: create graph
+[Rank 46] Step 00000003: cerate spanning tree
 [Rank 7] Step 00000001: my neighbor list: 28, 37, 
+[Rank 20] Step 00000001: my neighbor list: 25, 
+[Rank 36] Step 00000001: my neighbor list: 10, 19, 35, 
+[Rank 1] Step 00000001: my neighbor list: 12, 21, 
+[Rank 1] Step 00000002: create graph
+[Rank 1] Step 00000003: cerate spanning tree
+[Rank 20] Step 00000002: create graph
+[Rank 36] Step 00000002: create graph
+[Rank 36] Step 00000003: cerate spanning tree
 [Rank 7] Step 00000002: create graph
 [Rank 7] Step 00000003: cerate spanning tree
-[Rank 37] Step 00000006: 7 join me
-[Rank 37] Step 00000007: 14 join me
-[Rank 29] Step 00000001: my neighbor list: 3, 41, 
-[Rank 14] Step 00000005: my child list: 
-[Rank 14] Step 00000006: start task
+[Rank 20] Step 00000003: cerate spanning tree
+[Rank 41] Step 00000001: my neighbor list: 29, 
 [Rank 2] Step 00000001: my neighbor list: 16, 
 [Rank 2] Step 00000002: create graph
 [Rank 2] Step 00000003: cerate spanning tree
-[Rank 27] Step 00000005: 21 join me
-[Rank 16] Step 00000002: create graph
-[Rank 7] Step 00000004: Recv invite from 37, join
 [Rank 41] Step 00000002: create graph
-[Rank 29] Step 00000002: create graph
-[Rank 29] Step 00000003: cerate spanning tree
-[Rank 16] Step 00000003: cerate spanning tree
-[Rank 6] Step 00000001: my neighbor list: 31, 
+[Rank 9] Step 00000001: my neighbor list: 8, 16, 
+[Rank 9] Step 00000002: create graph
+[Rank 9] Step 00000003: cerate spanning tree
 [Rank 41] Step 00000003: cerate spanning tree
-[Rank 30] Step 00000001: my neighbor list: 24, 32, 
-[Rank 5] Step 00000002: create graph
-[Rank 5] Step 00000003: cerate spanning tree
-[Rank 43] Step 00000006: 5 join me
-[Rank 30] Step 00000002: create graph
-[Rank 30] Step 00000003: cerate spanning tree
+[Rank 22] Step 00000004: Recv invite from 0, join
+[Rank 0] Step 00000001: my neighbor list: 4, 22, 
+[Rank 0] Step 00000002: create graph
+[Rank 0] Step 00000003: cerate spanning tree
+[Rank 8] Step 00000001: my neighbor list: 9, 21, 40, 
+[Rank 43] Step 00000004: Recv invite from 22, join
+[Rank 8] Step 00000002: create graph
+[Rank 8] Step 00000003: cerate spanning tree
+[Rank 4] Step 00000001: my neighbor list: 0, 
+[Rank 0] Step 00000004: 22 join me
+[Rank 22] Step 00000005: 43 join me
+[Rank 37] Step 00000004: Recv invite from 43, join
+[Rank 43] Step 00000005: 37 join me
 [Rank 5] Step 00000004: Recv invite from 43, join
-[Rank 43] Step 00000007: my child list: 5, 37, 
-[Rank 43] Step 00000008: start task
-[Rank 34] Step 00000001: my neighbor list: 3, 
-[Rank 6] Step 00000002: create graph
-[Rank 35] Step 00000002: create graph
-[Rank 4] Step 00000002: create graph
-[Rank 4] Step 00000003: cerate spanning tree
-[Rank 36] Step 00000004: Recv invite from 35, join
-[Rank 35] Step 00000003: cerate spanning tree
+[Rank 22] Step 00000006: my child list: 43, 
+[Rank 22] Step 00000007: start task
+[Rank 27] Step 00000004: Recv invite from 37, join
+[Rank 43] Step 00000006: 5 join me
 [Rank 5] Step 00000005: my child list: 
 [Rank 5] Step 00000006: start task
-[Rank 42] Step 00000004: Recv invite from 35, join
+[Rank 14] Step 00000004: Recv invite from 37, join
+[Rank 37] Step 00000005: 7 join me
+[Rank 7] Step 00000004: Recv invite from 37, join
+[Rank 16] Step 00000004: Recv invite from 37, join
+[Rank 43] Step 00000007: my child list: 5, 37, 
+[Rank 43] Step 00000008: start task
+[Rank 11] Step 00000002: create graph
+[Rank 14] Step 00000005: my child list: 
+[Rank 14] Step 00000006: start task
+[Rank 21] Step 00000004: Recv invite from 27, join
+[Rank 28] Step 00000004: Recv invite from 7, join
+[Rank 37] Step 00000006: 14 join me
+[Rank 37] Step 00000007: 16 join me
+[Rank 4] Step 00000002: create graph
+[Rank 4] Step 00000003: cerate spanning tree
+[Rank 16] Step 00000005: 9 join me
 [Rank 35] Step 00000004: Recv invite from 27, join
-[Rank 19] Step 00000004: Recv invite from 36, join
-[Rank 6] Step 00000003: cerate spanning tree
-[Rank 45] Step 00000004: Recv invite from 42, join
-[Rank 34] Step 00000002: create graph
-[Rank 9] Step 00000001: my neighbor list: 8, 16, 
-[Rank 34] Step 00000003: cerate spanning tree
-[Rank 12] Step 00000004: Recv invite from 1, join
-[Rank 8] Step 00000004: Recv invite from 21, join
-[Rank 27] Step 00000006: 35 join me
-[Rank 21] Step 00000006: 8 join me
-[Rank 21] Step 00000007: my child list: 1, 8, 
-[Rank 21] Step 00000008: start task
-[Rank 10] Step 00000004: Recv invite from 36, join
-[Rank 36] Step 00000005: 19 join me
-[Rank 36] Step 00000006: 10 join me
+[Rank 37] Step 00000008: 27 join me
+[Rank 9] Step 00000004: Recv invite from 16, join
+[Rank 27] Step 00000005: 35 join me
+[Rank 27] Step 00000006: 21 join me
+[Rank 37] Step 00000009: my child list: 7, 14, 16, 27, 
+[Rank 37] Step 00000010: start task
+[Rank 2] Step 00000004: Recv invite from 16, join
+[Rank 17] Step 00000004: Recv invite from 28, join
 [Rank 27] Step 00000007: my child list: 21, 35, 
 [Rank 27] Step 00000008: start task
-[Rank 1] Step 00000005: 12 join me
-[Rank 42] Step 00000005: 45 join me
-[Rank 42] Step 00000006: my child list: 45, 
-[Rank 42] Step 00000007: start task
-[Rank 35] Step 00000005: 36 join me
-[Rank 12] Step 00000005: my child list: 
-[Rank 12] Step 00000006: start task
-[Rank 1] Step 00000006: my child list: 12, 
-[Rank 1] Step 00000007: start task
-[Rank 36] Step 00000007: my child list: 10, 19, 
-[Rank 36] Step 00000008: start task
-[Rank 28] Step 00000004: Recv invite from 7, join
-[Rank 19] Step 00000005: 38 join me
-[Rank 19] Step 00000006: 47 join me
+[Rank 36] Step 00000004: Recv invite from 35, join
 [Rank 7] Step 00000005: 28 join me
 [Rank 7] Step 00000006: my child list: 28, 
 [Rank 7] Step 00000007: start task
-[Rank 38] Step 00000004: Recv invite from 19, join
-[Rank 31] Step 00000004: Recv invite from 10, join
-[Rank 17] Step 00000004: Recv invite from 28, join
-[Rank 8] Step 00000005: 40 join me
-[Rank 39] Step 00000004: Recv invite from 45, join
-[Rank 25] Step 00000004: Recv invite from 39, join
-[Rank 19] Step 00000007: 44 join me
-[Rank 19] Step 00000008: my child list: 38, 44, 47, 
-[Rank 19] Step 00000009: start task
-[Rank 10] Step 00000005: 31 join me
-[Rank 10] Step 00000006: my child list: 31, 
-[Rank 10] Step 00000007: start task
-[Rank 40] Step 00000004: Recv invite from 8, join
-[Rank 40] Step 00000005: my child list: 
-[Rank 40] Step 00000006: start task
+[Rank 16] Step 00000006: 2 join me
 [Rank 28] Step 00000005: 17 join me
-[Rank 13] Step 00000004: Recv invite from 31, join
-[Rank 11] Step 00000004: Recv invite from 38, join
-[Rank 11] Step 00000005: my child list: 
-[Rank 44] Step 00000004: Recv invite from 19, join
 [Rank 28] Step 00000006: my child list: 17, 
-[Rank 28] Step 00000007: start task
+[Rank 36] Step 00000005: 19 join me
+[Rank 1] Step 00000004: Recv invite from 21, join
 [Rank 17] Step 00000005: my child list: 
 [Rank 17] Step 00000006: start task
+[Rank 28] Step 00000007: start task
+[Rank 38] Step 00000004: Recv invite from 19, join
+[Rank 2] Step 00000005: my child list: 
+[Rank 2] Step 00000006: start task
+[Rank 16] Step 00000007: my child list: 2, 9, 
+[Rank 16] Step 00000008: start task
+[Rank 35] Step 00000005: 36 join me
+[Rank 47] Step 00000004: Recv invite from 19, join
+[Rank 1] Step 00000005: 12 join me
+[Rank 21] Step 00000005: 1 join me
+[Rank 29] Step 00000004: Recv invite from 3, join
+[Rank 44] Step 00000004: Recv invite from 19, join
+[Rank 1] Step 00000006: my child list: 12, 
+[Rank 1] Step 00000007: start task
+[Rank 19] Step 00000004: Recv invite from 36, join
+[Rank 34] Step 00000004: Recv invite from 3, join
+[Rank 47] Step 00000005: my child list: 
+[Rank 47] Step 00000006: start task
 [Rank 3] Step 00000004: Recv invite from 44, join
+[Rank 12] Step 00000004: Recv invite from 1, join
+[Rank 34] Step 00000005: my child list: 
+[Rank 34] Step 00000006: start task
+[Rank 44] Step 00000005: 3 join me
+[Rank 11] Step 00000003: cerate spanning tree
+[Rank 12] Step 00000005: my child list: 
+[Rank 12] Step 00000006: start task
+[Rank 44] Step 00000006: my child list: 3, 
+[Rank 44] Step 00000007: start task
+[Rank 3] Step 00000005: 29 join me
+[Rank 3] Step 00000006: 34 join me
+[Rank 19] Step 00000005: 47 join me
+[Rank 19] Step 00000006: 38 join me
+[Rank 41] Step 00000004: Recv invite from 29, join
+[Rank 3] Step 00000007: my child list: 29, 34, 
+[Rank 3] Step 00000008: start task
+[Rank 19] Step 00000007: 44 join me
+[Rank 29] Step 00000005: 41 join me
+[Rank 41] Step 00000005: my child list: 
+[Rank 11] Step 00000004: Recv invite from 38, join
+[Rank 19] Step 00000008: my child list: 38, 44, 47, 
+[Rank 19] Step 00000009: start task
+[Rank 29] Step 00000006: my child list: 41, 
+[Rank 29] Step 00000007: start task
+[Rank 38] Step 00000005: 11 join me
+[Rank 11] Step 00000005: my child list: 
+[Rank 38] Step 00000006: my child list: 11, 
+[Rank 38] Step 00000007: start task
+[Rank 11] Step 00000006: start task
+[Rank 35] Step 00000006: 42 join me
+[Rank 42] Step 00000004: Recv invite from 35, join
+[Rank 35] Step 00000007: my child list: 36, 42, 
+[Rank 35] Step 00000008: start task
+[Rank 45] Step 00000004: Recv invite from 42, join
+[Rank 42] Step 00000005: 45 join me
+[Rank 39] Step 00000004: Recv invite from 45, join
+[Rank 25] Step 00000004: Recv invite from 39, join
+[Rank 42] Step 00000006: my child list: 45, 
+[Rank 42] Step 00000007: start task
 [Rank 45] Step 00000005: 39 join me
 [Rank 45] Step 00000006: my child list: 39, 
 [Rank 45] Step 00000007: start task
-[Rank 31] Step 00000005: 13 join me
-[Rank 31] Step 00000006: 6 join me
-[Rank 6] Step 00000004: Recv invite from 31, join
-[Rank 47] Step 00000004: Recv invite from 19, join
-[Rank 47] Step 00000005: my child list: 
-[Rank 47] Step 00000006: start task
-[Rank 29] Step 00000004: Recv invite from 3, join
-[Rank 22] Step 00000008: recv t_handle from 0
-[Rank 22] Step 00000009: send t_handle to all child
-[Rank 11] Step 00000006: start task
-[Rank 38] Step 00000005: 11 join me
-[Rank 38] Step 00000006: my child list: 11, 
-[Rank 38] Step 00000007: start task
-[Rank 31] Step 00000007: my child list: 6, 13, 
-[Rank 31] Step 00000008: start task
-[Rank 3] Step 00000005: 29 join me
 [Rank 39] Step 00000005: 25 join me
+[Rank 20] Step 00000004: Recv invite from 25, join
 [Rank 39] Step 00000006: my child list: 25, 
 [Rank 39] Step 00000007: start task
-[Rank 34] Step 00000004: Recv invite from 3, join
-[Rank 34] Step 00000005: my child list: 
-[Rank 34] Step 00000006: start task
-[Rank 6] Step 00000005: my child list: 
-[Rank 6] Step 00000006: start task
-[Rank 44] Step 00000005: 3 join me
-[Rank 44] Step 00000006: my child list: 3, 
-[Rank 44] Step 00000007: start task
-[Rank 35] Step 00000006: 42 join me
-[Rank 22] Step 00000010: recv t_signal from 0
-[Rank 22] Step 00000011: send t_signal to all child
-[Rank 22] Step 00000012: done wait for end
-[Rank 22] Step 00000013: dump to file
-[Rank 3] Step 00000006: 34 join me
-[Rank 3] Step 00000007: my child list: 29, 34, 
-[Rank 41] Step 00000004: Recv invite from 29, join
-[Rank 35] Step 00000007: my child list: 36, 42, 
-[Rank 3] Step 00000008: start task
-[Rank 41] Step 00000005: my child list: 
-[Rank 35] Step 00000008: start task
+[Rank 41] Step 00000006: start task
+[Rank 20] Step 00000005: my child list: 
+[Rank 25] Step 00000005: 20 join me
+[Rank 8] Step 00000004: Recv invite from 9, join
+[Rank 20] Step 00000006: start task
+[Rank 25] Step 00000006: my child list: 20, 
+[Rank 25] Step 00000007: start task
+[Rank 21] Step 00000006: Recv invite from 8, reject, already has parent 27
 [Rank 4] Step 00000004: Recv invite from 0, join
-[Rank 43] Step 00000009: recv t_handle from 22
-[Rank 43] Step 00000010: recv t_signal from 22
-[Rank 43] Step 00000011: send t_signal to all child
-[Rank 29] Step 00000005: 41 join me
+[Rank 21] Step 00000007: my child list: 1, 
+[Rank 21] Step 00000008: start task
+[Rank 21] Step 00000009: get unknown tag: 2 from 8
+[Rank 31] Step 00000004: Recv invite from 10, join
+[Rank 9] Step 00000005: 8 join me
+[Rank 40] Step 00000004: Recv invite from 8, join
 [Rank 0] Step 00000005: 4 join me
 [Rank 0] Step 00000006: my child list: 4, 22, 
-[Rank 43] Step 00000012: done wait for end
-[Rank 43] Step 00000013: dump to file
-[Rank 29] Step 00000006: my child list: 41, 
-[Rank 29] Step 00000007: start task
+[Rank 22] Step 00000008: recv t_handle from 0
+[Rank 22] Step 00000009: send t_handle to all child
+[Rank 31] Step 00000005: 13 join me
+[Rank 13] Step 00000004: Recv invite from 31, join
 [Rank 4] Step 00000005: my child list: 
 [Rank 4] Step 00000006: start task
-[Rank 41] Step 00000006: start task
+[Rank 8] Step 00000005: Recv invite from 21, reject, already has parent 9
+[Rank 8] Step 00000006: 21 reject me
+[Rank 14] Step 00000007: recv t_handle from 37
+[Rank 14] Step 00000008: leaf node, send t_back to parent
+[Rank 27] Step 00000009: recv t_handle from 37
+[Rank 27] Step 00000010: send t_handle to all child
+[Rank 9] Step 00000006: my child list: 8, 
+[Rank 9] Step 00000007: start task
+[Rank 16] Step 00000009: recv t_handle from 37
+[Rank 16] Step 00000010: send t_handle to all child
+[Rank 28] Step 00000008: recv t_handle from 7
+[Rank 28] Step 00000009: send t_handle to all child
+[Rank 36] Step 00000006: 10 join me
+[Rank 10] Step 00000004: Recv invite from 36, join
+[Rank 40] Step 00000005: my child list: 
+[Rank 40] Step 00000006: start task
 [Rank 0] Step 00000007: start task
+[Rank 36] Step 00000007: my child list: 10, 19, 
+[Rank 36] Step 00000008: start task
+[Rank 43] Step 00000009: recv t_handle from 22
+[Rank 43] Step 00000010: send t_handle to all child
+[Rank 37] Step 00000011: recv t_handle from 43
+[Rank 37] Step 00000012: send t_handle to all child
+[Rank 8] Step 00000007: my child list: 
+[Rank 8] Step 00000008: start task
 [Rank 0] Step 00000008: send t_handle to all child
-[Rank 0] Step 00000009: recv t_back from 4
 [Rank 4] Step 00000007: recv t_handle from 0
 [Rank 4] Step 00000008: leaf node, send t_back to parent
-[Rank 0] Step 00000010: all child send back t_back!!
-[Rank 0] Step 00000011: send t_signal to all child
-[Rank 0] Step 00000012: done wait for end
-[Rank 0] Step 00000013: dump to file
+[Rank 13] Step 00000005: 18 join me
+[Rank 28] Step 00000010: recv t_back from 17
+[Rank 28] Step 00000011: all child send back t_back!!
+[Rank 28] Step 00000012: send t_back to parent
+[Rank 8] Step 00000009: get unknown tag: 3 from 40
+[Rank 16] Step 00000011: recv t_back from 2
+[Rank 35] Step 00000009: recv t_handle from 27
+[Rank 35] Step 00000010: send t_handle to all child
+[Rank 43] Step 00000011: recv t_back from 5
+[Rank 0] Step 00000009: recv t_back from 4
+[Rank 17] Step 00000007: recv t_handle from 28
+[Rank 17] Step 00000008: leaf node, send t_back to parent
+[Rank 25] Step 00000008: recv t_handle from 39
+[Rank 37] Step 00000013: recv t_back from 14
+[Rank 10] Step 00000005: 31 join me
+[Rank 10] Step 00000006: my child list: 31, 
+[Rank 10] Step 00000007: start task
+[Rank 36] Step 00000009: recv t_handle from 35
+[Rank 36] Step 00000010: send t_handle to all child
+[Rank 5] Step 00000007: recv t_handle from 43
+[Rank 5] Step 00000008: leaf node, send t_back to parent
+[Rank 42] Step 00000008: recv t_handle from 35
+[Rank 42] Step 00000009: send t_handle to all child
+[Rank 7] Step 00000008: recv t_handle from 37
+[Rank 7] Step 00000009: send t_handle to all child
+[Rank 37] Step 00000014: recv t_back from 16
+[Rank 37] Step 00000015: recv t_back from 7
+[Rank 2] Step 00000007: recv t_handle from 16
+[Rank 2] Step 00000008: leaf node, send t_back to parent
+[Rank 38] Step 00000008: recv t_handle from 19
+[Rank 38] Step 00000009: send t_handle to all child
+[Rank 39] Step 00000008: recv t_handle from 45
+[Rank 39] Step 00000009: send t_handle to all child
+[Rank 44] Step 00000008: recv t_handle from 19
+[Rank 44] Step 00000009: send t_handle to all child
+[Rank 8] Step 00000010: recv t_handle from 9
+[Rank 8] Step 00000011: leaf node, send t_back to parent
+[Rank 18] Step 00000004: Recv invite from 13, join
+[Rank 27] Step 00000011: recv t_back from 21
+[Rank 45] Step 00000008: recv t_handle from 42
+[Rank 45] Step 00000009: send t_handle to all child
+[Rank 9] Step 00000008: recv t_handle from 16
+[Rank 9] Step 00000009: send t_handle to all child
+[Rank 9] Step 00000010: recv t_back from 8
+[Rank 9] Step 00000011: all child send back t_back!!
+[Rank 9] Step 00000012: send t_back to parent
+[Rank 21] Step 00000010: recv t_handle from 27
+[Rank 21] Step 00000011: send t_handle to all child
+[Rank 29] Step 00000008: recv t_handle from 3
+[Rank 29] Step 00000009: send t_handle to all child
+[Rank 46] Step 00000004: Recv invite from 18, join
+[Rank 1] Step 00000008: recv t_handle from 21
+[Rank 1] Step 00000009: send t_handle to all child
+[Rank 1] Step 00000010: recv t_back from 12
+[Rank 1] Step 00000011: all child send back t_back!!
+[Rank 1] Step 00000012: send t_back to parent
+[Rank 12] Step 00000007: recv t_handle from 1
+[Rank 12] Step 00000008: leaf node, send t_back to parent
+[Rank 34] Step 00000007: recv t_handle from 3
+[Rank 34] Step 00000008: leaf node, send t_back to parent
+[Rank 47] Step 00000007: recv t_handle from 19
+[Rank 47] Step 00000008: leaf node, send t_back to parent
+[Rank 7] Step 00000010: recv t_back from 28
+[Rank 7] Step 00000011: all child send back t_back!!
+[Rank 7] Step 00000012: send t_back to parent
+[Rank 13] Step 00000006: my child list: 18, 
+[Rank 13] Step 00000007: start task
+[Rank 33] Step 00000004: Recv invite from 23, join
+[Rank 46] Step 00000005: 15 join me
+[Rank 10] Step 00000008: recv t_handle from 36
+[Rank 16] Step 00000012: recv t_back from 9
+[Rank 16] Step 00000013: all child send back t_back!!
+[Rank 16] Step 00000014: send t_back to parent
+[Rank 33] Step 00000005: my child list: 
+[Rank 33] Step 00000006: start task
+[Rank 46] Step 00000006: my child list: 15, 
+[Rank 46] Step 00000007: start task
+[Rank 3] Step 00000009: recv t_handle from 44
+[Rank 3] Step 00000010: send t_handle to all child
+[Rank 19] Step 00000010: recv t_handle from 36
+[Rank 19] Step 00000011: send t_handle to all child
+[Rank 19] Step 00000012: recv t_back from 47
+[Rank 32] Step 00000004: Recv invite from 18, join
+[Rank 41] Step 00000007: recv t_handle from 29
+[Rank 3] Step 00000011: recv t_back from 34
+[Rank 15] Step 00000004: Recv invite from 46, join
+[Rank 29] Step 00000010: recv t_back from 41
+[Rank 29] Step 00000011: all child send back t_back!!
+[Rank 29] Step 00000012: send t_back to parent
+[Rank 41] Step 00000008: leaf node, send t_back to parent
+[Rank 11] Step 00000007: recv t_handle from 38
+[Rank 18] Step 00000005: 46 join me
+[Rank 44] Step 00000010: recv t_back from 3
+[Rank 44] Step 00000011: all child send back t_back!!
+[Rank 44] Step 00000012: send t_back to parent
+[Rank 6] Step 00000004: Recv invite from 31, join
+[Rank 21] Step 00000012: recv t_back from 1
+[Rank 21] Step 00000013: all child send back t_back!!
+[Rank 21] Step 00000014: send t_back to parent
+[Rank 31] Step 00000006: 6 join me
+[Rank 31] Step 00000007: my child list: 6, 13, 
+[Rank 31] Step 00000008: start task
+[Rank 23] Step 00000004: Recv invite from 15, join
+[Rank 25] Step 00000009: send t_handle to all child
+[Rank 15] Step 00000005: 23 join me
+[Rank 31] Step 00000009: recv t_handle from 10
+[Rank 31] Step 00000010: send t_handle to all child
+[Rank 15] Step 00000006: my child list: 23, 
+[Rank 15] Step 00000007: start task
+[Rank 31] Step 00000011: recv t_back from 6
+[Rank 3] Step 00000012: recv t_back from 29
+[Rank 3] Step 00000013: all child send back t_back!!
+[Rank 23] Step 00000005: 33 join me
+[Rank 39] Step 00000010: recv t_back from 25
+[Rank 39] Step 00000011: all child send back t_back!!
+[Rank 6] Step 00000005: my child list: 
+[Rank 6] Step 00000006: start task
+[Rank 18] Step 00000006: 32 join me
+[Rank 3] Step 00000014: send t_back to parent
+[Rank 18] Step 00000007: my child list: 32, 46, 
+[Rank 18] Step 00000008: start task
+[Rank 10] Step 00000009: send t_handle to all child
+[Rank 20] Step 00000007: recv t_handle from 25
+[Rank 6] Step 00000007: recv t_handle from 31
+[Rank 19] Step 00000013: recv t_back from 44
+[Rank 39] Step 00000012: send t_back to parent
+[Rank 6] Step 00000008: leaf node, send t_back to parent
+[Rank 13] Step 00000008: recv t_handle from 31
+[Rank 13] Step 00000009: send t_handle to all child
+[Rank 25] Step 00000010: recv t_back from 20
+[Rank 25] Step 00000011: all child send back t_back!!
+[Rank 25] Step 00000012: send t_back to parent
+[Rank 45] Step 00000010: recv t_back from 39
+[Rank 45] Step 00000011: all child send back t_back!!
+[Rank 45] Step 00000012: send t_back to parent
+[Rank 11] Step 00000008: leaf node, send t_back to parent
+[Rank 18] Step 00000009: recv t_handle from 13
+[Rank 35] Step 00000011: recv t_back from 42
+[Rank 20] Step 00000008: leaf node, send t_back to parent
+[Rank 26] Step 00000004: Recv invite from 23, join
+[Rank 26] Step 00000005: my child list: 
+[Rank 26] Step 00000006: start task
+[Rank 38] Step 00000010: recv t_back from 11
+[Rank 38] Step 00000011: all child send back t_back!!
+[Rank 38] Step 00000012: send t_back to parent
+[Rank 42] Step 00000010: recv t_back from 45
+[Rank 42] Step 00000011: all child send back t_back!!
+[Rank 42] Step 00000012: send t_back to parent
+[Rank 19] Step 00000014: recv t_back from 38
+[Rank 19] Step 00000015: all child send back t_back!!
+[Rank 19] Step 00000016: send t_back to parent
+[Rank 36] Step 00000011: recv t_back from 19
+[Rank 23] Step 00000006: 26 join me
+[Rank 23] Step 00000007: my child list: 26, 33, 
+[Rank 23] Step 00000008: start task
+[Rank 30] Step 00000004: Recv invite from 32, join
+[Rank 24] Step 00000004: Recv invite from 30, join
+[Rank 24] Step 00000005: my child list: 
+[Rank 24] Step 00000006: start task
+[Rank 30] Step 00000005: 24 join me
+[Rank 30] Step 00000006: my child list: 24, 
+[Rank 30] Step 00000007: start task
+[Rank 32] Step 00000005: 30 join me
+[Rank 32] Step 00000006: my child list: 30, 
+[Rank 32] Step 00000007: start task
+[Rank 18] Step 00000010: send t_handle to all child
+[Rank 32] Step 00000008: recv t_handle from 18
+[Rank 46] Step 00000008: recv t_handle from 18
+[Rank 46] Step 00000009: send t_handle to all child
+[Rank 15] Step 00000008: recv t_handle from 46
+[Rank 15] Step 00000009: send t_handle to all child
+[Rank 26] Step 00000007: recv t_handle from 23
+[Rank 26] Step 00000008: leaf node, send t_back to parent
+[Rank 46] Step 00000010: recv t_back from 15
+[Rank 46] Step 00000011: all child send back t_back!!
+[Rank 46] Step 00000012: send t_back to parent
+[Rank 23] Step 00000009: recv t_handle from 15
+[Rank 23] Step 00000010: send t_handle to all child
+[Rank 33] Step 00000007: recv t_handle from 23
+[Rank 33] Step 00000008: leaf node, send t_back to parent
+[Rank 23] Step 00000011: recv t_back from 26
+[Rank 23] Step 00000012: recv t_back from 33
+[Rank 32] Step 00000009: send t_handle to all child
+[Rank 15] Step 00000010: recv t_back from 23
+[Rank 15] Step 00000011: all child send back t_back!!
+[Rank 15] Step 00000012: send t_back to parent
+[Rank 23] Step 00000013: all child send back t_back!!
+[Rank 23] Step 00000014: send t_back to parent
+[Rank 18] Step 00000011: recv t_back from 46
+[Rank 30] Step 00000008: recv t_handle from 32
+[Rank 30] Step 00000009: send t_handle to all child
+[Rank 24] Step 00000007: recv t_handle from 30
+[Rank 24] Step 00000008: leaf node, send t_back to parent
+[Rank 30] Step 00000010: recv t_back from 24
+[Rank 30] Step 00000011: all child send back t_back!!
+[Rank 30] Step 00000012: send t_back to parent
+[Rank 32] Step 00000010: recv t_back from 30
+[Rank 32] Step 00000011: all child send back t_back!!
+[Rank 18] Step 00000012: recv t_back from 32
+[Rank 18] Step 00000013: all child send back t_back!!
+[Rank 32] Step 00000012: send t_back to parent
+[Rank 10] Step 00000010: recv t_back from 31
+[Rank 10] Step 00000011: all child send back t_back!!
+[Rank 10] Step 00000012: send t_back to parent
+[Rank 36] Step 00000012: recv t_back from 10
+[Rank 36] Step 00000013: all child send back t_back!!
+[Rank 36] Step 00000014: send t_back to parent
+[Rank 13] Step 00000010: recv t_back from 18
+[Rank 13] Step 00000011: all child send back t_back!!
+[Rank 31] Step 00000012: recv t_back from 13
+[Rank 31] Step 00000013: all child send back t_back!!
+[Rank 31] Step 00000014: send t_back to parent
+[Rank 37] Step 00000016: recv t_back from 27
+[Rank 37] Step 00000017: all child send back t_back!!
+[Rank 18] Step 00000014: send t_back to parent
+[Rank 13] Step 00000012: send t_back to parent
+[Rank 22] Step 00000010: recv t_back from 43
+[Rank 22] Step 00000011: all child send back t_back!!
+[Rank 35] Step 00000012: recv t_back from 36
+[Rank 35] Step 00000013: all child send back t_back!!
+[Rank 35] Step 00000014: send t_back to parent
+[Rank 0] Step 00000010: recv t_back from 22
+[Rank 0] Step 00000011: all child send back t_back!!
+[Rank 0] Step 00000012: send t_signal to all child
+[Rank 22] Step 00000012: send t_back to parent
+[Rank 27] Step 00000012: recv t_back from 35
+[Rank 27] Step 00000013: all child send back t_back!!
+[Rank 27] Step 00000014: send t_back to parent
+[Rank 22] Step 00000013: recv t_signal from 0
+[Rank 22] Step 00000014: send t_signal to all child
+[Rank 22] Step 00000015: done wait for end
+[Rank 22] Step 00000016: dump to file
+[Rank 27] Step 00000015: recv t_signal from 37
+[Rank 27] Step 00000016: send t_signal to all child
+[Rank 37] Step 00000018: send t_back to parent
+[Rank 43] Step 00000012: recv t_back from 37
+[Rank 43] Step 00000013: all child send back t_back!!
+[Rank 43] Step 00000014: send t_back to parent
+[Rank 0] Step 00000013: done wait for end
+[Rank 0] Step 00000014: dump to file
+[Rank 43] Step 00000015: recv t_signal from 22
+[Rank 43] Step 00000016: send t_signal to all child
+[Rank 37] Step 00000019: recv t_signal from 43
+[Rank 37] Step 00000020: send t_signal to all child
+[Rank 37] Step 00000021: done wait for end
+[Rank 43] Step 00000017: done wait for end
+[Rank 43] Step 00000018: dump to file
+[Rank 14] Step 00000009: recv t_signal from 37
+[Rank 14] Step 00000010: send t_signal to all child
+[Rank 14] Step 00000011: done wait for end
+[Rank 27] Step 00000017: done wait for end
+[Rank 27] Step 00000018: dump to file
+[Rank 16] Step 00000015: recv t_signal from 37
+[Rank 16] Step 00000016: send t_signal to all child
+[Rank 16] Step 00000017: done wait for end
+[Rank 16] Step 00000018: dump to file
+[Rank 28] Step 00000013: recv t_signal from 7
+[Rank 28] Step 00000014: send t_signal to all child
+[Rank 28] Step 00000015: done wait for end
+[Rank 28] Step 00000016: dump to file
+[Rank 37] Step 00000022: dump to file
 [Rank 4] Step 00000009: recv t_signal from 0
 [Rank 4] Step 00000010: send t_signal to all child
 [Rank 4] Step 00000011: done wait for end
 [Rank 4] Step 00000012: dump to file
-[Rank 5] Step 00000007: recv t_signal from 43
-[Rank 5] Step 00000008: send t_signal to all child
-[Rank 5] Step 00000009: done wait for end
-[Rank 5] Step 00000010: dump to file
-[Rank 9] Step 00000002: create graph
-[Rank 9] Step 00000003: cerate spanning tree
-[Rank 9] Step 00000004: Recv invite from 8, join
-[Rank 25] Step 00000005: 20 join me
-[Rank 18] Step 00000004: Recv invite from 13, join
-[Rank 8] Step 00000006: 9 join me
-[Rank 46] Step 00000004: Recv invite from 18, join
-[Rank 8] Step 00000007: my child list: 9, 40, 
-[Rank 8] Step 00000008: start task
-[Rank 25] Step 00000006: my child list: 20, 
-[Rank 25] Step 00000007: start task
-[Rank 32] Step 00000004: Recv invite from 18, join
-[Rank 20] Step 00000004: Recv invite from 25, join
-[Rank 46] Step 00000005: 15 join me
-[Rank 13] Step 00000005: 18 join me
-[Rank 33] Step 00000004: Recv invite from 23, join
-[Rank 46] Step 00000006: my child list: 15, 
-[Rank 46] Step 00000007: start task
-[Rank 20] Step 00000005: my child list: 
-[Rank 20] Step 00000006: start task
-[Rank 13] Step 00000006: my child list: 18, 
-[Rank 13] Step 00000007: start task
-[Rank 18] Step 00000005: 32 join me
-[Rank 18] Step 00000006: 46 join me
-[Rank 33] Step 00000005: my child list: 
-[Rank 33] Step 00000006: start task
-[Rank 18] Step 00000007: my child list: 32, 46, 
-[Rank 18] Step 00000008: start task
-[Rank 15] Step 00000004: Recv invite from 46, join
-[Rank 23] Step 00000004: Recv invite from 15, join
-[Rank 15] Step 00000005: 23 join me
-[Rank 15] Step 00000006: my child list: 23, 
-[Rank 15] Step 00000007: start task
-[Rank 23] Step 00000005: 33 join me
-[Rank 16] Step 00000004: Recv invite from 37, join
-[Rank 37] Step 00000008: 16 join me
-[Rank 9] Step 00000005: Recv invite from 16, reject, already has parent 8
-[Rank 16] Step 00000005: Recv invite from 9, reject, already has parent 37
-[Rank 27] Step 00000009: recv t_signal from 37
-[Rank 27] Step 00000010: send t_signal to all child
-[Rank 7] Step 00000008: recv t_signal from 37
-[Rank 7] Step 00000009: send t_signal to all child
-[Rank 37] Step 00000009: my child list: 7, 14, 16, 27, 
-[Rank 37] Step 00000010: start task
-[Rank 37] Step 00000011: recv t_signal from 43
-[Rank 37] Step 00000012: send t_signal to all child
-[Rank 14] Step 00000007: recv t_signal from 37
-[Rank 14] Step 00000008: send t_signal to all child
-[Rank 37] Step 00000013: done wait for end
-[Rank 37] Step 00000014: dump to file
-[Rank 27] Step 00000011: done wait for end
-[Rank 27] Step 00000012: dump to file
-[Rank 14] Step 00000009: done wait for end
-[Rank 14] Step 00000010: dump to file
-[Rank 40] Step 00000007: recv t_signal from 8
-[Rank 40] Step 00000008: send t_signal to all child
-[Rank 40] Step 00000009: done wait for end
-[Rank 28] Step 00000008: recv t_signal from 7
-[Rank 28] Step 00000009: send t_signal to all child
-[Rank 28] Step 00000010: done wait for end
-[Rank 28] Step 00000011: dump to file
-[Rank 21] Step 00000009: recv t_signal from 27
-[Rank 21] Step 00000010: send t_signal to all child
-[Rank 21] Step 00000011: done wait for end
-[Rank 21] Step 00000012: dump to file
-[Rank 7] Step 00000010: done wait for end
-[Rank 7] Step 00000011: dump to file
-[Rank 40] Step 00000010: dump to file
-[Rank 30] Step 00000004: Recv invite from 32, join
-[Rank 12] Step 00000007: recv t_signal from 1
-[Rank 1] Step 00000008: recv t_signal from 21
-[Rank 1] Step 00000009: send t_signal to all child
-[Rank 35] Step 00000009: recv t_signal from 27
-[Rank 17] Step 00000007: recv t_signal from 28
-[Rank 17] Step 00000008: send t_signal to all child
-[Rank 17] Step 00000009: done wait for end
-[Rank 17] Step 00000010: dump to file
-[Rank 8] Step 00000009: recv t_signal from 21
-[Rank 8] Step 00000010: send t_signal to all child
-[Rank 8] Step 00000011: done wait for end
-[Rank 8] Step 00000012: dump to file
-[Rank 32] Step 00000005: 30 join me
-[Rank 32] Step 00000006: my child list: 30, 
-[Rank 32] Step 00000007: start task
-[Rank 12] Step 00000008: send t_signal to all child
-[Rank 12] Step 00000009: done wait for end
-[Rank 12] Step 00000010: dump to file
-[Rank 1] Step 00000010: done wait for end
-[Rank 1] Step 00000011: dump to file
-[Rank 24] Step 00000004: Recv invite from 30, join
-[Rank 16] Step 00000006: 9 reject me
-[Rank 9] Step 00000006: my child list: 
-[Rank 24] Step 00000005: my child list: 
-[Rank 24] Step 00000006: start task
-[Rank 9] Step 00000007: start task
-[Rank 30] Step 00000005: 24 join me
-[Rank 30] Step 00000006: my child list: 24, 
-[Rank 30] Step 00000007: start task
-[Rank 9] Step 00000008: recv t_signal from 8
-[Rank 35] Step 00000010: send t_signal to all child
-[Rank 26] Step 00000004: Recv invite from 23, join
-[Rank 16] Step 00000007: my child list: 
-[Rank 9] Step 00000009: send t_signal to all child
-[Rank 36] Step 00000009: recv t_signal from 35
-[Rank 36] Step 00000010: send t_signal to all child
-[Rank 23] Step 00000006: 26 join me
-[Rank 10] Step 00000008: recv t_signal from 36
-[Rank 10] Step 00000009: send t_signal to all child
-[Rank 26] Step 00000005: my child list: 
-[Rank 26] Step 00000006: start task
-[Rank 23] Step 00000007: my child list: 26, 33, 
-[Rank 23] Step 00000008: start task
-[Rank 10] Step 00000010: done wait for end
-[Rank 10] Step 00000011: dump to file
-[Rank 35] Step 00000011: done wait for end
-[Rank 16] Step 00000008: start task
-[Rank 25] Step 00000008: recv t_signal from 39
-[Rank 25] Step 00000009: send t_signal to all child
-[Rank 19] Step 00000010: recv t_signal from 36
-[Rank 19] Step 00000011: send t_signal to all child
-[Rank 19] Step 00000012: done wait for end
-[Rank 19] Step 00000013: dump to file
-[Rank 31] Step 00000009: recv t_signal from 10
-[Rank 31] Step 00000010: send t_signal to all child
-[Rank 31] Step 00000011: done wait for end
-[Rank 31] Step 00000012: dump to file
-[Rank 13] Step 00000008: recv t_signal from 31
-[Rank 13] Step 00000009: send t_signal to all child
-[Rank 42] Step 00000008: recv t_signal from 35
-[Rank 42] Step 00000009: send t_signal to all child
-[Rank 42] Step 00000010: done wait for end
-[Rank 42] Step 00000011: dump to file
-[Rank 11] Step 00000007: recv t_signal from 38
-[Rank 11] Step 00000008: send t_signal to all child
-[Rank 11] Step 00000009: done wait for end
-[Rank 11] Step 00000010: dump to file
-[Rank 36] Step 00000011: done wait for end
-[Rank 36] Step 00000012: dump to file
-[Rank 25] Step 00000010: done wait for end
-[Rank 25] Step 00000011: dump to file
-[Rank 20] Step 00000007: recv t_signal from 25
-[Rank 20] Step 00000008: send t_signal to all child
-[Rank 20] Step 00000009: done wait for end
-[Rank 20] Step 00000010: dump to file
-[Rank 3] Step 00000009: recv t_signal from 44
-[Rank 3] Step 00000010: send t_signal to all child
-[Rank 3] Step 00000011: done wait for end
-[Rank 3] Step 00000012: dump to file
-[Rank 38] Step 00000008: recv t_signal from 19
-[Rank 38] Step 00000009: send t_signal to all child
-[Rank 38] Step 00000010: done wait for end
-[Rank 29] Step 00000008: recv t_signal from 3
-[Rank 29] Step 00000009: send t_signal to all child
-[Rank 29] Step 00000010: done wait for end
-[Rank 29] Step 00000011: dump to file
-[Rank 13] Step 00000010: done wait for end
-[Rank 13] Step 00000011: dump to file
-[Rank 6] Step 00000007: recv t_signal from 31
-[Rank 6] Step 00000008: send t_signal to all child
-[Rank 6] Step 00000009: done wait for end
-[Rank 6] Step 00000010: dump to file
-[Rank 39] Step 00000008: recv t_signal from 45
-[Rank 39] Step 00000009: send t_signal to all child
-[Rank 39] Step 00000010: done wait for end
-[Rank 39] Step 00000011: dump to file
-[Rank 34] Step 00000007: recv t_signal from 3
-[Rank 34] Step 00000008: send t_signal to all child
-[Rank 34] Step 00000009: done wait for end
-[Rank 34] Step 00000010: dump to file
-[Rank 18] Step 00000009: recv t_signal from 13
-[Rank 18] Step 00000010: send t_signal to all child
-[Rank 18] Step 00000011: done wait for end
-[Rank 18] Step 00000012: dump to file
-[Rank 2] Step 00000004: Recv invite from 16, join
-[Rank 44] Step 00000008: recv t_signal from 19
-[Rank 44] Step 00000009: send t_signal to all child
-[Rank 44] Step 00000010: done wait for end
-[Rank 44] Step 00000011: dump to file
-[Rank 30] Step 00000008: recv t_signal from 32
-[Rank 30] Step 00000009: send t_signal to all child
-[Rank 30] Step 00000010: done wait for end
-[Rank 15] Step 00000008: recv t_signal from 46
-[Rank 15] Step 00000009: send t_signal to all child
-[Rank 15] Step 00000010: done wait for end
-[Rank 15] Step 00000011: dump to file
-[Rank 2] Step 00000005: my child list: 
-[Rank 2] Step 00000006: start task
-[Rank 45] Step 00000008: recv t_signal from 42
-[Rank 45] Step 00000009: send t_signal to all child
-[Rank 45] Step 00000010: done wait for end
-[Rank 45] Step 00000011: dump to file
-[Rank 32] Step 00000008: recv t_signal from 18
-[Rank 32] Step 00000009: send t_signal to all child
-[Rank 32] Step 00000010: done wait for end
-[Rank 32] Step 00000011: dump to file
-[Rank 23] Step 00000009: recv t_signal from 15
-[Rank 23] Step 00000010: send t_signal to all child
-[Rank 23] Step 00000011: done wait for end
-[Rank 23] Step 00000012: dump to file
-[Rank 9] Step 00000010: done wait for end
-[Rank 47] Step 00000007: recv t_signal from 19
-[Rank 47] Step 00000008: send t_signal to all child
-[Rank 47] Step 00000009: done wait for end
-[Rank 47] Step 00000010: dump to file
-[Rank 24] Step 00000007: recv t_signal from 30
-[Rank 24] Step 00000008: send t_signal to all child
-[Rank 24] Step 00000009: done wait for end
-[Rank 24] Step 00000010: dump to file
-[Rank 16] Step 00000009: get unknown tag: 3 from 2
-[Rank 9] Step 00000011: dump to file
-[Rank 38] Step 00000011: dump to file
-[Rank 26] Step 00000007: recv t_signal from 23
-[Rank 26] Step 00000008: send t_signal to all child
-[Rank 26] Step 00000009: done wait for end
-[Rank 26] Step 00000010: dump to file
-[Rank 46] Step 00000008: recv t_signal from 18
-[Rank 46] Step 00000009: send t_signal to all child
-[Rank 46] Step 00000010: done wait for end
-[Rank 46] Step 00000011: dump to file
-[Rank 30] Step 00000011: dump to file
-[Rank 41] Step 00000007: recv t_signal from 29
-[Rank 33] Step 00000007: recv t_signal from 23
-[Rank 33] Step 00000008: send t_signal to all child
-[Rank 33] Step 00000009: done wait for end
-[Rank 33] Step 00000010: dump to file
-[Rank 41] Step 00000008: send t_signal to all child
-[Rank 35] Step 00000012: dump to file
-[Rank 16] Step 00000010: recv t_signal from 37
-[Rank 16] Step 00000011: send t_signal to all child
-[Rank 16] Step 00000012: done wait for end
-[Rank 16] Step 00000013: dump to file
-[Rank 41] Step 00000009: done wait for end
-[Rank 41] Step 00000010: dump to file
+[Rank 36] Step 00000015: recv t_signal from 35
+[Rank 36] Step 00000016: send t_signal to all child
+[Rank 36] Step 00000017: done wait for end
+[Rank 5] Step 00000009: recv t_signal from 43
+[Rank 5] Step 00000010: send t_signal to all child
+[Rank 5] Step 00000011: done wait for end
+[Rank 5] Step 00000012: dump to file
+[Rank 42] Step 00000013: recv t_signal from 35
+[Rank 42] Step 00000014: send t_signal to all child
+[Rank 42] Step 00000015: done wait for end
+[Rank 7] Step 00000013: recv t_signal from 37
+[Rank 7] Step 00000014: send t_signal to all child
+[Rank 7] Step 00000015: done wait for end
+[Rank 7] Step 00000016: dump to file
+[Rank 36] Step 00000018: dump to file
+[Rank 2] Step 00000009: recv t_signal from 16
+[Rank 2] Step 00000010: send t_signal to all child
+[Rank 2] Step 00000011: done wait for end
+[Rank 2] Step 00000012: dump to file
+[Rank 14] Step 00000012: dump to file
+[Rank 35] Step 00000015: recv t_signal from 27
+[Rank 35] Step 00000016: send t_signal to all child
+[Rank 35] Step 00000017: done wait for end
+[Rank 35] Step 00000018: dump to file
+[Rank 17] Step 00000009: recv t_signal from 28
+[Rank 17] Step 00000010: send t_signal to all child
+[Rank 17] Step 00000011: done wait for end
+[Rank 17] Step 00000012: dump to file
+[Rank 25] Step 00000013: recv t_signal from 39
+[Rank 25] Step 00000014: send t_signal to all child
+[Rank 21] Step 00000015: recv t_signal from 27
+[Rank 21] Step 00000016: send t_signal to all child
+[Rank 21] Step 00000017: done wait for end
+[Rank 21] Step 00000018: dump to file
+[Rank 31] Step 00000015: recv t_signal from 10
+[Rank 31] Step 00000016: send t_signal to all child
+[Rank 31] Step 00000017: done wait for end
+[Rank 31] Step 00000018: dump to file
+[Rank 12] Step 00000009: recv t_signal from 1
+[Rank 12] Step 00000010: send t_signal to all child
+[Rank 12] Step 00000011: done wait for end
+[Rank 12] Step 00000012: dump to file
+[Rank 25] Step 00000015: done wait for end
+[Rank 25] Step 00000016: dump to file
+[Rank 38] Step 00000013: recv t_signal from 19
+[Rank 38] Step 00000014: send t_signal to all child
+[Rank 38] Step 00000015: done wait for end
+[Rank 38] Step 00000016: dump to file
+[Rank 13] Step 00000013: recv t_signal from 31
+[Rank 13] Step 00000014: send t_signal to all child
+[Rank 13] Step 00000015: done wait for end
+[Rank 13] Step 00000016: dump to file
+[Rank 29] Step 00000013: recv t_signal from 3
+[Rank 29] Step 00000014: send t_signal to all child
+[Rank 29] Step 00000015: done wait for end
+[Rank 29] Step 00000016: dump to file
+[Rank 39] Step 00000013: recv t_signal from 45
+[Rank 39] Step 00000014: send t_signal to all child
+[Rank 39] Step 00000015: done wait for end
+[Rank 39] Step 00000016: dump to file
+[Rank 8] Step 00000012: recv t_signal from 9
+[Rank 8] Step 00000013: send t_signal to all child
+[Rank 8] Step 00000014: done wait for end
+[Rank 8] Step 00000015: dump to file
+[Rank 19] Step 00000017: recv t_signal from 36
+[Rank 19] Step 00000018: send t_signal to all child
+[Rank 19] Step 00000019: done wait for end
+[Rank 19] Step 00000020: dump to file
+[Rank 34] Step 00000009: recv t_signal from 3
+[Rank 34] Step 00000010: send t_signal to all child
+[Rank 34] Step 00000011: done wait for end
+[Rank 34] Step 00000012: dump to file
+[Rank 42] Step 00000016: dump to file
+[Rank 9] Step 00000013: recv t_signal from 16
+[Rank 9] Step 00000014: send t_signal to all child
+[Rank 9] Step 00000015: done wait for end
+[Rank 9] Step 00000016: dump to file
+[Rank 15] Step 00000013: recv t_signal from 46
+[Rank 15] Step 00000014: send t_signal to all child
+[Rank 15] Step 00000015: done wait for end
+[Rank 15] Step 00000016: dump to file
+[Rank 26] Step 00000009: recv t_signal from 23
+[Rank 26] Step 00000010: send t_signal to all child
+[Rank 26] Step 00000011: done wait for end
+[Rank 26] Step 00000012: dump to file
+[Rank 44] Step 00000013: recv t_signal from 19
+[Rank 44] Step 00000014: send t_signal to all child
+[Rank 44] Step 00000015: done wait for end
+[Rank 44] Step 00000016: dump to file
+[Rank 1] Step 00000013: recv t_signal from 21
+[Rank 1] Step 00000014: send t_signal to all child
+[Rank 1] Step 00000015: done wait for end
+[Rank 1] Step 00000016: dump to file
+[Rank 18] Step 00000015: recv t_signal from 13
+[Rank 18] Step 00000016: send t_signal to all child
+[Rank 18] Step 00000017: done wait for end
+[Rank 18] Step 00000018: dump to file
+[Rank 33] Step 00000009: recv t_signal from 23
+[Rank 33] Step 00000010: send t_signal to all child
+[Rank 33] Step 00000011: done wait for end
+[Rank 33] Step 00000012: dump to file
+[Rank 45] Step 00000013: recv t_signal from 42
+[Rank 45] Step 00000014: send t_signal to all child
+[Rank 45] Step 00000015: done wait for end
+[Rank 45] Step 00000016: dump to file
+[Rank 3] Step 00000015: recv t_signal from 44
+[Rank 3] Step 00000016: send t_signal to all child
+[Rank 23] Step 00000015: recv t_signal from 15
+[Rank 23] Step 00000016: send t_signal to all child
+[Rank 23] Step 00000017: done wait for end
+[Rank 23] Step 00000018: dump to file
+[Rank 32] Step 00000013: recv t_signal from 18
+[Rank 47] Step 00000009: recv t_signal from 19
+[Rank 47] Step 00000010: send t_signal to all child
+[Rank 47] Step 00000011: done wait for end
+[Rank 47] Step 00000012: dump to file
+[Rank 6] Step 00000009: recv t_signal from 31
+[Rank 6] Step 00000010: send t_signal to all child
+[Rank 6] Step 00000011: done wait for end
+[Rank 6] Step 00000012: dump to file
+[Rank 20] Step 00000009: recv t_signal from 25
+[Rank 32] Step 00000014: send t_signal to all child
+[Rank 46] Step 00000013: recv t_signal from 18
+[Rank 46] Step 00000014: send t_signal to all child
+[Rank 46] Step 00000015: done wait for end
+[Rank 46] Step 00000016: dump to file
+[Rank 10] Step 00000013: recv t_signal from 36
+[Rank 10] Step 00000014: send t_signal to all child
+[Rank 10] Step 00000015: done wait for end
+[Rank 10] Step 00000016: dump to file
+[Rank 20] Step 00000010: send t_signal to all child
+[Rank 30] Step 00000013: recv t_signal from 32
+[Rank 30] Step 00000014: send t_signal to all child
+[Rank 41] Step 00000009: recv t_signal from 29
+[Rank 3] Step 00000017: done wait for end
+[Rank 3] Step 00000018: dump to file
+[Rank 20] Step 00000011: done wait for end
+[Rank 41] Step 00000010: send t_signal to all child
+[Rank 11] Step 00000009: recv t_signal from 38
+[Rank 11] Step 00000010: send t_signal to all child
+[Rank 11] Step 00000011: done wait for end
+[Rank 41] Step 00000011: done wait for end
+[Rank 41] Step 00000012: dump to file
+[Rank 11] Step 00000012: dump to file
+[Rank 20] Step 00000012: dump to file
+[Rank 32] Step 00000015: done wait for end
+[Rank 24] Step 00000009: recv t_signal from 30
+[Rank 24] Step 00000010: send t_signal to all child
+[Rank 24] Step 00000011: done wait for end
+[Rank 24] Step 00000012: dump to file
+[Rank 30] Step 00000015: done wait for end
+[Rank 30] Step 00000016: dump to file
+[Rank 32] Step 00000016: dump to file

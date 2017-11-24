@@ -232,9 +232,9 @@ inline int check_all_no_update(){
 }
 
 inline int check_all_terminate(){
-    int ter = 0;
+    int ter = 1;
     for(int i=0;i<child_count;++i){
-        ter |= terminate_list[ child_list[i] ];
+        ter &= terminate_list[ child_list[i] ];
     }
     return ter;
 }
