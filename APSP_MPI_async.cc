@@ -395,7 +395,7 @@ inline void task(){
                 update_list[status.MPI_SOURCE] = 0;
                 break;
             default:
-                LOG("get unknown tag: %d", status.MPI_TAG);
+                LOG("get unknown tag: %d from %d", status.MPI_TAG, status.MPI_SOURCE);
                 break;
         }
     }
