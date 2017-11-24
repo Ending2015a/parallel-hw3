@@ -160,6 +160,14 @@ inline void dump_from_file(const char *file){
             neighbor_list.push_back(i);
     }
     neighbor_count = neighbor_list.size();
+
+#ifdef _DEBUG_
+    std::stringstream dss;
+    for(int i=0;i<neighbor_count;++i)
+        dss << neighbor_list[i] << ", ";
+    LOG("my neighbor list: %s", dss.str().c_str());
+#endif
+
 }
 
 inline void dump_to_file(const char *file){
