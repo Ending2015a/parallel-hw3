@@ -2,394 +2,539 @@
 [Rank 0] Step 00000001: my neighbor list: 4, 22, 
 [Rank 0] Step 00000002: create graph
 [Rank 0] Step 00000003: cerate spanning tree
-[Rank 0] Step 00000004: 4 join me
-[Rank 0] Step 00000005: my child list: 4, 
-[Rank 0] Step 00000006: start task
-[Rank 0] Step 00000007: get unknown tag: 3 from 22
-[Rank 0] Step 00000008: send t_handle to all child
-[Rank 0] Step 00000009: all child send back t_back!!
-[Rank 0] Step 00000010: send t_signal to all child
-[Rank 0] Step 00000011: done wait for end
-[Rank 0] Step 00000012: dump to file
+[Rank 0] Step 00000004: neighbor count 2
+[Rank 0] Step 00000005: recv source: 4 /tag: 3
+[Rank 0] Step 00000006: 4 join me
+[Rank 0] Step 00000007: recv source: 4 /tag: 7
+[Rank 0] Step 00000008: my child list: 4, 
+[Rank 0] Step 00000009: start task
+[Rank 0] Step 00000010: get unknown tag: 3 from 22
+[Rank 0] Step 00000011: send t_handle to all child
+[Rank 0] Step 00000012: all child send back t_back!!
+[Rank 0] Step 00000013: send t_signal to all child
+[Rank 0] Step 00000014: done wait for end
+[Rank 0] Step 00000015: dump to file
 [Rank 10] Step 00000000: dump from file
 [Rank 10] Step 00000001: my neighbor list: 31, 36, 
 [Rank 10] Step 00000002: create graph
 [Rank 10] Step 00000003: cerate spanning tree
-[Rank 10] Step 00000004: Recv invite from 36, join
-[Rank 10] Step 00000005: my child list: 
-[Rank 10] Step 00000006: start task
-[Rank 10] Step 00000007: get unknown tag: 3 from 31
+[Rank 10] Step 00000004: neighbor count 2
+[Rank 10] Step 00000005: recv source: 36 /tag: 1
+[Rank 10] Step 00000006: Recv invite from 36, join
+[Rank 10] Step 00000007: recv source: 36 /tag: 7
+[Rank 10] Step 00000008: my child list: 
+[Rank 10] Step 00000009: start task
+[Rank 10] Step 00000010: get unknown tag: 3 from 31
 [Rank 11] Step 00000000: dump from file
 [Rank 11] Step 00000001: my neighbor list: 38, 
 [Rank 11] Step 00000002: create graph
 [Rank 11] Step 00000003: cerate spanning tree
-[Rank 11] Step 00000004: Recv invite from 38, join
-[Rank 11] Step 00000005: my child list: 
-[Rank 11] Step 00000006: start task
+[Rank 11] Step 00000004: neighbor count 1
+[Rank 11] Step 00000005: recv source: 38 /tag: 1
+[Rank 11] Step 00000006: Recv invite from 38, join
+[Rank 11] Step 00000007: my child list: 
+[Rank 11] Step 00000008: start task
 [Rank 12] Step 00000000: dump from file
 [Rank 12] Step 00000001: my neighbor list: 1, 
 [Rank 12] Step 00000002: create graph
 [Rank 12] Step 00000003: cerate spanning tree
-[Rank 12] Step 00000004: Recv invite from 1, join
-[Rank 12] Step 00000005: my child list: 
-[Rank 12] Step 00000006: start task
+[Rank 12] Step 00000004: neighbor count 1
+[Rank 12] Step 00000005: recv source: 1 /tag: 1
+[Rank 12] Step 00000006: Recv invite from 1, join
+[Rank 12] Step 00000007: my child list: 
+[Rank 12] Step 00000008: start task
 [Rank 13] Step 00000000: dump from file
 [Rank 13] Step 00000001: my neighbor list: 18, 31, 
 [Rank 13] Step 00000002: create graph
 [Rank 13] Step 00000003: cerate spanning tree
-[Rank 13] Step 00000004: Recv invite from 31, join
-[Rank 13] Step 00000005: my child list: 
-[Rank 13] Step 00000006: start task
-[Rank 13] Step 00000007: get unknown tag: 3 from 18
+[Rank 13] Step 00000004: neighbor count 2
+[Rank 13] Step 00000005: recv source: 31 /tag: 1
+[Rank 13] Step 00000006: Recv invite from 31, join
+[Rank 13] Step 00000007: recv source: 31 /tag: 7
+[Rank 13] Step 00000008: my child list: 
+[Rank 13] Step 00000009: start task
+[Rank 13] Step 00000010: get unknown tag: 3 from 18
 [Rank 14] Step 00000000: dump from file
 [Rank 14] Step 00000001: my neighbor list: 37, 
 [Rank 14] Step 00000002: create graph
 [Rank 14] Step 00000003: cerate spanning tree
-[Rank 14] Step 00000004: Recv invite from 37, join
-[Rank 14] Step 00000005: my child list: 
-[Rank 14] Step 00000006: start task
+[Rank 14] Step 00000004: neighbor count 1
+[Rank 14] Step 00000005: recv source: 37 /tag: 1
+[Rank 14] Step 00000006: Recv invite from 37, join
+[Rank 14] Step 00000007: my child list: 
+[Rank 14] Step 00000008: start task
 [Rank 15] Step 00000000: dump from file
 [Rank 15] Step 00000001: my neighbor list: 23, 46, 
 [Rank 15] Step 00000002: create graph
 [Rank 15] Step 00000003: cerate spanning tree
-[Rank 15] Step 00000004: Recv invite from 46, join
-[Rank 15] Step 00000005: my child list: 
-[Rank 15] Step 00000006: start task
-[Rank 15] Step 00000007: get unknown tag: 3 from 23
+[Rank 15] Step 00000004: neighbor count 2
+[Rank 15] Step 00000005: recv source: 46 /tag: 1
+[Rank 15] Step 00000006: Recv invite from 46, join
+[Rank 15] Step 00000007: recv source: 23 /tag: 3
+[Rank 15] Step 00000008: 23 join me
+[Rank 15] Step 00000009: my child list: 23, 
+[Rank 15] Step 00000010: start task
 [Rank 16] Step 00000000: dump from file
 [Rank 16] Step 00000001: my neighbor list: 2, 9, 37, 
 [Rank 16] Step 00000002: create graph
 [Rank 16] Step 00000003: cerate spanning tree
-[Rank 16] Step 00000004: Recv invite from 37, join
-[Rank 16] Step 00000005: 9 join me
-[Rank 16] Step 00000006: 2 join me
-[Rank 16] Step 00000007: my child list: 2, 9, 
-[Rank 16] Step 00000008: start task
+[Rank 16] Step 00000004: neighbor count 3
+[Rank 16] Step 00000005: recv source: 37 /tag: 1
+[Rank 16] Step 00000006: Recv invite from 37, join
+[Rank 16] Step 00000007: recv source: 9 /tag: 3
+[Rank 16] Step 00000008: 9 join me
+[Rank 16] Step 00000009: recv source: 2 /tag: 3
+[Rank 16] Step 00000010: 2 join me
+[Rank 16] Step 00000011: my child list: 2, 9, 
+[Rank 16] Step 00000012: start task
 [Rank 17] Step 00000000: dump from file
 [Rank 17] Step 00000001: my neighbor list: 28, 
 [Rank 17] Step 00000002: create graph
 [Rank 17] Step 00000003: cerate spanning tree
-[Rank 17] Step 00000004: Recv invite from 28, join
-[Rank 17] Step 00000005: my child list: 
-[Rank 17] Step 00000006: start task
+[Rank 17] Step 00000004: neighbor count 1
+[Rank 17] Step 00000005: recv source: 28 /tag: 1
+[Rank 17] Step 00000006: Recv invite from 28, join
+[Rank 17] Step 00000007: my child list: 
+[Rank 17] Step 00000008: start task
 [Rank 18] Step 00000000: dump from file
 [Rank 18] Step 00000001: my neighbor list: 13, 32, 46, 
 [Rank 18] Step 00000002: create graph
 [Rank 18] Step 00000003: cerate spanning tree
-[Rank 18] Step 00000004: Recv invite from 13, join
-[Rank 18] Step 00000005: my child list: 
-[Rank 18] Step 00000006: start task
-[Rank 18] Step 00000007: get unknown tag: 3 from 32
-[Rank 18] Step 00000008: get unknown tag: 3 from 46
+[Rank 18] Step 00000004: neighbor count 3
+[Rank 18] Step 00000005: recv source: 13 /tag: 1
+[Rank 18] Step 00000006: Recv invite from 13, join
+[Rank 18] Step 00000007: recv source: 13 /tag: 7
+[Rank 18] Step 00000008: recv source: 13 /tag: 7
+[Rank 18] Step 00000009: my child list: 
+[Rank 18] Step 00000010: start task
+[Rank 18] Step 00000011: get unknown tag: 3 from 32
+[Rank 18] Step 00000012: get unknown tag: 3 from 46
 [Rank 19] Step 00000000: dump from file
 [Rank 19] Step 00000001: my neighbor list: 36, 38, 44, 47, 
 [Rank 19] Step 00000002: create graph
 [Rank 19] Step 00000003: cerate spanning tree
-[Rank 19] Step 00000004: Recv invite from 36, join
-[Rank 19] Step 00000005: 38 join me
-[Rank 19] Step 00000006: 44 join me
-[Rank 19] Step 00000007: my child list: 38, 44, 
-[Rank 19] Step 00000008: start task
-[Rank 19] Step 00000009: get unknown tag: 3 from 47
+[Rank 19] Step 00000004: neighbor count 4
+[Rank 19] Step 00000005: recv source: 36 /tag: 1
+[Rank 19] Step 00000006: Recv invite from 36, join
+[Rank 19] Step 00000007: recv source: 36 /tag: 7
+[Rank 19] Step 00000008: recv source: 38 /tag: 3
+[Rank 19] Step 00000009: 38 join me
+[Rank 19] Step 00000010: recv source: 36 /tag: 7
+[Rank 19] Step 00000011: my child list: 38, 
+[Rank 19] Step 00000012: start task
+[Rank 19] Step 00000013: get unknown tag: 3 from 44
+[Rank 19] Step 00000014: get unknown tag: 3 from 47
 [Rank 1] Step 00000000: dump from file
 [Rank 1] Step 00000001: my neighbor list: 12, 21, 
 [Rank 1] Step 00000002: create graph
 [Rank 1] Step 00000003: cerate spanning tree
-[Rank 1] Step 00000004: Recv invite from 21, join
-[Rank 1] Step 00000005: my child list: 
-[Rank 1] Step 00000006: start task
-[Rank 1] Step 00000007: get unknown tag: 3 from 12
+[Rank 1] Step 00000004: neighbor count 2
+[Rank 1] Step 00000005: recv source: 21 /tag: 1
+[Rank 1] Step 00000006: Recv invite from 21, join
+[Rank 1] Step 00000007: recv source: 21 /tag: 7
+[Rank 1] Step 00000008: my child list: 
+[Rank 1] Step 00000009: start task
+[Rank 1] Step 00000010: get unknown tag: 3 from 12
 [Rank 20] Step 00000000: dump from file
 [Rank 20] Step 00000001: my neighbor list: 25, 
 [Rank 20] Step 00000002: create graph
 [Rank 20] Step 00000003: cerate spanning tree
-[Rank 20] Step 00000004: Recv invite from 25, join
-[Rank 20] Step 00000005: my child list: 
-[Rank 20] Step 00000006: start task
+[Rank 20] Step 00000004: neighbor count 1
+[Rank 20] Step 00000005: recv source: 25 /tag: 1
+[Rank 20] Step 00000006: Recv invite from 25, join
+[Rank 20] Step 00000007: my child list: 
+[Rank 20] Step 00000008: start task
 [Rank 21] Step 00000000: dump from file
 [Rank 21] Step 00000001: my neighbor list: 1, 8, 27, 
 [Rank 21] Step 00000002: create graph
 [Rank 21] Step 00000003: cerate spanning tree
-[Rank 21] Step 00000004: Recv invite from 27, join
-[Rank 21] Step 00000005: 1 join me
-[Rank 21] Step 00000006: my child list: 1, 
-[Rank 21] Step 00000007: start task
-[Rank 21] Step 00000008: get unknown tag: 1 from 8
-[Rank 21] Step 00000009: get unknown tag: 2 from 8
+[Rank 21] Step 00000004: neighbor count 3
+[Rank 21] Step 00000005: recv source: 27 /tag: 1
+[Rank 21] Step 00000006: Recv invite from 27, join
+[Rank 21] Step 00000007: recv source: 1 /tag: 3
+[Rank 21] Step 00000008: 1 join me
+[Rank 21] Step 00000009: recv source: 27 /tag: 7
+[Rank 21] Step 00000010: my child list: 1, 
+[Rank 21] Step 00000011: start task
+[Rank 21] Step 00000012: get unknown tag: 3 from 8
 [Rank 22] Step 00000000: dump from file
 [Rank 22] Step 00000001: my neighbor list: 0, 43, 
 [Rank 22] Step 00000002: create graph
 [Rank 22] Step 00000003: cerate spanning tree
-[Rank 22] Step 00000004: Recv invite from 0, join
-[Rank 22] Step 00000005: my child list: 
-[Rank 22] Step 00000006: start task
-[Rank 22] Step 00000007: get unknown tag: 3 from 43
+[Rank 22] Step 00000004: neighbor count 2
+[Rank 22] Step 00000005: recv source: 0 /tag: 1
+[Rank 22] Step 00000006: Recv invite from 0, join
+[Rank 22] Step 00000007: recv source: 0 /tag: 7
+[Rank 22] Step 00000008: my child list: 
+[Rank 22] Step 00000009: start task
+[Rank 22] Step 00000010: get unknown tag: 3 from 43
 [Rank 23] Step 00000000: dump from file
 [Rank 23] Step 00000001: my neighbor list: 15, 26, 33, 
 [Rank 23] Step 00000002: create graph
 [Rank 23] Step 00000003: cerate spanning tree
-[Rank 23] Step 00000004: Recv invite from 15, join
-[Rank 23] Step 00000005: my child list: 
-[Rank 23] Step 00000006: start task
-[Rank 23] Step 00000007: get unknown tag: 3 from 33
-[Rank 23] Step 00000008: get unknown tag: 3 from 26
+[Rank 23] Step 00000004: neighbor count 3
+[Rank 23] Step 00000005: recv source: 15 /tag: 1
+[Rank 23] Step 00000006: Recv invite from 15, join
+[Rank 23] Step 00000007: recv source: 15 /tag: 7
+[Rank 23] Step 00000008: recv source: 15 /tag: 7
+[Rank 23] Step 00000009: my child list: 
+[Rank 23] Step 00000010: start task
+[Rank 23] Step 00000011: get unknown tag: 3 from 26
+[Rank 23] Step 00000012: get unknown tag: 3 from 33
 [Rank 24] Step 00000000: dump from file
 [Rank 24] Step 00000001: my neighbor list: 30, 
 [Rank 24] Step 00000002: create graph
 [Rank 24] Step 00000003: cerate spanning tree
-[Rank 24] Step 00000004: Recv invite from 30, join
-[Rank 24] Step 00000005: my child list: 
-[Rank 24] Step 00000006: start task
+[Rank 24] Step 00000004: neighbor count 1
+[Rank 24] Step 00000005: recv source: 30 /tag: 1
+[Rank 24] Step 00000006: Recv invite from 30, join
+[Rank 24] Step 00000007: my child list: 
+[Rank 24] Step 00000008: start task
 [Rank 25] Step 00000000: dump from file
 [Rank 25] Step 00000001: my neighbor list: 20, 39, 
 [Rank 25] Step 00000002: create graph
 [Rank 25] Step 00000003: cerate spanning tree
-[Rank 25] Step 00000004: Recv invite from 39, join
-[Rank 25] Step 00000005: my child list: 
-[Rank 25] Step 00000006: start task
-[Rank 25] Step 00000007: get unknown tag: 3 from 20
+[Rank 25] Step 00000004: neighbor count 2
+[Rank 25] Step 00000005: recv source: 39 /tag: 1
+[Rank 25] Step 00000006: Recv invite from 39, join
+[Rank 25] Step 00000007: recv source: 39 /tag: 7
+[Rank 25] Step 00000008: my child list: 
+[Rank 25] Step 00000009: start task
+[Rank 25] Step 00000010: get unknown tag: 3 from 20
 [Rank 26] Step 00000000: dump from file
 [Rank 26] Step 00000001: my neighbor list: 23, 
 [Rank 26] Step 00000002: create graph
 [Rank 26] Step 00000003: cerate spanning tree
-[Rank 26] Step 00000004: Recv invite from 23, join
-[Rank 26] Step 00000005: my child list: 
-[Rank 26] Step 00000006: start task
+[Rank 26] Step 00000004: neighbor count 1
+[Rank 26] Step 00000005: recv source: 23 /tag: 1
+[Rank 26] Step 00000006: Recv invite from 23, join
+[Rank 26] Step 00000007: my child list: 
+[Rank 26] Step 00000008: start task
 [Rank 27] Step 00000000: dump from file
 [Rank 27] Step 00000001: my neighbor list: 21, 35, 37, 
 [Rank 27] Step 00000002: create graph
 [Rank 27] Step 00000003: cerate spanning tree
-[Rank 27] Step 00000004: Recv invite from 37, join
-[Rank 27] Step 00000005: 35 join me
-[Rank 27] Step 00000006: 21 join me
-[Rank 27] Step 00000007: my child list: 21, 35, 
-[Rank 27] Step 00000008: start task
+[Rank 27] Step 00000004: neighbor count 3
+[Rank 27] Step 00000005: recv source: 37 /tag: 1
+[Rank 27] Step 00000006: Recv invite from 37, join
+[Rank 27] Step 00000007: recv source: 21 /tag: 3
+[Rank 27] Step 00000008: 21 join me
+[Rank 27] Step 00000009: recv source: 35 /tag: 3
+[Rank 27] Step 00000010: 35 join me
+[Rank 27] Step 00000011: my child list: 21, 35, 
+[Rank 27] Step 00000012: start task
 [Rank 28] Step 00000000: dump from file
 [Rank 28] Step 00000001: my neighbor list: 7, 17, 
 [Rank 28] Step 00000002: create graph
 [Rank 28] Step 00000003: cerate spanning tree
-[Rank 28] Step 00000004: Recv invite from 7, join
-[Rank 28] Step 00000005: 17 join me
-[Rank 28] Step 00000006: my child list: 17, 
-[Rank 28] Step 00000007: start task
+[Rank 28] Step 00000004: neighbor count 2
+[Rank 28] Step 00000005: recv source: 7 /tag: 1
+[Rank 28] Step 00000006: Recv invite from 7, join
+[Rank 28] Step 00000007: recv source: 7 /tag: 7
+[Rank 28] Step 00000008: my child list: 
+[Rank 28] Step 00000009: start task
+[Rank 28] Step 00000010: get unknown tag: 3 from 17
 [Rank 29] Step 00000000: dump from file
 [Rank 29] Step 00000001: my neighbor list: 3, 41, 
 [Rank 29] Step 00000002: create graph
 [Rank 29] Step 00000003: cerate spanning tree
-[Rank 29] Step 00000004: Recv invite from 3, join
-[Rank 29] Step 00000005: my child list: 
-[Rank 29] Step 00000006: start task
-[Rank 29] Step 00000007: get unknown tag: 3 from 41
+[Rank 29] Step 00000004: neighbor count 2
+[Rank 29] Step 00000005: recv source: 3 /tag: 1
+[Rank 29] Step 00000006: Recv invite from 3, join
+[Rank 29] Step 00000007: recv source: 3 /tag: 7
+[Rank 29] Step 00000008: my child list: 
+[Rank 29] Step 00000009: start task
+[Rank 29] Step 00000010: get unknown tag: 3 from 41
 [Rank 2] Step 00000000: dump from file
 [Rank 2] Step 00000001: my neighbor list: 16, 
 [Rank 2] Step 00000002: create graph
 [Rank 2] Step 00000003: cerate spanning tree
-[Rank 2] Step 00000004: Recv invite from 16, join
-[Rank 2] Step 00000005: my child list: 
-[Rank 2] Step 00000006: start task
+[Rank 2] Step 00000004: neighbor count 1
+[Rank 2] Step 00000005: recv source: 16 /tag: 1
+[Rank 2] Step 00000006: Recv invite from 16, join
+[Rank 2] Step 00000007: my child list: 
+[Rank 2] Step 00000008: start task
 [Rank 30] Step 00000000: dump from file
 [Rank 30] Step 00000001: my neighbor list: 24, 32, 
 [Rank 30] Step 00000002: create graph
 [Rank 30] Step 00000003: cerate spanning tree
-[Rank 30] Step 00000004: Recv invite from 32, join
-[Rank 30] Step 00000005: my child list: 
-[Rank 30] Step 00000006: start task
-[Rank 30] Step 00000007: get unknown tag: 3 from 24
+[Rank 30] Step 00000004: neighbor count 2
+[Rank 30] Step 00000005: recv source: 32 /tag: 1
+[Rank 30] Step 00000006: Recv invite from 32, join
+[Rank 30] Step 00000007: recv source: 32 /tag: 7
+[Rank 30] Step 00000008: my child list: 
+[Rank 30] Step 00000009: start task
+[Rank 30] Step 00000010: get unknown tag: 3 from 24
 [Rank 31] Step 00000000: dump from file
 [Rank 31] Step 00000001: my neighbor list: 6, 10, 13, 
 [Rank 31] Step 00000002: create graph
 [Rank 31] Step 00000003: cerate spanning tree
-[Rank 31] Step 00000004: Recv invite from 10, join
-[Rank 31] Step 00000005: my child list: 
-[Rank 31] Step 00000006: start task
-[Rank 31] Step 00000007: get unknown tag: 3 from 13
-[Rank 31] Step 00000008: get unknown tag: 3 from 6
+[Rank 31] Step 00000004: neighbor count 3
+[Rank 31] Step 00000005: recv source: 10 /tag: 1
+[Rank 31] Step 00000006: Recv invite from 10, join
+[Rank 31] Step 00000007: recv source: 10 /tag: 7
+[Rank 31] Step 00000008: recv source: 10 /tag: 7
+[Rank 31] Step 00000009: my child list: 
+[Rank 31] Step 00000010: start task
+[Rank 31] Step 00000011: get unknown tag: 3 from 6
+[Rank 31] Step 00000012: get unknown tag: 3 from 13
 [Rank 32] Step 00000000: dump from file
 [Rank 32] Step 00000001: my neighbor list: 18, 30, 
 [Rank 32] Step 00000002: create graph
 [Rank 32] Step 00000003: cerate spanning tree
-[Rank 32] Step 00000004: Recv invite from 18, join
-[Rank 32] Step 00000005: my child list: 
-[Rank 32] Step 00000006: start task
-[Rank 32] Step 00000007: get unknown tag: 3 from 30
+[Rank 32] Step 00000004: neighbor count 2
+[Rank 32] Step 00000005: recv source: 18 /tag: 1
+[Rank 32] Step 00000006: Recv invite from 18, join
+[Rank 32] Step 00000007: recv source: 30 /tag: 3
+[Rank 32] Step 00000008: 30 join me
+[Rank 32] Step 00000009: my child list: 30, 
+[Rank 32] Step 00000010: start task
 [Rank 33] Step 00000000: dump from file
 [Rank 33] Step 00000001: my neighbor list: 23, 
 [Rank 33] Step 00000002: create graph
 [Rank 33] Step 00000003: cerate spanning tree
-[Rank 33] Step 00000004: Recv invite from 23, join
-[Rank 33] Step 00000005: my child list: 
-[Rank 33] Step 00000006: start task
+[Rank 33] Step 00000004: neighbor count 1
+[Rank 33] Step 00000005: recv source: 23 /tag: 1
+[Rank 33] Step 00000006: Recv invite from 23, join
+[Rank 33] Step 00000007: my child list: 
+[Rank 33] Step 00000008: start task
 [Rank 34] Step 00000000: dump from file
 [Rank 34] Step 00000001: my neighbor list: 3, 
 [Rank 34] Step 00000002: create graph
 [Rank 34] Step 00000003: cerate spanning tree
-[Rank 34] Step 00000004: Recv invite from 3, join
-[Rank 34] Step 00000005: my child list: 
-[Rank 34] Step 00000006: start task
+[Rank 34] Step 00000004: neighbor count 1
+[Rank 34] Step 00000005: recv source: 3 /tag: 1
+[Rank 34] Step 00000006: Recv invite from 3, join
+[Rank 34] Step 00000007: my child list: 
+[Rank 34] Step 00000008: start task
 [Rank 35] Step 00000000: dump from file
 [Rank 35] Step 00000001: my neighbor list: 27, 36, 42, 
 [Rank 35] Step 00000002: create graph
 [Rank 35] Step 00000003: cerate spanning tree
-[Rank 35] Step 00000004: Recv invite from 27, join
-[Rank 35] Step 00000005: 36 join me
-[Rank 35] Step 00000006: my child list: 36, 
-[Rank 35] Step 00000007: start task
-[Rank 35] Step 00000008: get unknown tag: 3 from 42
+[Rank 35] Step 00000004: neighbor count 3
+[Rank 35] Step 00000005: recv source: 27 /tag: 1
+[Rank 35] Step 00000006: Recv invite from 27, join
+[Rank 35] Step 00000007: recv source: 27 /tag: 7
+[Rank 35] Step 00000008: recv source: 27 /tag: 7
+[Rank 35] Step 00000009: my child list: 
+[Rank 35] Step 00000010: start task
+[Rank 35] Step 00000011: get unknown tag: 3 from 36
+[Rank 35] Step 00000012: get unknown tag: 3 from 42
 [Rank 36] Step 00000000: dump from file
 [Rank 36] Step 00000001: my neighbor list: 10, 19, 35, 
 [Rank 36] Step 00000002: create graph
 [Rank 36] Step 00000003: cerate spanning tree
-[Rank 36] Step 00000004: Recv invite from 35, join
-[Rank 36] Step 00000005: 19 join me
-[Rank 36] Step 00000006: my child list: 19, 
-[Rank 36] Step 00000007: start task
-[Rank 36] Step 00000008: get unknown tag: 3 from 10
+[Rank 36] Step 00000004: neighbor count 3
+[Rank 36] Step 00000005: recv source: 35 /tag: 1
+[Rank 36] Step 00000006: Recv invite from 35, join
+[Rank 36] Step 00000007: recv source: 35 /tag: 7
+[Rank 36] Step 00000008: recv source: 19 /tag: 3
+[Rank 36] Step 00000009: 19 join me
+[Rank 36] Step 00000010: my child list: 19, 
+[Rank 36] Step 00000011: start task
+[Rank 36] Step 00000012: get unknown tag: 3 from 10
 [Rank 37] Step 00000000: dump from file
 [Rank 37] Step 00000001: my neighbor list: 7, 14, 16, 27, 43, 
 [Rank 37] Step 00000002: create graph
 [Rank 37] Step 00000003: cerate spanning tree
-[Rank 37] Step 00000004: Recv invite from 43, join
-[Rank 37] Step 00000005: 14 join me
-[Rank 37] Step 00000006: 16 join me
-[Rank 37] Step 00000007: 27 join me
-[Rank 37] Step 00000008: my child list: 14, 16, 27, 
-[Rank 37] Step 00000009: start task
-[Rank 37] Step 00000010: get unknown tag: 3 from 7
+[Rank 37] Step 00000004: neighbor count 5
+[Rank 37] Step 00000005: recv source: 43 /tag: 1
+[Rank 37] Step 00000006: Recv invite from 43, join
+[Rank 37] Step 00000007: recv source: 7 /tag: 3
+[Rank 37] Step 00000008: 7 join me
+[Rank 37] Step 00000009: recv source: 27 /tag: 3
+[Rank 37] Step 00000010: 27 join me
+[Rank 37] Step 00000011: recv source: 14 /tag: 3
+[Rank 37] Step 00000012: 14 join me
+[Rank 37] Step 00000013: recv source: 14 /tag: 7
+[Rank 37] Step 00000014: my child list: 7, 14, 27, 
+[Rank 37] Step 00000015: start task
+[Rank 37] Step 00000016: get unknown tag: 3 from 16
 [Rank 38] Step 00000000: dump from file
 [Rank 38] Step 00000001: my neighbor list: 11, 19, 
 [Rank 38] Step 00000002: create graph
 [Rank 38] Step 00000003: cerate spanning tree
-[Rank 38] Step 00000004: Recv invite from 19, join
-[Rank 38] Step 00000005: 11 join me
-[Rank 38] Step 00000006: my child list: 11, 
-[Rank 38] Step 00000007: start task
+[Rank 38] Step 00000004: neighbor count 2
+[Rank 38] Step 00000005: recv source: 19 /tag: 1
+[Rank 38] Step 00000006: Recv invite from 19, join
+[Rank 38] Step 00000007: recv source: 11 /tag: 3
+[Rank 38] Step 00000008: 11 join me
+[Rank 38] Step 00000009: my child list: 11, 
+[Rank 38] Step 00000010: start task
 [Rank 39] Step 00000000: dump from file
 [Rank 39] Step 00000001: my neighbor list: 25, 45, 
 [Rank 39] Step 00000002: create graph
 [Rank 39] Step 00000003: cerate spanning tree
-[Rank 39] Step 00000004: Recv invite from 45, join
-[Rank 39] Step 00000005: my child list: 
-[Rank 39] Step 00000006: start task
-[Rank 39] Step 00000007: get unknown tag: 3 from 25
+[Rank 39] Step 00000004: neighbor count 2
+[Rank 39] Step 00000005: recv source: 45 /tag: 1
+[Rank 39] Step 00000006: Recv invite from 45, join
+[Rank 39] Step 00000007: recv source: 45 /tag: 7
+[Rank 39] Step 00000008: my child list: 
+[Rank 39] Step 00000009: start task
+[Rank 39] Step 00000010: get unknown tag: 3 from 25
 [Rank 3] Step 00000000: dump from file
 [Rank 3] Step 00000001: my neighbor list: 29, 34, 44, 
 [Rank 3] Step 00000002: create graph
 [Rank 3] Step 00000003: cerate spanning tree
-[Rank 3] Step 00000004: Recv invite from 44, join
-[Rank 3] Step 00000005: 29 join me
-[Rank 3] Step 00000006: my child list: 29, 
-[Rank 3] Step 00000007: start task
-[Rank 3] Step 00000008: get unknown tag: 3 from 34
+[Rank 3] Step 00000004: neighbor count 3
+[Rank 3] Step 00000005: recv source: 44 /tag: 1
+[Rank 3] Step 00000006: Recv invite from 44, join
+[Rank 3] Step 00000007: recv source: 44 /tag: 7
+[Rank 3] Step 00000008: recv source: 29 /tag: 3
+[Rank 3] Step 00000009: 29 join me
+[Rank 3] Step 00000010: my child list: 29, 
+[Rank 3] Step 00000011: start task
+[Rank 3] Step 00000012: get unknown tag: 3 from 34
 [Rank 40] Step 00000000: dump from file
 [Rank 40] Step 00000001: my neighbor list: 8, 
 [Rank 40] Step 00000002: create graph
 [Rank 40] Step 00000003: cerate spanning tree
-[Rank 40] Step 00000004: Recv invite from 8, join
-[Rank 40] Step 00000005: my child list: 
-[Rank 40] Step 00000006: start task
+[Rank 40] Step 00000004: neighbor count 1
+[Rank 40] Step 00000005: recv source: 8 /tag: 1
+[Rank 40] Step 00000006: Recv invite from 8, join
+[Rank 40] Step 00000007: my child list: 
+[Rank 40] Step 00000008: start task
 [Rank 41] Step 00000000: dump from file
 [Rank 41] Step 00000001: my neighbor list: 29, 
 [Rank 41] Step 00000002: create graph
 [Rank 41] Step 00000003: cerate spanning tree
-[Rank 41] Step 00000004: Recv invite from 29, join
-[Rank 41] Step 00000005: my child list: 
-[Rank 41] Step 00000006: start task
+[Rank 41] Step 00000004: neighbor count 1
+[Rank 41] Step 00000005: recv source: 29 /tag: 1
+[Rank 41] Step 00000006: Recv invite from 29, join
+[Rank 41] Step 00000007: my child list: 
+[Rank 41] Step 00000008: start task
 [Rank 42] Step 00000000: dump from file
 [Rank 42] Step 00000001: my neighbor list: 35, 45, 
 [Rank 42] Step 00000002: create graph
 [Rank 42] Step 00000003: cerate spanning tree
-[Rank 42] Step 00000004: Recv invite from 35, join
-[Rank 42] Step 00000005: 45 join me
-[Rank 42] Step 00000006: my child list: 45, 
-[Rank 42] Step 00000007: start task
+[Rank 42] Step 00000004: neighbor count 2
+[Rank 42] Step 00000005: recv source: 35 /tag: 1
+[Rank 42] Step 00000006: Recv invite from 35, join
+[Rank 42] Step 00000007: recv source: 45 /tag: 3
+[Rank 42] Step 00000008: 45 join me
+[Rank 42] Step 00000009: my child list: 45, 
+[Rank 42] Step 00000010: start task
 [Rank 43] Step 00000000: dump from file
 [Rank 43] Step 00000001: my neighbor list: 5, 22, 37, 
 [Rank 43] Step 00000002: create graph
 [Rank 43] Step 00000003: cerate spanning tree
-[Rank 43] Step 00000004: Recv invite from 22, join
-[Rank 43] Step 00000005: 37 join me
-[Rank 43] Step 00000006: my child list: 37, 
-[Rank 43] Step 00000007: start task
-[Rank 43] Step 00000008: get unknown tag: 3 from 5
+[Rank 43] Step 00000004: neighbor count 3
+[Rank 43] Step 00000005: recv source: 22 /tag: 1
+[Rank 43] Step 00000006: Recv invite from 22, join
+[Rank 43] Step 00000007: recv source: 22 /tag: 7
+[Rank 43] Step 00000008: recv source: 37 /tag: 3
+[Rank 43] Step 00000009: 37 join me
+[Rank 43] Step 00000010: my child list: 37, 
+[Rank 43] Step 00000011: start task
+[Rank 43] Step 00000012: get unknown tag: 3 from 5
 [Rank 44] Step 00000000: dump from file
 [Rank 44] Step 00000001: my neighbor list: 3, 19, 
 [Rank 44] Step 00000002: create graph
 [Rank 44] Step 00000003: cerate spanning tree
-[Rank 44] Step 00000004: Recv invite from 19, join
-[Rank 44] Step 00000005: 3 join me
-[Rank 44] Step 00000006: my child list: 3, 
-[Rank 44] Step 00000007: start task
+[Rank 44] Step 00000004: neighbor count 2
+[Rank 44] Step 00000005: recv source: 19 /tag: 1
+[Rank 44] Step 00000006: Recv invite from 19, join
+[Rank 44] Step 00000007: recv source: 3 /tag: 3
+[Rank 44] Step 00000008: 3 join me
+[Rank 44] Step 00000009: my child list: 3, 
+[Rank 44] Step 00000010: start task
 [Rank 45] Step 00000000: dump from file
 [Rank 45] Step 00000001: my neighbor list: 39, 42, 
 [Rank 45] Step 00000002: create graph
 [Rank 45] Step 00000003: cerate spanning tree
-[Rank 45] Step 00000004: Recv invite from 42, join
-[Rank 45] Step 00000005: 39 join me
-[Rank 45] Step 00000006: my child list: 39, 
-[Rank 45] Step 00000007: start task
+[Rank 45] Step 00000004: neighbor count 2
+[Rank 45] Step 00000005: recv source: 42 /tag: 1
+[Rank 45] Step 00000006: Recv invite from 42, join
+[Rank 45] Step 00000007: recv source: 42 /tag: 7
+[Rank 45] Step 00000008: my child list: 
+[Rank 45] Step 00000009: start task
+[Rank 45] Step 00000010: get unknown tag: 3 from 39
 [Rank 46] Step 00000000: dump from file
 [Rank 46] Step 00000001: my neighbor list: 15, 18, 
 [Rank 46] Step 00000002: create graph
 [Rank 46] Step 00000003: cerate spanning tree
-[Rank 46] Step 00000004: Recv invite from 18, join
-[Rank 46] Step 00000005: my child list: 
-[Rank 46] Step 00000006: start task
-[Rank 46] Step 00000007: get unknown tag: 3 from 15
+[Rank 46] Step 00000004: neighbor count 2
+[Rank 46] Step 00000005: recv source: 18 /tag: 1
+[Rank 46] Step 00000006: Recv invite from 18, join
+[Rank 46] Step 00000007: recv source: 15 /tag: 3
+[Rank 46] Step 00000008: 15 join me
+[Rank 46] Step 00000009: my child list: 15, 
+[Rank 46] Step 00000010: start task
 [Rank 47] Step 00000000: dump from file
 [Rank 47] Step 00000001: my neighbor list: 19, 
 [Rank 47] Step 00000002: create graph
 [Rank 47] Step 00000003: cerate spanning tree
-[Rank 47] Step 00000004: Recv invite from 19, join
-[Rank 47] Step 00000005: my child list: 
-[Rank 47] Step 00000006: start task
+[Rank 47] Step 00000004: neighbor count 1
+[Rank 47] Step 00000005: recv source: 19 /tag: 1
+[Rank 47] Step 00000006: Recv invite from 19, join
+[Rank 47] Step 00000007: my child list: 
+[Rank 47] Step 00000008: start task
 [Rank 4] Step 00000000: dump from file
 [Rank 4] Step 00000001: my neighbor list: 0, 
 [Rank 4] Step 00000002: create graph
 [Rank 4] Step 00000003: cerate spanning tree
-[Rank 4] Step 00000004: Recv invite from 0, join
-[Rank 4] Step 00000005: my child list: 
-[Rank 4] Step 00000006: start task
-[Rank 4] Step 00000007: recv t_handle
-[Rank 4] Step 00000008: leaf node, send t_back to parent
-[Rank 4] Step 00000009: send t_signal to all child
-[Rank 4] Step 00000010: done wait for end
-[Rank 4] Step 00000011: dump to file
+[Rank 4] Step 00000004: neighbor count 1
+[Rank 4] Step 00000005: recv source: 0 /tag: 1
+[Rank 4] Step 00000006: Recv invite from 0, join
+[Rank 4] Step 00000007: my child list: 
+[Rank 4] Step 00000008: start task
+[Rank 4] Step 00000009: recv t_handle
+[Rank 4] Step 00000010: leaf node, send t_back to parent
+[Rank 4] Step 00000011: send t_signal to all child
+[Rank 4] Step 00000012: done wait for end
+[Rank 4] Step 00000013: dump to file
 [Rank 5] Step 00000000: dump from file
 [Rank 5] Step 00000001: my neighbor list: 43, 
 [Rank 5] Step 00000002: create graph
 [Rank 5] Step 00000003: cerate spanning tree
-[Rank 5] Step 00000004: Recv invite from 43, join
-[Rank 5] Step 00000005: my child list: 
-[Rank 5] Step 00000006: start task
+[Rank 5] Step 00000004: neighbor count 1
+[Rank 5] Step 00000005: recv source: 43 /tag: 1
+[Rank 5] Step 00000006: Recv invite from 43, join
+[Rank 5] Step 00000007: my child list: 
+[Rank 5] Step 00000008: start task
 [Rank 6] Step 00000000: dump from file
 [Rank 6] Step 00000001: my neighbor list: 31, 
 [Rank 6] Step 00000002: create graph
 [Rank 6] Step 00000003: cerate spanning tree
-[Rank 6] Step 00000004: Recv invite from 31, join
-[Rank 6] Step 00000005: my child list: 
-[Rank 6] Step 00000006: start task
+[Rank 6] Step 00000004: neighbor count 1
+[Rank 6] Step 00000005: recv source: 31 /tag: 1
+[Rank 6] Step 00000006: Recv invite from 31, join
+[Rank 6] Step 00000007: my child list: 
+[Rank 6] Step 00000008: start task
 [Rank 7] Step 00000000: dump from file
 [Rank 7] Step 00000001: my neighbor list: 28, 37, 
 [Rank 7] Step 00000002: create graph
 [Rank 7] Step 00000003: cerate spanning tree
-[Rank 7] Step 00000004: Recv invite from 37, join
-[Rank 7] Step 00000005: my child list: 
-[Rank 7] Step 00000006: start task
-[Rank 7] Step 00000007: get unknown tag: 3 from 28
+[Rank 7] Step 00000004: neighbor count 2
+[Rank 7] Step 00000005: recv source: 37 /tag: 1
+[Rank 7] Step 00000006: Recv invite from 37, join
+[Rank 7] Step 00000007: recv source: 37 /tag: 7
+[Rank 7] Step 00000008: my child list: 
+[Rank 7] Step 00000009: start task
+[Rank 7] Step 00000010: get unknown tag: 3 from 28
 [Rank 8] Step 00000000: dump from file
 [Rank 8] Step 00000001: my neighbor list: 9, 21, 40, 
 [Rank 8] Step 00000002: create graph
 [Rank 8] Step 00000003: cerate spanning tree
-[Rank 8] Step 00000004: Recv invite from 9, join
-[Rank 8] Step 00000005: Recv invite from 21, reject, already has parent 9
-[Rank 8] Step 00000006: my child list: 
-[Rank 8] Step 00000007: start task
-[Rank 8] Step 00000008: get unknown tag: 3 from 40
+[Rank 8] Step 00000004: neighbor count 3
+[Rank 8] Step 00000005: recv source: 21 /tag: 1
+[Rank 8] Step 00000006: Recv invite from 21, join
+[Rank 8] Step 00000007: recv source: 9 /tag: 1
+[Rank 8] Step 00000008: Recv invite from 9, reject, already has parent 21
+[Rank 8] Step 00000009: recv source: 9 /tag: 2
+[Rank 8] Step 00000010: 9 reject me
+[Rank 8] Step 00000011: my child list: 
+[Rank 8] Step 00000012: start task
+[Rank 8] Step 00000013: get unknown tag: 3 from 40
 [Rank 9] Step 00000000: dump from file
 [Rank 9] Step 00000001: my neighbor list: 8, 16, 
 [Rank 9] Step 00000002: create graph
 [Rank 9] Step 00000003: cerate spanning tree
-[Rank 9] Step 00000004: Recv invite from 16, join
-[Rank 9] Step 00000005: 8 join me
-[Rank 9] Step 00000006: my child list: 8, 
-[Rank 9] Step 00000007: start task
+[Rank 9] Step 00000004: neighbor count 2
+[Rank 9] Step 00000005: recv source: 16 /tag: 1
+[Rank 9] Step 00000006: Recv invite from 16, join
+[Rank 9] Step 00000007: recv source: 8 /tag: 1
+[Rank 9] Step 00000008: Recv invite from 8, reject, already has parent 16
+[Rank 9] Step 00000009: my child list: 
+[Rank 9] Step 00000010: start task
+[Rank 9] Step 00000011: get unknown tag: 2 from 8

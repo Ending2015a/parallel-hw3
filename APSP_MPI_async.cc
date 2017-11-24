@@ -295,8 +295,10 @@ inline void create_spanning_tree(){
     }
 
     MPI_Status status;
+    LOG("neighbor count %d", neighbor_count);
     for(int i=0;i<neighbor_count;++i){
         MPI_Recv(buf, vert, MPI_INT, MPI_ANY_SOURCE, MPI_ANY_TAG, COMM_GRAPH, &status);
+        LOG("recv source: %d /tag: %d", status.MPI_SOURCE, status.MPI_TAG);
         switch(status.MPI_TAG){
             case invite:
                 //already has parent
