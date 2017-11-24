@@ -1,3 +1,51 @@
+0, 0.002410, 0.000009, 0.000009, 0.000000, 0.002392
+1, 0.002806, 0.000043, 0.000043, 0.000000, 0.002720
+10, 0.002900, 0.000016, 0.000016, 0.000000, 0.002868
+11, 0.002921, 0.000013, 0.000013, 0.000000, 0.002895
+12, 0.002760, 0.000011, 0.000011, 0.000000, 0.002738
+13, 0.002431, 0.000009, 0.000009, 0.000000, 0.002414
+14, 0.003239, 0.000010, 0.000010, 0.000000, 0.003220
+15, 0.002938, 0.000014, 0.000014, 0.000000, 0.002910
+16, 0.002462, 0.000009, 0.000009, 0.000000, 0.002444
+17, 0.002452, 0.000011, 0.000011, 0.000000, 0.002430
+18, 0.002924, 0.000011, 0.000011, 0.000000, 0.002902
+19, 0.002903, 0.000010, 0.000010, 0.000000, 0.002883
+2, 0.002885, 0.000013, 0.000013, 0.000000, 0.002859
+20, 0.002826, 0.000011, 0.000011, 0.000000, 0.002804
+21, 0.002455, 0.000010, 0.000010, 0.000000, 0.002435
+22, 0.002849, 0.000016, 0.000016, 0.000000, 0.002817
+23, 0.002954, 0.000011, 0.000011, 0.000000, 0.002932
+24, 0.002538, 0.000010, 0.000010, 0.000000, 0.002518
+25, 0.002869, 0.000107, 0.000107, 0.000000, 0.002655
+26, 0.002972, 0.000015, 0.000015, 0.000000, 0.002942
+27, 0.002889, 0.000012, 0.000012, 0.000000, 0.002865
+28, 0.002453, 0.000011, 0.000011, 0.000000, 0.002431
+29, 0.002509, 0.000011, 0.000011, 0.000000, 0.002487
+3, 0.002929, 0.000012, 0.000012, 0.000000, 0.002905
+30, 0.002951, 0.000009, 0.000009, 0.000000, 0.002934
+31, 0.002921, 0.000013, 0.000013, 0.000000, 0.002895
+32, 0.002531, 0.000011, 0.000011, 0.000000, 0.002509
+33, 0.002973, 0.000010, 0.000010, 0.000000, 0.002953
+34, 0.002514, 0.000019, 0.000019, 0.000000, 0.002476
+35, 0.002893, 0.000011, 0.000011, 0.000000, 0.002871
+36, 0.002477, 0.000014, 0.000014, 0.000000, 0.002449
+37, 0.002847, 0.000020, 0.000020, 0.000000, 0.002807
+38, 0.002489, 0.000014, 0.000014, 0.000000, 0.002461
+39, 0.002884, 0.000011, 0.000011, 0.000000, 0.002862
+4, 0.002415, 0.000012, 0.000012, 0.000000, 0.002391
+40, 0.002458, 0.000020, 0.000020, 0.000000, 0.002418
+41, 0.003229, 0.000010, 0.000010, 0.000000, 0.003209
+42, 0.002466, 0.000011, 0.000011, 0.000000, 0.002444
+43, 0.002838, 0.000011, 0.000011, 0.000000, 0.002816
+44, 0.002497, 0.000011, 0.000011, 0.000000, 0.002475
+45, 0.002879, 0.000011, 0.000011, 0.000000, 0.002856
+46, 0.002517, 0.000009, 0.000009, 0.000000, 0.002499
+47, 0.002894, 0.000017, 0.000017, 0.000000, 0.002860
+5, 0.002432, 0.000010, 0.000010, 0.000000, 0.002412
+6, 0.002918, 0.000012, 0.000012, 0.000000, 0.002894
+7, 0.002869, 0.000012, 0.000012, 0.000000, 0.002845
+8, 0.002483, 0.000008, 0.000008, 0.000000, 0.002467
+9, 0.002475, 0.000011, 0.000011, 0.000000, 0.002453
 [Rank 0] Step 00000000: dump from file
 [Rank 0] Step 00000001: my neighbor list: 4, 22, 
 [Rank 0] Step 00000002: create graph
@@ -12,8 +60,6 @@
 [Rank 0] Step 00000011: all child send back t_back!!
 [Rank 0] Step 00000012: send t_signal to all child
 [Rank 0] Step 00000013: done wait for end
-[Rank 0] Step 00000014: dump to file
-[Rank 0] Step 00000015: write file vert: 48, world_rank: 0
 [Rank 10] Step 00000000: dump from file
 [Rank 10] Step 00000001: my neighbor list: 31, 36, 
 [Rank 10] Step 00000002: create graph
@@ -30,8 +76,6 @@
 [Rank 10] Step 00000013: recv t_signal from 36
 [Rank 10] Step 00000014: send t_signal to all child
 [Rank 10] Step 00000015: done wait for end
-[Rank 10] Step 00000016: dump to file
-[Rank 10] Step 00000017: write file vert: 48, world_rank: 10
 [Rank 11] Step 00000000: dump from file
 [Rank 11] Step 00000001: my neighbor list: 38, 
 [Rank 11] Step 00000002: create graph
@@ -44,8 +88,6 @@
 [Rank 11] Step 00000009: recv t_signal from 38
 [Rank 11] Step 00000010: send t_signal to all child
 [Rank 11] Step 00000011: done wait for end
-[Rank 11] Step 00000012: dump to file
-[Rank 11] Step 00000013: write file vert: 48, world_rank: 11
 [Rank 12] Step 00000000: dump from file
 [Rank 12] Step 00000001: my neighbor list: 1, 
 [Rank 12] Step 00000002: create graph
@@ -58,8 +100,6 @@
 [Rank 12] Step 00000009: recv t_signal from 1
 [Rank 12] Step 00000010: send t_signal to all child
 [Rank 12] Step 00000011: done wait for end
-[Rank 12] Step 00000012: dump to file
-[Rank 12] Step 00000013: write file vert: 48, world_rank: 12
 [Rank 13] Step 00000000: dump from file
 [Rank 13] Step 00000001: my neighbor list: 18, 31, 
 [Rank 13] Step 00000002: create graph
@@ -76,8 +116,6 @@
 [Rank 13] Step 00000013: recv t_signal from 31
 [Rank 13] Step 00000014: send t_signal to all child
 [Rank 13] Step 00000015: done wait for end
-[Rank 13] Step 00000016: dump to file
-[Rank 13] Step 00000017: write file vert: 48, world_rank: 13
 [Rank 14] Step 00000000: dump from file
 [Rank 14] Step 00000001: my neighbor list: 37, 
 [Rank 14] Step 00000002: create graph
@@ -90,8 +128,6 @@
 [Rank 14] Step 00000009: recv t_signal from 37
 [Rank 14] Step 00000010: send t_signal to all child
 [Rank 14] Step 00000011: done wait for end
-[Rank 14] Step 00000012: dump to file
-[Rank 14] Step 00000013: write file vert: 48, world_rank: 14
 [Rank 15] Step 00000000: dump from file
 [Rank 15] Step 00000001: my neighbor list: 23, 46, 
 [Rank 15] Step 00000002: create graph
@@ -108,28 +144,24 @@
 [Rank 15] Step 00000013: recv t_signal from 46
 [Rank 15] Step 00000014: send t_signal to all child
 [Rank 15] Step 00000015: done wait for end
-[Rank 15] Step 00000016: dump to file
-[Rank 15] Step 00000017: write file vert: 48, world_rank: 15
 [Rank 16] Step 00000000: dump from file
 [Rank 16] Step 00000001: my neighbor list: 2, 9, 37, 
 [Rank 16] Step 00000002: create graph
 [Rank 16] Step 00000003: cerate spanning tree
-[Rank 16] Step 00000004: Recv invite from 9, join
-[Rank 16] Step 00000005: Recv invite from 37, reject, already has parent 9
+[Rank 16] Step 00000004: Recv invite from 37, join
+[Rank 16] Step 00000005: 9 join me
 [Rank 16] Step 00000006: 2 join me
-[Rank 16] Step 00000007: 37 reject me
-[Rank 16] Step 00000008: my child list: 2, 
-[Rank 16] Step 00000009: start task
-[Rank 16] Step 00000010: recv t_handle from 9
-[Rank 16] Step 00000011: send t_handle to all child
-[Rank 16] Step 00000012: recv t_back from 2
+[Rank 16] Step 00000007: my child list: 2, 9, 
+[Rank 16] Step 00000008: start task
+[Rank 16] Step 00000009: recv t_handle from 37
+[Rank 16] Step 00000010: send t_handle to all child
+[Rank 16] Step 00000011: recv t_back from 2
+[Rank 16] Step 00000012: recv t_back from 9
 [Rank 16] Step 00000013: all child send back t_back!!
 [Rank 16] Step 00000014: send t_back to parent
-[Rank 16] Step 00000015: recv t_signal from 9
+[Rank 16] Step 00000015: recv t_signal from 37
 [Rank 16] Step 00000016: send t_signal to all child
 [Rank 16] Step 00000017: done wait for end
-[Rank 16] Step 00000018: dump to file
-[Rank 16] Step 00000019: write file vert: 48, world_rank: 16
 [Rank 17] Step 00000000: dump from file
 [Rank 17] Step 00000001: my neighbor list: 28, 
 [Rank 17] Step 00000002: create graph
@@ -142,8 +174,6 @@
 [Rank 17] Step 00000009: recv t_signal from 28
 [Rank 17] Step 00000010: send t_signal to all child
 [Rank 17] Step 00000011: done wait for end
-[Rank 17] Step 00000012: dump to file
-[Rank 17] Step 00000013: write file vert: 48, world_rank: 17
 [Rank 18] Step 00000000: dump from file
 [Rank 18] Step 00000001: my neighbor list: 13, 32, 46, 
 [Rank 18] Step 00000002: create graph
@@ -162,16 +192,14 @@
 [Rank 18] Step 00000015: recv t_signal from 13
 [Rank 18] Step 00000016: send t_signal to all child
 [Rank 18] Step 00000017: done wait for end
-[Rank 18] Step 00000018: dump to file
-[Rank 18] Step 00000019: write file vert: 48, world_rank: 18
 [Rank 19] Step 00000000: dump from file
 [Rank 19] Step 00000001: my neighbor list: 36, 38, 44, 47, 
 [Rank 19] Step 00000002: create graph
 [Rank 19] Step 00000003: cerate spanning tree
 [Rank 19] Step 00000004: Recv invite from 36, join
 [Rank 19] Step 00000005: 38 join me
-[Rank 19] Step 00000006: 47 join me
-[Rank 19] Step 00000007: 44 join me
+[Rank 19] Step 00000006: 44 join me
+[Rank 19] Step 00000007: 47 join me
 [Rank 19] Step 00000008: my child list: 38, 44, 47, 
 [Rank 19] Step 00000009: start task
 [Rank 19] Step 00000010: recv t_handle from 36
@@ -184,8 +212,6 @@
 [Rank 19] Step 00000017: recv t_signal from 36
 [Rank 19] Step 00000018: send t_signal to all child
 [Rank 19] Step 00000019: done wait for end
-[Rank 19] Step 00000020: dump to file
-[Rank 19] Step 00000021: write file vert: 48, world_rank: 19
 [Rank 1] Step 00000000: dump from file
 [Rank 1] Step 00000001: my neighbor list: 12, 21, 
 [Rank 1] Step 00000002: create graph
@@ -202,8 +228,6 @@
 [Rank 1] Step 00000013: recv t_signal from 21
 [Rank 1] Step 00000014: send t_signal to all child
 [Rank 1] Step 00000015: done wait for end
-[Rank 1] Step 00000016: dump to file
-[Rank 1] Step 00000017: write file vert: 48, world_rank: 1
 [Rank 20] Step 00000000: dump from file
 [Rank 20] Step 00000001: my neighbor list: 25, 
 [Rank 20] Step 00000002: create graph
@@ -216,28 +240,24 @@
 [Rank 20] Step 00000009: recv t_signal from 25
 [Rank 20] Step 00000010: send t_signal to all child
 [Rank 20] Step 00000011: done wait for end
-[Rank 20] Step 00000012: dump to file
-[Rank 20] Step 00000013: write file vert: 48, world_rank: 20
 [Rank 21] Step 00000000: dump from file
 [Rank 21] Step 00000001: my neighbor list: 1, 8, 27, 
 [Rank 21] Step 00000002: create graph
 [Rank 21] Step 00000003: cerate spanning tree
 [Rank 21] Step 00000004: Recv invite from 27, join
 [Rank 21] Step 00000005: 1 join me
-[Rank 21] Step 00000006: 8 join me
-[Rank 21] Step 00000007: my child list: 1, 8, 
-[Rank 21] Step 00000008: start task
-[Rank 21] Step 00000009: recv t_handle from 27
-[Rank 21] Step 00000010: send t_handle to all child
-[Rank 21] Step 00000011: recv t_back from 1
-[Rank 21] Step 00000012: recv t_back from 8
+[Rank 21] Step 00000006: Recv invite from 8, reject, already has parent 27
+[Rank 21] Step 00000007: 8 reject me
+[Rank 21] Step 00000008: my child list: 1, 
+[Rank 21] Step 00000009: start task
+[Rank 21] Step 00000010: recv t_handle from 27
+[Rank 21] Step 00000011: send t_handle to all child
+[Rank 21] Step 00000012: recv t_back from 1
 [Rank 21] Step 00000013: all child send back t_back!!
 [Rank 21] Step 00000014: send t_back to parent
 [Rank 21] Step 00000015: recv t_signal from 27
 [Rank 21] Step 00000016: send t_signal to all child
 [Rank 21] Step 00000017: done wait for end
-[Rank 21] Step 00000018: dump to file
-[Rank 21] Step 00000019: write file vert: 48, world_rank: 21
 [Rank 22] Step 00000000: dump from file
 [Rank 22] Step 00000001: my neighbor list: 0, 43, 
 [Rank 22] Step 00000002: create graph
@@ -254,8 +274,6 @@
 [Rank 22] Step 00000013: recv t_signal from 0
 [Rank 22] Step 00000014: send t_signal to all child
 [Rank 22] Step 00000015: done wait for end
-[Rank 22] Step 00000016: dump to file
-[Rank 22] Step 00000017: write file vert: 48, world_rank: 22
 [Rank 23] Step 00000000: dump from file
 [Rank 23] Step 00000001: my neighbor list: 15, 26, 33, 
 [Rank 23] Step 00000002: create graph
@@ -267,15 +285,13 @@
 [Rank 23] Step 00000008: start task
 [Rank 23] Step 00000009: recv t_handle from 15
 [Rank 23] Step 00000010: send t_handle to all child
-[Rank 23] Step 00000011: recv t_back from 33
-[Rank 23] Step 00000012: recv t_back from 26
+[Rank 23] Step 00000011: recv t_back from 26
+[Rank 23] Step 00000012: recv t_back from 33
 [Rank 23] Step 00000013: all child send back t_back!!
 [Rank 23] Step 00000014: send t_back to parent
 [Rank 23] Step 00000015: recv t_signal from 15
 [Rank 23] Step 00000016: send t_signal to all child
 [Rank 23] Step 00000017: done wait for end
-[Rank 23] Step 00000018: dump to file
-[Rank 23] Step 00000019: write file vert: 48, world_rank: 23
 [Rank 24] Step 00000000: dump from file
 [Rank 24] Step 00000001: my neighbor list: 30, 
 [Rank 24] Step 00000002: create graph
@@ -288,8 +304,6 @@
 [Rank 24] Step 00000009: recv t_signal from 30
 [Rank 24] Step 00000010: send t_signal to all child
 [Rank 24] Step 00000011: done wait for end
-[Rank 24] Step 00000012: dump to file
-[Rank 24] Step 00000013: write file vert: 48, world_rank: 24
 [Rank 25] Step 00000000: dump from file
 [Rank 25] Step 00000001: my neighbor list: 20, 39, 
 [Rank 25] Step 00000002: create graph
@@ -306,8 +320,6 @@
 [Rank 25] Step 00000013: recv t_signal from 39
 [Rank 25] Step 00000014: send t_signal to all child
 [Rank 25] Step 00000015: done wait for end
-[Rank 25] Step 00000016: dump to file
-[Rank 25] Step 00000017: write file vert: 48, world_rank: 25
 [Rank 26] Step 00000000: dump from file
 [Rank 26] Step 00000001: my neighbor list: 23, 
 [Rank 26] Step 00000002: create graph
@@ -320,8 +332,6 @@
 [Rank 26] Step 00000009: recv t_signal from 23
 [Rank 26] Step 00000010: send t_signal to all child
 [Rank 26] Step 00000011: done wait for end
-[Rank 26] Step 00000012: dump to file
-[Rank 26] Step 00000013: write file vert: 48, world_rank: 26
 [Rank 27] Step 00000000: dump from file
 [Rank 27] Step 00000001: my neighbor list: 21, 35, 37, 
 [Rank 27] Step 00000002: create graph
@@ -340,8 +350,6 @@
 [Rank 27] Step 00000015: recv t_signal from 37
 [Rank 27] Step 00000016: send t_signal to all child
 [Rank 27] Step 00000017: done wait for end
-[Rank 27] Step 00000018: dump to file
-[Rank 27] Step 00000019: write file vert: 48, world_rank: 27
 [Rank 28] Step 00000000: dump from file
 [Rank 28] Step 00000001: my neighbor list: 7, 17, 
 [Rank 28] Step 00000002: create graph
@@ -358,8 +366,6 @@
 [Rank 28] Step 00000013: recv t_signal from 7
 [Rank 28] Step 00000014: send t_signal to all child
 [Rank 28] Step 00000015: done wait for end
-[Rank 28] Step 00000016: dump to file
-[Rank 28] Step 00000017: write file vert: 48, world_rank: 28
 [Rank 29] Step 00000000: dump from file
 [Rank 29] Step 00000001: my neighbor list: 3, 41, 
 [Rank 29] Step 00000002: create graph
@@ -376,8 +382,6 @@
 [Rank 29] Step 00000013: recv t_signal from 3
 [Rank 29] Step 00000014: send t_signal to all child
 [Rank 29] Step 00000015: done wait for end
-[Rank 29] Step 00000016: dump to file
-[Rank 29] Step 00000017: write file vert: 48, world_rank: 29
 [Rank 2] Step 00000000: dump from file
 [Rank 2] Step 00000001: my neighbor list: 16, 
 [Rank 2] Step 00000002: create graph
@@ -390,8 +394,6 @@
 [Rank 2] Step 00000009: recv t_signal from 16
 [Rank 2] Step 00000010: send t_signal to all child
 [Rank 2] Step 00000011: done wait for end
-[Rank 2] Step 00000012: dump to file
-[Rank 2] Step 00000013: write file vert: 48, world_rank: 2
 [Rank 30] Step 00000000: dump from file
 [Rank 30] Step 00000001: my neighbor list: 24, 32, 
 [Rank 30] Step 00000002: create graph
@@ -408,8 +410,6 @@
 [Rank 30] Step 00000013: recv t_signal from 32
 [Rank 30] Step 00000014: send t_signal to all child
 [Rank 30] Step 00000015: done wait for end
-[Rank 30] Step 00000016: dump to file
-[Rank 30] Step 00000017: write file vert: 48, world_rank: 30
 [Rank 31] Step 00000000: dump from file
 [Rank 31] Step 00000001: my neighbor list: 6, 10, 13, 
 [Rank 31] Step 00000002: create graph
@@ -428,8 +428,6 @@
 [Rank 31] Step 00000015: recv t_signal from 10
 [Rank 31] Step 00000016: send t_signal to all child
 [Rank 31] Step 00000017: done wait for end
-[Rank 31] Step 00000018: dump to file
-[Rank 31] Step 00000019: write file vert: 48, world_rank: 31
 [Rank 32] Step 00000000: dump from file
 [Rank 32] Step 00000001: my neighbor list: 18, 30, 
 [Rank 32] Step 00000002: create graph
@@ -446,8 +444,6 @@
 [Rank 32] Step 00000013: recv t_signal from 18
 [Rank 32] Step 00000014: send t_signal to all child
 [Rank 32] Step 00000015: done wait for end
-[Rank 32] Step 00000016: dump to file
-[Rank 32] Step 00000017: write file vert: 48, world_rank: 32
 [Rank 33] Step 00000000: dump from file
 [Rank 33] Step 00000001: my neighbor list: 23, 
 [Rank 33] Step 00000002: create graph
@@ -460,8 +456,6 @@
 [Rank 33] Step 00000009: recv t_signal from 23
 [Rank 33] Step 00000010: send t_signal to all child
 [Rank 33] Step 00000011: done wait for end
-[Rank 33] Step 00000012: dump to file
-[Rank 33] Step 00000013: write file vert: 48, world_rank: 33
 [Rank 34] Step 00000000: dump from file
 [Rank 34] Step 00000001: my neighbor list: 3, 
 [Rank 34] Step 00000002: create graph
@@ -474,28 +468,24 @@
 [Rank 34] Step 00000009: recv t_signal from 3
 [Rank 34] Step 00000010: send t_signal to all child
 [Rank 34] Step 00000011: done wait for end
-[Rank 34] Step 00000012: dump to file
-[Rank 34] Step 00000013: write file vert: 48, world_rank: 34
 [Rank 35] Step 00000000: dump from file
 [Rank 35] Step 00000001: my neighbor list: 27, 36, 42, 
 [Rank 35] Step 00000002: create graph
 [Rank 35] Step 00000003: cerate spanning tree
 [Rank 35] Step 00000004: Recv invite from 27, join
-[Rank 35] Step 00000005: 42 join me
-[Rank 35] Step 00000006: 36 join me
+[Rank 35] Step 00000005: 36 join me
+[Rank 35] Step 00000006: 42 join me
 [Rank 35] Step 00000007: my child list: 36, 42, 
 [Rank 35] Step 00000008: start task
 [Rank 35] Step 00000009: recv t_handle from 27
 [Rank 35] Step 00000010: send t_handle to all child
-[Rank 35] Step 00000011: recv t_back from 42
-[Rank 35] Step 00000012: recv t_back from 36
+[Rank 35] Step 00000011: recv t_back from 36
+[Rank 35] Step 00000012: recv t_back from 42
 [Rank 35] Step 00000013: all child send back t_back!!
 [Rank 35] Step 00000014: send t_back to parent
 [Rank 35] Step 00000015: recv t_signal from 27
 [Rank 35] Step 00000016: send t_signal to all child
 [Rank 35] Step 00000017: done wait for end
-[Rank 35] Step 00000018: dump to file
-[Rank 35] Step 00000019: write file vert: 48, world_rank: 35
 [Rank 36] Step 00000000: dump from file
 [Rank 36] Step 00000001: my neighbor list: 10, 19, 35, 
 [Rank 36] Step 00000002: create graph
@@ -507,39 +497,35 @@
 [Rank 36] Step 00000008: start task
 [Rank 36] Step 00000009: recv t_handle from 35
 [Rank 36] Step 00000010: send t_handle to all child
-[Rank 36] Step 00000011: recv t_back from 10
-[Rank 36] Step 00000012: recv t_back from 19
+[Rank 36] Step 00000011: recv t_back from 19
+[Rank 36] Step 00000012: recv t_back from 10
 [Rank 36] Step 00000013: all child send back t_back!!
 [Rank 36] Step 00000014: send t_back to parent
 [Rank 36] Step 00000015: recv t_signal from 35
 [Rank 36] Step 00000016: send t_signal to all child
 [Rank 36] Step 00000017: done wait for end
-[Rank 36] Step 00000018: dump to file
-[Rank 36] Step 00000019: write file vert: 48, world_rank: 36
 [Rank 37] Step 00000000: dump from file
 [Rank 37] Step 00000001: my neighbor list: 7, 14, 16, 27, 43, 
 [Rank 37] Step 00000002: create graph
 [Rank 37] Step 00000003: cerate spanning tree
 [Rank 37] Step 00000004: Recv invite from 43, join
 [Rank 37] Step 00000005: 7 join me
-[Rank 37] Step 00000006: 14 join me
+[Rank 37] Step 00000006: 16 join me
 [Rank 37] Step 00000007: 27 join me
-[Rank 37] Step 00000008: Recv invite from 16, reject, already has parent 43
-[Rank 37] Step 00000009: 16 reject me
-[Rank 37] Step 00000010: my child list: 7, 14, 27, 
-[Rank 37] Step 00000011: start task
-[Rank 37] Step 00000012: recv t_handle from 43
-[Rank 37] Step 00000013: send t_handle to all child
-[Rank 37] Step 00000014: recv t_back from 14
-[Rank 37] Step 00000015: recv t_back from 7
+[Rank 37] Step 00000008: 14 join me
+[Rank 37] Step 00000009: my child list: 7, 14, 16, 27, 
+[Rank 37] Step 00000010: start task
+[Rank 37] Step 00000011: recv t_handle from 43
+[Rank 37] Step 00000012: send t_handle to all child
+[Rank 37] Step 00000013: recv t_back from 7
+[Rank 37] Step 00000014: recv t_back from 16
+[Rank 37] Step 00000015: recv t_back from 14
 [Rank 37] Step 00000016: recv t_back from 27
 [Rank 37] Step 00000017: all child send back t_back!!
 [Rank 37] Step 00000018: send t_back to parent
 [Rank 37] Step 00000019: recv t_signal from 43
 [Rank 37] Step 00000020: send t_signal to all child
 [Rank 37] Step 00000021: done wait for end
-[Rank 37] Step 00000022: dump to file
-[Rank 37] Step 00000023: write file vert: 48, world_rank: 37
 [Rank 38] Step 00000000: dump from file
 [Rank 38] Step 00000001: my neighbor list: 11, 19, 
 [Rank 38] Step 00000002: create graph
@@ -556,8 +542,6 @@
 [Rank 38] Step 00000013: recv t_signal from 19
 [Rank 38] Step 00000014: send t_signal to all child
 [Rank 38] Step 00000015: done wait for end
-[Rank 38] Step 00000016: dump to file
-[Rank 38] Step 00000017: write file vert: 48, world_rank: 38
 [Rank 39] Step 00000000: dump from file
 [Rank 39] Step 00000001: my neighbor list: 25, 45, 
 [Rank 39] Step 00000002: create graph
@@ -574,15 +558,13 @@
 [Rank 39] Step 00000013: recv t_signal from 45
 [Rank 39] Step 00000014: send t_signal to all child
 [Rank 39] Step 00000015: done wait for end
-[Rank 39] Step 00000016: dump to file
-[Rank 39] Step 00000017: write file vert: 48, world_rank: 39
 [Rank 3] Step 00000000: dump from file
 [Rank 3] Step 00000001: my neighbor list: 29, 34, 44, 
 [Rank 3] Step 00000002: create graph
 [Rank 3] Step 00000003: cerate spanning tree
 [Rank 3] Step 00000004: Recv invite from 44, join
-[Rank 3] Step 00000005: 34 join me
-[Rank 3] Step 00000006: 29 join me
+[Rank 3] Step 00000005: 29 join me
+[Rank 3] Step 00000006: 34 join me
 [Rank 3] Step 00000007: my child list: 29, 34, 
 [Rank 3] Step 00000008: start task
 [Rank 3] Step 00000009: recv t_handle from 44
@@ -594,8 +576,6 @@
 [Rank 3] Step 00000015: recv t_signal from 44
 [Rank 3] Step 00000016: send t_signal to all child
 [Rank 3] Step 00000017: done wait for end
-[Rank 3] Step 00000018: dump to file
-[Rank 3] Step 00000019: write file vert: 48, world_rank: 3
 [Rank 40] Step 00000000: dump from file
 [Rank 40] Step 00000001: my neighbor list: 8, 
 [Rank 40] Step 00000002: create graph
@@ -608,8 +588,6 @@
 [Rank 40] Step 00000009: recv t_signal from 8
 [Rank 40] Step 00000010: send t_signal to all child
 [Rank 40] Step 00000011: done wait for end
-[Rank 40] Step 00000012: dump to file
-[Rank 40] Step 00000013: write file vert: 48, world_rank: 40
 [Rank 41] Step 00000000: dump from file
 [Rank 41] Step 00000001: my neighbor list: 29, 
 [Rank 41] Step 00000002: create graph
@@ -622,8 +600,6 @@
 [Rank 41] Step 00000009: recv t_signal from 29
 [Rank 41] Step 00000010: send t_signal to all child
 [Rank 41] Step 00000011: done wait for end
-[Rank 41] Step 00000012: dump to file
-[Rank 41] Step 00000013: write file vert: 48, world_rank: 41
 [Rank 42] Step 00000000: dump from file
 [Rank 42] Step 00000001: my neighbor list: 35, 45, 
 [Rank 42] Step 00000002: create graph
@@ -640,15 +616,13 @@
 [Rank 42] Step 00000013: recv t_signal from 35
 [Rank 42] Step 00000014: send t_signal to all child
 [Rank 42] Step 00000015: done wait for end
-[Rank 42] Step 00000016: dump to file
-[Rank 42] Step 00000017: write file vert: 48, world_rank: 42
 [Rank 43] Step 00000000: dump from file
 [Rank 43] Step 00000001: my neighbor list: 5, 22, 37, 
 [Rank 43] Step 00000002: create graph
 [Rank 43] Step 00000003: cerate spanning tree
 [Rank 43] Step 00000004: Recv invite from 22, join
-[Rank 43] Step 00000005: 5 join me
-[Rank 43] Step 00000006: 37 join me
+[Rank 43] Step 00000005: 37 join me
+[Rank 43] Step 00000006: 5 join me
 [Rank 43] Step 00000007: my child list: 5, 37, 
 [Rank 43] Step 00000008: start task
 [Rank 43] Step 00000009: recv t_handle from 22
@@ -660,8 +634,6 @@
 [Rank 43] Step 00000015: recv t_signal from 22
 [Rank 43] Step 00000016: send t_signal to all child
 [Rank 43] Step 00000017: done wait for end
-[Rank 43] Step 00000018: dump to file
-[Rank 43] Step 00000019: write file vert: 48, world_rank: 43
 [Rank 44] Step 00000000: dump from file
 [Rank 44] Step 00000001: my neighbor list: 3, 19, 
 [Rank 44] Step 00000002: create graph
@@ -678,8 +650,6 @@
 [Rank 44] Step 00000013: recv t_signal from 19
 [Rank 44] Step 00000014: send t_signal to all child
 [Rank 44] Step 00000015: done wait for end
-[Rank 44] Step 00000016: dump to file
-[Rank 44] Step 00000017: write file vert: 48, world_rank: 44
 [Rank 45] Step 00000000: dump from file
 [Rank 45] Step 00000001: my neighbor list: 39, 42, 
 [Rank 45] Step 00000002: create graph
@@ -696,8 +666,6 @@
 [Rank 45] Step 00000013: recv t_signal from 42
 [Rank 45] Step 00000014: send t_signal to all child
 [Rank 45] Step 00000015: done wait for end
-[Rank 45] Step 00000016: dump to file
-[Rank 45] Step 00000017: write file vert: 48, world_rank: 45
 [Rank 46] Step 00000000: dump from file
 [Rank 46] Step 00000001: my neighbor list: 15, 18, 
 [Rank 46] Step 00000002: create graph
@@ -714,8 +682,6 @@
 [Rank 46] Step 00000013: recv t_signal from 18
 [Rank 46] Step 00000014: send t_signal to all child
 [Rank 46] Step 00000015: done wait for end
-[Rank 46] Step 00000016: dump to file
-[Rank 46] Step 00000017: write file vert: 48, world_rank: 46
 [Rank 47] Step 00000000: dump from file
 [Rank 47] Step 00000001: my neighbor list: 19, 
 [Rank 47] Step 00000002: create graph
@@ -728,8 +694,6 @@
 [Rank 47] Step 00000009: recv t_signal from 19
 [Rank 47] Step 00000010: send t_signal to all child
 [Rank 47] Step 00000011: done wait for end
-[Rank 47] Step 00000012: dump to file
-[Rank 47] Step 00000013: write file vert: 48, world_rank: 47
 [Rank 4] Step 00000000: dump from file
 [Rank 4] Step 00000001: my neighbor list: 0, 
 [Rank 4] Step 00000002: create graph
@@ -742,8 +706,6 @@
 [Rank 4] Step 00000009: recv t_signal from 0
 [Rank 4] Step 00000010: send t_signal to all child
 [Rank 4] Step 00000011: done wait for end
-[Rank 4] Step 00000012: dump to file
-[Rank 4] Step 00000013: write file vert: 48, world_rank: 4
 [Rank 5] Step 00000000: dump from file
 [Rank 5] Step 00000001: my neighbor list: 43, 
 [Rank 5] Step 00000002: create graph
@@ -756,8 +718,6 @@
 [Rank 5] Step 00000009: recv t_signal from 43
 [Rank 5] Step 00000010: send t_signal to all child
 [Rank 5] Step 00000011: done wait for end
-[Rank 5] Step 00000012: dump to file
-[Rank 5] Step 00000013: write file vert: 48, world_rank: 5
 [Rank 6] Step 00000000: dump from file
 [Rank 6] Step 00000001: my neighbor list: 31, 
 [Rank 6] Step 00000002: create graph
@@ -770,8 +730,6 @@
 [Rank 6] Step 00000009: recv t_signal from 31
 [Rank 6] Step 00000010: send t_signal to all child
 [Rank 6] Step 00000011: done wait for end
-[Rank 6] Step 00000012: dump to file
-[Rank 6] Step 00000013: write file vert: 48, world_rank: 6
 [Rank 7] Step 00000000: dump from file
 [Rank 7] Step 00000001: my neighbor list: 28, 37, 
 [Rank 7] Step 00000002: create graph
@@ -788,43 +746,37 @@
 [Rank 7] Step 00000013: recv t_signal from 37
 [Rank 7] Step 00000014: send t_signal to all child
 [Rank 7] Step 00000015: done wait for end
-[Rank 7] Step 00000016: dump to file
-[Rank 7] Step 00000017: write file vert: 48, world_rank: 7
 [Rank 8] Step 00000000: dump from file
 [Rank 8] Step 00000001: my neighbor list: 9, 21, 40, 
 [Rank 8] Step 00000002: create graph
 [Rank 8] Step 00000003: cerate spanning tree
-[Rank 8] Step 00000004: Recv invite from 21, join
-[Rank 8] Step 00000005: 9 join me
-[Rank 8] Step 00000006: 40 join me
-[Rank 8] Step 00000007: my child list: 9, 40, 
-[Rank 8] Step 00000008: start task
-[Rank 8] Step 00000009: recv t_handle from 21
-[Rank 8] Step 00000010: send t_handle to all child
-[Rank 8] Step 00000011: recv t_back from 40
-[Rank 8] Step 00000012: recv t_back from 9
+[Rank 8] Step 00000004: Recv invite from 9, join
+[Rank 8] Step 00000005: Recv invite from 21, reject, already has parent 9
+[Rank 8] Step 00000006: 21 reject me
+[Rank 8] Step 00000007: 40 join me
+[Rank 8] Step 00000008: my child list: 40, 
+[Rank 8] Step 00000009: start task
+[Rank 8] Step 00000010: recv t_handle from 9
+[Rank 8] Step 00000011: send t_handle to all child
+[Rank 8] Step 00000012: recv t_back from 40
 [Rank 8] Step 00000013: all child send back t_back!!
 [Rank 8] Step 00000014: send t_back to parent
-[Rank 8] Step 00000015: recv t_signal from 21
+[Rank 8] Step 00000015: recv t_signal from 9
 [Rank 8] Step 00000016: send t_signal to all child
 [Rank 8] Step 00000017: done wait for end
-[Rank 8] Step 00000018: dump to file
-[Rank 8] Step 00000019: write file vert: 48, world_rank: 8
 [Rank 9] Step 00000000: dump from file
 [Rank 9] Step 00000001: my neighbor list: 8, 16, 
 [Rank 9] Step 00000002: create graph
 [Rank 9] Step 00000003: cerate spanning tree
-[Rank 9] Step 00000004: Recv invite from 8, join
-[Rank 9] Step 00000005: 16 join me
-[Rank 9] Step 00000006: my child list: 16, 
+[Rank 9] Step 00000004: Recv invite from 16, join
+[Rank 9] Step 00000005: 8 join me
+[Rank 9] Step 00000006: my child list: 8, 
 [Rank 9] Step 00000007: start task
-[Rank 9] Step 00000008: recv t_handle from 8
+[Rank 9] Step 00000008: recv t_handle from 16
 [Rank 9] Step 00000009: send t_handle to all child
-[Rank 9] Step 00000010: recv t_back from 16
+[Rank 9] Step 00000010: recv t_back from 8
 [Rank 9] Step 00000011: all child send back t_back!!
 [Rank 9] Step 00000012: send t_back to parent
-[Rank 9] Step 00000013: recv t_signal from 8
+[Rank 9] Step 00000013: recv t_signal from 16
 [Rank 9] Step 00000014: send t_signal to all child
 [Rank 9] Step 00000015: done wait for end
-[Rank 9] Step 00000016: dump to file
-[Rank 9] Step 00000017: write file vert: 48, world_rank: 9
