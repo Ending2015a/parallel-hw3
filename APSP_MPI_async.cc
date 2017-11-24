@@ -298,8 +298,8 @@ inline void create_spanning_tree(){
 
 
     MPI_Status status;
-    
-    for(int i=0;i<neighbor_count;++i){
+    int recv_count = 0;
+    while(recv_count < neighbor_count){
         MPI_Recv(buf, vert, MPI_INT, MPI_ANY_SOURCE, MPI_ANY_TAG, COMM_GRAPH, &status);
         LOG("recv source: %d /tag: %d", status.MPI_SOURCE, status.MPI_TAG);
         switch(status.MPI_TAG){
@@ -315,16 +315,23 @@ inline void create_spanning_tree(){
                     isend_to_all_neighbor_except(data, vert, MPI_INT, invite, parent, COMM_GRAPH, send_req.data());
                 }
                 update_list[status.MPI_SOURCE] = update(status.MPI_SOURCE);
+                ++recv_count;
                 break;
             case join:
                 LOG("%d join me", status.MPI_SOURCE);
                 //MPI_Recv(buf, vert, MPI_INT, status.MPI_SOURCE, status.MPI_TAG, COMM_GRAPH, MPI_STATUS_IGNORE);
                 child_list.push_back(status.MPI_SOURCE);
                 update_list[status.MPI_SOURCE] = update(status.MPI_SOURCE);
+                ++recv_count;
                 break;
             case reject:
                 LOG("%d reject me", status.MPI_SOURCE);
                 //MPI_Recv(buf, vert, MPI_INT, status.MPI_SOURCE, status.MPI_TAG, COMM_GRAPH, MPI_STATUS_IGNORE);
+                update_list[status.MPI_SOURCE] = update(status.MPI_SOURCE);
+                ++recv_count;
+                break;
+            case updt:
+                LOG("%d send me updt", status.MPI_SOURCE);
                 update_list[status.MPI_SOURCE] = update(status.MPI_SOURCE);
                 break;
         }
