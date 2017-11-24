@@ -101,7 +101,7 @@ std::vector<int> neighbor_list;
 std::vector<int> child_list;
 std::vector<int> update_list;
 std::vector<int> terminate_list;
-std::vector<int> send_req;
+std::vector<MPI_Request> send_req;
 
 
 inline void init(int v){
@@ -173,7 +173,6 @@ inline void dump_to_file(char *file){
 
     std::string str = ss.str();
     int *len = new int[vert]{};
-    int *lenreduce = new int[vert]{};
     assert(len != NULL);
     len[graph_rank] = str.size();
     LOG("write file vert: %d, world_rank: %d", vert, graph_rank);
@@ -181,10 +180,8 @@ inline void dump_to_file(char *file){
     MPI_File fout;
     MPI_File_open(COMM_GRAPH, file, MPI_MODE_WRONLY | MPI_MODE_CREATE, MPI_INFO_NULL, &fout);
 
-    LOG("allreduce");
-
     TIC;{
-    MPI_Allreduce(len, lenreduce, vert, MPI_INT, MPI_SUM, COMM_GRAPH);
+    MPI_Allreduce(MPI_IN_PLACE, len, vert, MPI_INT, MPI_SUM, COMM_GRAPH);
     }TOC_P(COMM);
     
 
@@ -206,7 +203,6 @@ inline void dump_to_file(char *file){
 
 
     delete[] len;
-    delete[] lenreduce;
 }
 
 
@@ -481,8 +477,8 @@ int main(int argc, char **argv){
     LOG("start task");
     task();
 
-    //LOG("dump to file");
-    //dump_to_file(argv[2]);
+    LOG("dump to file");
+    dump_to_file(argv[2]);
 
 #ifdef _MEASURE_TIME
     TIME(ED);
@@ -490,6 +486,9 @@ int main(int argc, char **argv){
     //rank, EXE, CALC, IO, COMM, PROC
     printf("%d, %lf, %lf, %lf, %lf, %lf\n", world_rank, EXE, CALC, IO, COMM, EXE-CALC-IO-COMM);
 #endif
+
+    delete[] data;
+    delete[] buf;
     
     MPI_Finalize();
 
