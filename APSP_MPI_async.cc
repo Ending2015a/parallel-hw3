@@ -60,11 +60,11 @@
     void __pt_log(const char *f_, ...){
         std::stringstream ss;
         ss << "[Rank %d] Step %08d: " << f_ <<'\n';
-        const char *format = ss.str().c_str();
+        std::string format = ss.str();
 
         va_list va;
         va_start(va, f_);
-            vprintf(format, va);
+            vprintf(format.c_str(), va);
         va_end(va);
         __print_step++;
     }
@@ -85,13 +85,10 @@ MPI_Comm COMM_GRAPH;
 int graph_size;
 int graph_rank;
 
-int NOTHING = 0;
-
 enum tag_field { none=0, invite=1, reject, join, 
                 t_handle, t_back, t_signal, updt, no_updt };
 
 int *data;
-//int *bufdata;
 int *buf;
 int parent = -1;
 int neighbor_count;
@@ -102,6 +99,7 @@ std::vector<int> child_list;
 std::vector<int> update_list;
 std::vector<int> terminate_list;
 MPI_Request *send_req;
+MPI_Request one_send_req;
 
 
 inline void init(int v){
@@ -120,6 +118,7 @@ inline void init(int v){
 inline void finalize(){
     delete[] data;
     delete[] buf;
+    delete[] send_req;
 }
 
 inline int update(int id){
@@ -181,10 +180,8 @@ inline void dump_to_file(char *file){
     
 
     std::string str = ss.str();
-    int *len = new int[vert+10];
-    assert(len != NULL);
+    int *len = new int[vert]{};
     len[world_rank] = str.size();
-    LOG("write file vert: %d, world_rank: %d", vert, graph_rank);
 
     MPI_File fout;
     MPI_File_open(COMM_GRAPH, file, MPI_MODE_WRONLY | MPI_MODE_CREATE, MPI_INFO_NULL, &fout);
@@ -305,7 +302,7 @@ inline void create_spanning_tree(){
             MPI_Recv(buf, vert, MPI_INT, status.MPI_SOURCE, status.MPI_TAG, COMM_GRAPH, MPI_STATUS_IGNORE);
             if(parent != -1){
                 LOG("Recv invite from %d, reject, already has parent %d", status.MPI_SOURCE, parent);
-                MPI_Isend(data, vert, MPI_INT, status.MPI_SOURCE, reject, COMM_GRAPH, send_req);
+                MPI_Isend(data, vert, MPI_INT, status.MPI_SOURCE, reject, COMM_GRAPH, &one_send_req);
             }else{
                 LOG("Recv invite from %d, join", status.MPI_SOURCE);
                 parent=status.MPI_SOURCE;
@@ -363,7 +360,7 @@ inline void task(){
                 if(child_count == 0){
                     LOG("leaf node, send t_back to parent");
                     terminal_signal = t_back;
-                    MPI_Isend(data, 1, MPI_INT, parent, t_back, COMM_GRAPH, send_req);
+                    MPI_Isend(data, 1, MPI_INT, parent, t_back, COMM_GRAPH, &one_send_req);
                 }else{
                     LOG("send t_handle to all child");
                     terminal_signal = t_back;
@@ -390,7 +387,7 @@ inline void task(){
                     }else{
                         LOG("send t_back to parent");
                         terminal_signal = t_back;
-                        MPI_Isend(data, 1, MPI_INT, parent, t_back, COMM_GRAPH, send_req);
+                        MPI_Isend(data, 1, MPI_INT, parent, t_back, COMM_GRAPH, &one_send_req);
                     }
                 }
                 break;
@@ -446,8 +443,8 @@ int main(int argc, char **argv){
     LOG("start task");
     task();
 
-    //LOG("dump to file");
-    //dump_to_file(argv[2]);
+    LOG("dump to file");
+    dump_to_file(argv[2]);
 
 #ifdef _MEASURE_TIME
     TIME(ED);
