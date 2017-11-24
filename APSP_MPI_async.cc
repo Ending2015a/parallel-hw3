@@ -414,10 +414,11 @@ inline void task(){
 
         switch(status.MPI_TAG){
             case t_handle:
-                LOG("recv t_handle");
+                LOG("recv t_handle from %d", status.MPI_SOURCE);
                 terminal_signal = t_handle;
                 break;
             case t_back:
+                LOG("recv t_back from %d", status.MPI_SOURCE);
                 terminate_list[status.MPI_SOURCE] = 1;
                 if(check_all_terminate()){
                     LOG("all child send back t_back!!");
@@ -433,6 +434,7 @@ inline void task(){
                 }
                 break;
             case t_signal:
+                LOG("recv t_signal from %d", status.MPI_SOURCE);
                 LOG("send t_signal to all child");
                 isend_to_all_child(&NOTHING, 1, MPI_INT, t_signal, COMM_GRAPH, send_req.data(), false);
                 not_done=0;
