@@ -106,7 +106,6 @@ std::vector<int> send_req;
 
 inline void init(int v){
     data = new int[v];
-    //bufdata = new int[v*v];
     buf = new int[v];
     neighbor_list.reserve(v);
     child_list.reserve(v);
@@ -116,12 +115,6 @@ inline void init(int v){
     std::fill(data, data+v, INF);
     std::fill(update_list.begin(), update_list.end(), 1);
     std::fill(terminate_list.begin(), terminate_list.end(), 0);
-}
-
-inline void finalize(){
-    delete[] data;
-    //delete[] bufdata;
-    delete[] buf;
 }
 
 inline int update(int id){
@@ -171,7 +164,7 @@ inline void dump_from_file(const char *file){
 
 }
 
-inline void dump_to_file(const char *file){
+inline void dump_to_file(char *file){
     std::stringstream ss;
 
     std::ostream_iterator<int> out(ss, " ");
@@ -179,19 +172,21 @@ inline void dump_to_file(const char *file){
     ss << '\n';
 
     std::string str = ss.str();
-    int *len = new int[vert]();
-    len[world_rank] = str.size();
+    int *len = new int[vert]{};
+    int *lenreduce = new int[vert]{};
+    assert(len != NULL);
+    len[graph_rank] = str.size();
+    LOG("write file vert: %d, world_rank: %d", vert, graph_rank);
 
     MPI_File fout;
-    MPI_File_open(MPI_COMM_WORLD, file, MPI_MODE_WRONLY | MPI_MODE_CREATE, MPI_INFO_NULL, &fout);
+    MPI_File_open(COMM_GRAPH, file, MPI_MODE_WRONLY | MPI_MODE_CREATE, MPI_INFO_NULL, &fout);
 
-
-    LOG("writing file");
-
+    LOG("allreduce");
 
     TIC;{
-    MPI_Allreduce(MPI_IN_PLACE, len, vert, MPI_INT, MPI_SUM, MPI_COMM_WORLD);
+    MPI_Allreduce(len, lenreduce, vert, MPI_INT, MPI_SUM, COMM_GRAPH);
     }TOC_P(COMM);
+    
 
     int offset=0;
     for(int i=0;i<world_rank;++i){
@@ -211,6 +206,7 @@ inline void dump_to_file(const char *file){
 
 
     delete[] len;
+    delete[] lenreduce;
 }
 
 
@@ -312,9 +308,9 @@ inline void create_spanning_tree(){
                 parent=status.MPI_SOURCE;
                 MPI_Isend(data, vert, MPI_INT, parent, join, COMM_GRAPH, &send_req.back());
                 isend_to_all_neighbor_except(data, vert, MPI_INT, invite, parent, COMM_GRAPH, send_req.data());
+                ++recv_count;
             }
             update_list[status.MPI_SOURCE] = update(status.MPI_SOURCE);
-            ++recv_count;
             continue;
         }
         MPI_Iprobe(MPI_ANY_SOURCE, join, COMM_GRAPH, &flag, &status);
@@ -485,8 +481,8 @@ int main(int argc, char **argv){
     LOG("start task");
     task();
 
-    LOG("dump to file");
-    dump_to_file(argv[2]);
+    //LOG("dump to file");
+    //dump_to_file(argv[2]);
 
 #ifdef _MEASURE_TIME
     TIME(ED);
@@ -494,8 +490,8 @@ int main(int argc, char **argv){
     //rank, EXE, CALC, IO, COMM, PROC
     printf("%d, %lf, %lf, %lf, %lf, %lf\n", world_rank, EXE, CALC, IO, COMM, EXE-CALC-IO-COMM);
 #endif
-
-    finalize();
+    
     MPI_Finalize();
+
     return 0;
 }
