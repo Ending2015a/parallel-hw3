@@ -72,6 +72,8 @@ int graph_rank;
 
 const int NOTHING = 0;
 
+
+
 enum tags { invt=1, rej, join, upd, nupd, termi, done };
 enum term_flag { none, fwd, back};
 //=v==v==v==v==v=   MAP   =v==v==v==v==v=//
