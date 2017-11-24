@@ -225,6 +225,17 @@ inline int check_all_terminate(){
     return ter;
 }
 
+inline void wait_all_neighbor(MPI_Request *request){
+    for(int i=0;i<neighbor_count;++i){
+        MPI_Wait(request + neighbor_list[i], MPI_STATUS_IGNORE);
+    }
+}
+
+inline void wait_all_child(MPI_Request *request){
+    for(int i=0;i<child_count;++i){
+        MPI_Wait(request + child_list[i], MPI_STATUS_IGNORE);
+    }
+}
 
 inline void isend_to_all_neighbor(void *buf, int count, MPI_Datatype type,
                 int tag, MPI_Comm comm, MPI_Request *request, bool wait=false){
@@ -232,7 +243,7 @@ inline void isend_to_all_neighbor(void *buf, int count, MPI_Datatype type,
         MPI_Isend(buf, count, type, neighbor_list[i], tag, comm, request + neighbor_list[i]);
     }
     if(wait)
-        MPI_Waitall(neighbor_count, request, MPI_STATUSES_IGNORE);
+        wait_all_neighbor(request);
 }
 
 inline void irecv_from_all_neighbor(void *buf, int count, MPI_Datatype type, 
@@ -243,7 +254,7 @@ inline void irecv_from_all_neighbor(void *buf, int count, MPI_Datatype type,
     }
 
     if(wait)
-        MPI_Waitall(neighbor_count, request, MPI_STATUSES_IGNORE);
+        wait_all_neighbor(request);
 }
 
 inline void isend_to_all_neighbor_except(void *buf, int count, MPI_Datatype type,
@@ -266,7 +277,7 @@ inline void isend_to_all_child(void *buf, int count, MPI_Datatype type,
     }
 
     if(wait)
-        MPI_Waitall(neighbor_count, request, MPI_STATUSES_IGNORE);
+        wait_all_child(request);
 }
 
 inline void create_spanning_tree(){
@@ -321,7 +332,7 @@ inline void create_spanning_tree(){
     std::sort(child_list.begin(), child_list.end());
     child_count = child_list.size();
     
-    MPI_Waitall(vert, send_req, MPI_STATUSES_IGNORE);
+    wait_all_neighbor(send_req);
 
     delete[] send_req;
 
@@ -404,7 +415,7 @@ inline void task(){
     }
 
     LOG("done! wait for end");
-    MPI_Waitall(vert, send_req, MPI_STATUSES_IGNORE);
+    wait_all_neighbor(send_req);
 
     delete[] send_req;
 }
