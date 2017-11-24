@@ -88,7 +88,7 @@ int graph_rank;
 const int NOTHING = 0;
 
 enum tree_tag_field { invite=1, reject, join };
-enum task_field { none=0, t_handle, t_back, t_signal, update, no_update };
+enum task_field { none=0, t_handle, t_back, t_signal, updt, no_updt };
 
 int *data;
 //int *bufdata;
@@ -109,9 +109,11 @@ inline void init(int v){
     neighbor_list.reserve(v);
     child_list.reserve(v);
     update_list.resize(v);
+    terminate_list.resize(v);
 
     std::fill(data, data+v, INF);
     std::fill(update_list.begin(), update_list.end(), 1);
+    std::fill(terminate_list.begin(), terminate_list.end(), 0);
 }
 
 inline void finalize(){
@@ -174,6 +176,14 @@ inline int check_all_no_update(){
         up |= update_list[ neighbor_list[i] ];
     }
     return (up == 0) ? 1:0;
+}
+
+inline int check_all_terminate(){
+    int ter = 0;
+    for(int i=0;i<child_count;++i){
+        ter |= terminate_list[ child_list[i] ];
+    }
+    return ter;
 }
 
 
@@ -268,7 +278,7 @@ inline void create_spanning_tree(){
     std::sort(child_list.begin(), child_list.end());
     child_count = child_list.size();
     
-    MPI_Waitall(neighbor_count)
+    MPI_Waitall(neighbor_count, send_req.data(), MPI_STATUSES_IGNORE);
 
     #ifdef _DEBUG_
     std::stringstream ss;
@@ -282,20 +292,58 @@ inline void create_spanning_tree(){
 inline void task(){
 
     std::vector<MPI_Request> send_req;
-    std::vector<MPI_Request> recv_req;
 
-    MPI_status &status;
-    while(1){
+    send_req.resize(neighbor_count);
+
+    MPI_status status;
+
+    int not_done = 1;
+    while(not_done){
         if(terminal_signal == t_handle){
             if(check_all_no_update()){
                 LOG("send terminal handle to all child");
                 terminal_signal = t_back;
-                isend_to_all_child(&NOTHING, 1, MPI_INT, t_handle, COMM_GRAPH, recv_req.data(), false);
+                isend_to_all_child(&NOTHING, 1, MPI_INT, t_handle, COMM_GRAPH, send_req.data(), false);
             }
-        }else if(terminal_signal == t_)
+        }
+        MPI_Recv(buf, vert, MPI_INT, MPI_ANY_SOURCE, MPI_ANY_TAG, COMM_GRAPH, &status);
+
+        switch(status.MPI_TAG){
+            case t_handle:
+                if(status.MPI_SOterminal_signal = t_handle;
+                break;
+            case t_back:
+                terminate_list[status.MPI_SOURCE] = 1;
+                if(check_all_terminate()){
+                    LOG("all child send back t_back");
+                    if(graph_rank == 0){
+                        isend_to_all_child(&NOTHING, 1, MPI_INT, t_signal, COMM_GRAPH, send_req.data(), false);
+                        not_done=0;
+                    }else{
+                        terminal_signal = t_back;
+                        MPI_Isend(&NOTHING, 1, MPI_INT, parent, t_back, COMM_GRAPH, &send_req[0]);
+                    }
+                }
+                break;
+            case t_signal:
+                isend_to_all_child(&NOTHING, 1, MPI_INT, t_signal, COMM_GRAPH, send_req.data(), false);
+                not_done=0;
+                break;
+            case updt:
+                if(update(status.MPI_SOURCE)){
+                    isend_to_all_neighbor(data, vert, MPI_INT, updt, COMM_GRAPH, send_req.data(), false);
+                }else{
+                    MPI_Isend(data, vert, MPI_INT, status.MPI_SOURCE, no_updt, COMM_GRAPH, &send_req[status.MPI_SOURCE]);
+                    update_list[status.MPI_SOURCE] = 0;
+                }
+                break;
+            case no_updt:
+                update_list[status.MPI_SOURCE] = 0;
+                break;
+        }
     }
 
-
+    MPI_Waitall(neighbor_count, send_req.data(), MPI_STATUSES_IGNORE);
 }
 
 int main(int argc, char **argv){
