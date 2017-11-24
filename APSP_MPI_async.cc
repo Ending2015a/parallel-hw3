@@ -87,8 +87,7 @@ int graph_rank;
 
 int NOTHING = 0;
 
-enum tree_tag_field { invite=1, reject, join };
-enum task_field { none=0, t_handle, t_back, t_signal, updt, no_updt };
+enum tag_field { none=0, invite=1, reject, join, t_handle, t_back, t_signal, updt, no_updt };
 
 int *data;
 //int *bufdata;
@@ -394,6 +393,9 @@ inline void task(){
                 break;
             case no_updt:
                 update_list[status.MPI_SOURCE] = 0;
+                break;
+            default:
+                LOG("get unknown tag: %d", status.MPI_TAG);
                 break;
         }
     }
