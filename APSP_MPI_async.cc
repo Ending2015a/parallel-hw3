@@ -87,7 +87,8 @@ int graph_rank;
 
 int NOTHING = 0;
 
-enum tag_field { none=0, invite=1, reject, join, t_handle, t_back, t_signal, updt, no_updt };
+enum tag_field { none=0, invite=1, reject, join, 
+                t_handle, t_back, t_signal, updt, no_updt };
 
 int *data;
 //int *bufdata;
@@ -294,8 +295,10 @@ inline void create_spanning_tree(){
         isend_to_all_neighbor(data, vert, MPI_INT, invite, COMM_GRAPH, send_req.data(), true);
     }
 
+
+
     MPI_Status status;
-    LOG("neighbor count %d", neighbor_count);
+    
     for(int i=0;i<neighbor_count;++i){
         MPI_Recv(buf, vert, MPI_INT, MPI_ANY_SOURCE, MPI_ANY_TAG, COMM_GRAPH, &status);
         LOG("recv source: %d /tag: %d", status.MPI_SOURCE, status.MPI_TAG);
