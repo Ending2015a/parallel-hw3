@@ -85,7 +85,7 @@ MPI_Comm COMM_GRAPH;
 int graph_size;
 int graph_rank;
 
-const int NOTHING = 0;
+int NOTHING = 0;
 
 enum tree_tag_field { invite=1, reject, join };
 enum task_field { none=0, t_handle, t_back, t_signal, updt, no_updt };
@@ -167,11 +167,11 @@ inline void dump_to_file(const char *file){
     std::stringstream ss;
 
     std::ostream_iterator<int> out(ss, " ");
-    std::copy(map.data, map.data+map.vt, out);
+    std::copy(data, data+vert, out);
     ss << '\n';
 
     std::string str = ss.str();
-    int *len = new int[map.vt]();
+    int *len = new int[vert]();
     len[world_rank] = str.size();
 
     MPI_File fout;
@@ -182,7 +182,7 @@ inline void dump_to_file(const char *file){
 
 
     TIC;{
-    MPI_Allreduce(MPI_IN_PLACE, len, map.vt, MPI_INT, MPI_SUM, MPI_COMM_WORLD);
+    MPI_Allreduce(MPI_IN_PLACE, len, vert, MPI_INT, MPI_SUM, MPI_COMM_WORLD);
     }TOC_P(COMM);
 
     int offset=0;
@@ -334,9 +334,14 @@ inline void create_spanning_tree(){
 
 inline void task(){
 
-    MPI_status status;
+    MPI_Status status;
 
     int not_done = 1;
+
+    if(!check_all_no_update()){
+        isend_to_all_neighbor(data, vert, MPI_INT, updt, COMM_GRAPH, send_req.data(), false);
+    }
+
     while(not_done){
         if(terminal_signal == t_handle){
             if(check_all_no_update()){
