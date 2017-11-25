@@ -93,7 +93,7 @@ inline void dump_from_file(char *file){
 }
 
 
-/*
+
 inline void dump_to_file(char *file){
 
     std::stringstream ss;
@@ -112,7 +112,7 @@ inline void dump_to_file(char *file){
 
     fout << ss.rdbuf();
     fout.close();
-}*/
+}
 
 inline void parallel_dump_to_file(const int &id){
     for(int i=id;i<vert;i+=valid_size){
@@ -157,9 +157,9 @@ void *task(void* var){
 int main(int argc, char **argv){
 
     // check for argument count
-    assert(argc == 4);
+    assert(argc == 5);
 
-    num_threads = MIN(atoi(argv[3]), PTHREAD_LIMIT);
+    num_threads = MIN(atoi(argv[3]), atoi(argv[4]));
     threads = new pthread_t[num_threads];
     ID = new int[num_threads];
 
@@ -174,8 +174,6 @@ int main(int argc, char **argv){
             ID[i] = i;
             pthread_create(&threads[i], NULL, task, (void*)&ID[i]);
         }
-
-        
 
         for(int i=0;i<valid_size;++i){
             pthread_join(threads[i], NULL);

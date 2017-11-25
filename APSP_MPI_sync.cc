@@ -54,6 +54,27 @@
 #endif
 
 
+#ifdef _DEBUG_
+    int __print_step = 0;
+
+    void __pt_log(const char *f_, ...){
+        std::stringstream ss;
+        ss << "[Rank %d] Step %08d: " << f_ <<'\n';
+        std::string format = ss.str();
+
+        va_list va;
+        va_start(va, f_);
+            vprintf(format.c_str(), va);
+        va_end(va);
+        __print_step++;
+    }
+
+    #define VA_ARGS(...) , ##__VA_ARGS__
+    #define LOG(f_, ...) __pt_log((f_), world_rank, __print_step VA_ARGS(__VA_ARGS__))
+#else
+    #define LOG(F_, ...)
+#endif
+
 
 int world_size;
 int world_rank;
@@ -91,12 +112,12 @@ struct Map{
 
         nb = neig.size();
 
-#ifdef _DEBUG_
-        printf("Rank %d neig: ", world_rank);
+#ifdef X_DEBUG_
+        std::stringstream ss;
         for(int i=0;i<nb;++i){
-            printf("%d, ", neig[i]);
+            ss << neig[i] << ", ";
         }
-        printf("\n");
+        LOG("neig: %s", ss.str().c_str());
 #endif
     }
 
@@ -119,23 +140,6 @@ struct Map{
 Map map;
 
 int done=0;
-
-/*
-inline void read_from_file(const char *file){
-    std::ifstream fin(file);
-
-    TIC;{
-        fin >> vert >> edge;
-        map.init(vert);
-        int i, j, w;
-        for(int e=0;e<edge;++e){
-            fin >> i >> j >> w;
-            if(i==world_rank)map.data[j]=w;
-            else if(j==world_rank)map.data[i]=w;
-        }
-
-    }TOC_P(IO);
-}*/
 
 inline void dump_from_file(const char *file){
 
@@ -170,9 +174,7 @@ inline void floyd(){
         for(int i=0;i<map.nb;++i){
             MPI_Isend(map.data, map.vt, MPI_INT, map.neig[i], 1, MPI_COMM_WORLD, &send_req[i]);
 
-#ifdef _DEBUG_
-            printf("Rank %d: send to %d\n", world_rank, map.neig[i]);
-#endif
+            LOG("send to %d", map.neig[i]);
 
         }
         for(int i=0;i<map.nb;++i){
@@ -244,9 +246,7 @@ int main(int argc, char **argv){
     TIME(ST);
     dump_from_file(argv[1]);
 
-#ifdef _DEBUG_
-    printf("Rank %d: file read\n", world_rank);
-#endif
+    LOG("file read");
 
     map.calc();
 
