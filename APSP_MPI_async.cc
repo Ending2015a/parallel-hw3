@@ -219,11 +219,11 @@ inline void dump_to_file(const char *file){
 
 
 inline void create_graph(){
-    MPI_Dist_graph_create(MPI_COMM_WORLD, 1, &world_rank, &neighbor_count, 
-            neighbor_list.data(), MPI_UNWEIGHTED, MPI_INFO_NULL, false, &COMM_GRAPH);
-    MPI_Comm_rank(COMM_GRAPH, &graph_rank);
-    //COMM_GRAPH = MPI_COMM_WORLD;
-    //graph_rank = world_rank;
+    //MPI_Dist_graph_create(MPI_COMM_WORLD, 1, &world_rank, &neighbor_count, 
+    //        neighbor_list.data(), MPI_UNWEIGHTED, MPI_INFO_NULL, false, &COMM_GRAPH);
+    //MPI_Comm_rank(COMM_GRAPH, &graph_rank);
+    COMM_GRAPH = MPI_COMM_WORLD;
+    graph_rank = world_rank;
 }
 
 inline int check_all_no_update(){
@@ -368,6 +368,7 @@ inline void task(){
 
     MPI_Status status;
     int not_done = 1;
+    isend_to_all_neighbor(data, vert, MPI_INT, updt, COMM_GRAPH, send_req, false);
 
     while(not_done){
         if(terminal_signal == t_handle){
@@ -430,6 +431,10 @@ inline void task(){
                 break;
             case no_updt:
                 update_list[status.MPI_SOURCE] = 0;
+                break;
+            case invite:
+                LOG("Recv invite from %d, reject, already has parent %d", status.MPI_SOURCE, parent);
+                MPI_Isend(data, vert, MPI_INT, status.MPI_SOURCE, reject, COMM_GRAPH, send_req+status.MPI_SOURCE);
                 break;
             default:
                 LOG("get unknown tag: %d from %d", status.MPI_TAG, status.MPI_SOURCE);
