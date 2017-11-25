@@ -14,10 +14,11 @@
 #define MAX(x, y) ((x)>(y) ? (x):(y))
 #define MIN(x, y) ((x)<(y) ? (x):(y))
 
-#define INF 0x7FFFFFFF
+#define INF 99999999
 
 #define _DEBUG_
 #define _MEASURE_TIME
+
 
 #ifdef _MEASURE_TIME
     double __temp_time=0;
@@ -110,6 +111,8 @@ inline void init(int v){
     std::fill(data, data+v, INF);
     std::fill(update_list.begin(), update_list.end(), 1);
     std::fill(terminate_list.begin(), terminate_list.end(), 0);
+
+    data[world_rank] = 0;
 }
 
 inline void finalize(){
@@ -148,14 +151,23 @@ inline void dump_from_file(const char *file){
         else if(j==world_rank)data[i]=w;
     }
 
+#ifdef X_DEBUG__
+    std::stringstream nss;
+    for(int i=0;i<vert;++i){
+        nss << data[i] << ", ";
+    }
+    LOG("data: %s", nss.str().c_str());
+#endif
+
+
 
     for(int i=0;i<vert;++i){
-        if(data[i] != INF)
+        if(i != world_rank && data[i] != INF)
             neighbor_list.push_back(i);
     }
     neighbor_count = neighbor_list.size();
 
-#ifdef _DEBUG_
+#ifdef X_DEBUG_
     std::stringstream dss;
     for(int i=0;i<neighbor_count;++i)
         dss << neighbor_list[i] << ", ";
@@ -164,22 +176,25 @@ inline void dump_from_file(const char *file){
 
 }
 
-inline void dump_to_file(char *file){
+inline void dump_to_file(const char *file){
     std::stringstream ss;
+
 
     std::ostream_iterator<int> out(ss, " ");
     std::copy(data, data+vert, out);
     ss << '\n';
 
     std::string str = ss.str();
-    int *len = new int[vert]{};
+    int *len = new int[vert]();
     len[world_rank] = str.size();
 
+
     MPI_File fout;
-    MPI_File_open(COMM_GRAPH, file, MPI_MODE_WRONLY | MPI_MODE_CREATE, MPI_INFO_NULL, &fout);
+    MPI_File_delete(file, MPI_INFO_NULL);
+    MPI_File_open(MPI_COMM_WORLD, file, MPI_MODE_WRONLY | MPI_MODE_CREATE, MPI_INFO_NULL, &fout);
 
     TIC;{
-    MPI_Allreduce(MPI_IN_PLACE, len, vert, MPI_INT, MPI_SUM, COMM_GRAPH);
+    MPI_Allreduce(MPI_IN_PLACE, len, vert, MPI_INT, MPI_SUM, MPI_COMM_WORLD);
     }TOC_P(COMM);
     
 
@@ -207,6 +222,8 @@ inline void create_graph(){
     MPI_Dist_graph_create(MPI_COMM_WORLD, 1, &world_rank, &neighbor_count, 
             neighbor_list.data(), MPI_UNWEIGHTED, MPI_INFO_NULL, false, &COMM_GRAPH);
     MPI_Comm_rank(COMM_GRAPH, &graph_rank);
+    //COMM_GRAPH = MPI_COMM_WORLD;
+    //graph_rank = world_rank;
 }
 
 inline int check_all_no_update(){
@@ -287,7 +304,7 @@ inline void create_spanning_tree(){
     if(graph_rank == 0){
         parent=0;
         terminal_signal = t_handle;
-        isend_to_all_neighbor(data, vert, MPI_INT, invite, COMM_GRAPH, send_req, true);
+        isend_to_all_neighbor(data, vert, MPI_INT, invite, COMM_GRAPH, send_req, false);
     }
 
     MPI_Status status;
@@ -336,13 +353,13 @@ inline void create_spanning_tree(){
 
     delete[] send_req;
 
-    #ifdef _DEBUG_
+#ifdef X_DEBUG_
     std::stringstream ss;
     for(int i=0;i<child_count;++i){
         ss << child_list[i] << ", ";
     }
     LOG("my child list: %s", ss.str().c_str());
-    #endif
+#endif
 }
 
 inline void task(){
@@ -351,11 +368,17 @@ inline void task(){
 
     MPI_Status status;
     int not_done = 1;
-    isend_to_all_neighbor(data, vert, MPI_INT, updt, COMM_GRAPH, send_req, false);
 
     while(not_done){
         if(terminal_signal == t_handle){
-            if(check_all_no_update()){
+            int all_done = 1;
+            for(int i=0;i<neighbor_count;++i){
+                if(update_list[neighbor_list[i]] == 1){
+                    MPI_Isend(data, vert, MPI_INT, updt, COMM_GRAPH, send_req + neighbor_list[i]);
+                    all_done = 0;
+                }
+            }
+            if(all_done){
                 if(child_count == 0){
                     LOG("leaf node, send t_back to parent");
                     terminal_signal = t_back;
@@ -413,6 +436,15 @@ inline void task(){
                 break;
         }
     }
+
+#ifdef X_DEBUG_
+    std::stringstream ss;
+    for(int i=0;i<vert;++i){
+        ss << data[i] << ", ";
+    }
+    LOG("data end : %s", ss.str().c_str());
+#endif
+
 
     LOG("done! wait for end");
     wait_all_neighbor(send_req);
