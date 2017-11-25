@@ -157,9 +157,9 @@ void *task(void* var){
 int main(int argc, char **argv){
 
     // check for argument count
-    assert(argc == 5);
+    assert(argc == 4);
 
-    num_threads = MIN(atoi(argv[3]), atoi(argv[4]));
+    num_threads = atoi(argv[3]);
     threads = new pthread_t[num_threads];
     ID = new int[num_threads];
 
