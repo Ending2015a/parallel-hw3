@@ -16,7 +16,7 @@
 
 #define INF 99999999
 
-#define _DEBUG_
+//#define _DEBUG_
 #define _MEASURE_TIME
 
 
@@ -372,14 +372,7 @@ inline void task(){
 
     while(not_done){
         if(terminal_signal == t_handle){
-            int all_done = 1;
-            for(int i=0;i<neighbor_count;++i){
-                if(update_list[neighbor_list[i]] == 1){
-                    MPI_Isend(data, vert, MPI_INT, updt, COMM_GRAPH, send_req + neighbor_list[i]);
-                    all_done = 0;
-                }
-            }
-            if(all_done){
+            if(check_all_no_update()){
                 if(child_count == 0){
                     LOG("leaf node, send t_back to parent");
                     terminal_signal = t_back;
