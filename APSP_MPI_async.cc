@@ -121,6 +121,7 @@ inline void finalize(){
 }
 
 inline int update(int id){
+    TIC;
     int up = 0;
     for(int i=0;i<vert;++i){
         if(data[i] > data[id] + buf[i]){
@@ -128,6 +129,7 @@ inline int update(int id){
             up = 1;
         }
     }
+    TOC_P(CALC);
     return up;
 }
 
@@ -219,64 +221,77 @@ inline void dump_to_file(const char *file){
 
 
 inline void create_graph(){
+    TIC;
     MPI_Dist_graph_create(MPI_COMM_WORLD, 1, &world_rank, &neighbor_count, 
             neighbor_list.data(), MPI_UNWEIGHTED, MPI_INFO_NULL, false, &COMM_GRAPH);
     MPI_Comm_rank(COMM_GRAPH, &graph_rank);
     //COMM_GRAPH = MPI_COMM_WORLD;
     //graph_rank = world_rank;
+    TOC_P(COMM);
 }
 
 inline int check_all_no_update(){
+    TIC;
     int up = 0;
     for(int i=0;i<neighbor_count;++i){
         up |= update_list[ neighbor_list[i] ];
     }
+    TOC_P(CALC);
     return (up == 0) ? 1:0;
 }
 
 inline int check_all_terminate(){
+    TIC;
     int ter = 1;
     for(int i=0;i<child_count;++i){
         ter &= terminate_list[ child_list[i] ];
     }
+    TOC_P(CALC);
     return ter;
 }
 
 inline void wait_all_neighbor(MPI_Request *request){
+    TIC;
     for(int i=0;i<neighbor_count;++i){
         MPI_Wait(request + neighbor_list[i], MPI_STATUS_IGNORE);
     }
+    TOC_P(COMM);
 }
 
 inline void wait_all_child(MPI_Request *request){
+    TIC;
     for(int i=0;i<child_count;++i){
         MPI_Wait(request + child_list[i], MPI_STATUS_IGNORE);
     }
+    TOC_P(COMM);
 }
 
 inline void isend_to_all_neighbor(void *buf, int count, MPI_Datatype type,
                 int tag, MPI_Comm comm, MPI_Request *request, bool wait=false){
+    TIC;
     for(int i=0;i<neighbor_count;++i){
         MPI_Isend(buf, count, type, neighbor_list[i], tag, comm, request + neighbor_list[i]);
     }
     if(wait)
         wait_all_neighbor(request);
+    TOC_P(COMM);
 }
 
 inline void irecv_from_all_neighbor(void *buf, int count, MPI_Datatype type, 
                 int tag, MPI_Comm comm, MPI_Request *request, bool wait=false){
-
+    TIC;
     for(int i=0;i<neighbor_count;++i){
         MPI_Irecv(buf, count, type, neighbor_list[i], tag, comm, request + neighbor_list[i]);
     }
 
     if(wait)
         wait_all_neighbor(request);
+    TOC_P(COMM);
 }
 
 inline void isend_to_all_neighbor_except(void *buf, int count, MPI_Datatype type,
                 int tag, int except_node, MPI_Comm comm, MPI_Request *request, bool wait=false){
-    
+    TIC;
     for(int i=0;i<neighbor_count;++i){
         if(neighbor_list[i] == except_node) continue;
         MPI_Isend(buf, count, type, neighbor_list[i], tag, comm, request + neighbor_list[i]);
@@ -284,17 +299,19 @@ inline void isend_to_all_neighbor_except(void *buf, int count, MPI_Datatype type
 
     if(wait)
         MPI_Waitall(neighbor_count, request, MPI_STATUSES_IGNORE);
+    TOC_P(COMM);
 }
 
 inline void isend_to_all_child(void *buf, int count, MPI_Datatype type,
                 int tag, MPI_Comm comm, MPI_Request *request, bool wait=false){
-
+    TIC;
     for(int i=0;i<child_count;++i){
         MPI_Isend(buf, count, type, child_list[i], tag, comm, request + child_list[i]);
     }
 
     if(wait)
         wait_all_child(request);
+    TOC_P(COMM);
 }
 
 inline void create_spanning_tree(){
@@ -313,14 +330,20 @@ inline void create_spanning_tree(){
     while(recv_count < neighbor_count){
         MPI_Iprobe(MPI_ANY_SOURCE, invite, COMM_GRAPH, &flag, &status);
         if(flag){
+            TIC;
             MPI_Recv(buf, vert, MPI_INT, status.MPI_SOURCE, status.MPI_TAG, COMM_GRAPH, MPI_STATUS_IGNORE);
+            TOC_P(COMM);
             if(parent != -1){
                 LOG("Recv invite from %d, reject, already has parent %d", status.MPI_SOURCE, parent);
+                TIC;
                 MPI_Isend(data, vert, MPI_INT, status.MPI_SOURCE, reject, COMM_GRAPH, send_req+status.MPI_SOURCE);
+                TOC_P(COMM);
             }else{
                 LOG("Recv invite from %d, join", status.MPI_SOURCE);
                 parent=status.MPI_SOURCE;
+                TIC;
                 MPI_Isend(data, vert, MPI_INT, parent, join, COMM_GRAPH, send_req + parent);
+                TOC_P(COMM);
                 isend_to_all_neighbor_except(data, vert, MPI_INT, invite, parent, COMM_GRAPH, send_req);
                 ++recv_count;
             }
@@ -330,7 +353,9 @@ inline void create_spanning_tree(){
         MPI_Iprobe(MPI_ANY_SOURCE, join, COMM_GRAPH, &flag, &status);
         if(flag){
             LOG("%d join me", status.MPI_SOURCE);
+            TIC;
             MPI_Recv(buf, vert, MPI_INT, status.MPI_SOURCE, status.MPI_TAG, COMM_GRAPH, MPI_STATUS_IGNORE);
+            TOC_P(COMM);
             child_list.push_back(status.MPI_SOURCE);
             update(status.MPI_SOURCE);
             ++recv_count;
@@ -339,7 +364,9 @@ inline void create_spanning_tree(){
         MPI_Iprobe(MPI_ANY_SOURCE, reject, COMM_GRAPH, &flag, &status);
         if(flag){
             LOG("%d reject me", status.MPI_SOURCE);
+            TIC;
             MPI_Recv(buf, vert, MPI_INT, status.MPI_SOURCE, status.MPI_TAG, COMM_GRAPH, MPI_STATUS_IGNORE);
+            TOC_P(COMM);
             update(status.MPI_SOURCE);
             ++recv_count;
             continue;
@@ -376,7 +403,9 @@ inline void task(){
                 if(child_count == 0){
                     LOG("leaf node, send t_back to parent");
                     terminal_signal = t_back;
+                    TIC;
                     MPI_Isend(data, 1, MPI_INT, parent, t_back, COMM_GRAPH, send_req + parent);
+                    TOC_P(COMM);
                 }else{
                     LOG("send t_handle to all child");
                     terminal_signal = t_back;
@@ -384,8 +413,9 @@ inline void task(){
                 }
             }
         }
+        TIC;
         MPI_Recv(buf, vert, MPI_INT, MPI_ANY_SOURCE, MPI_ANY_TAG, COMM_GRAPH, &status);
-
+        TOC_P(COMM);
         switch(status.MPI_TAG){
             case t_handle:
                 LOG("recv t_handle from %d", status.MPI_SOURCE);
@@ -403,7 +433,9 @@ inline void task(){
                     }else{
                         LOG("send t_back to parent");
                         terminal_signal = t_back;
+                        TIC;
                         MPI_Isend(data, 1, MPI_INT, parent, t_back, COMM_GRAPH, send_req + parent);
+                        TOC_P(COMM);
                     }
                 }
                 break;
@@ -427,7 +459,9 @@ inline void task(){
                 break;
             case invite:
                 LOG("Recv invite from %d, reject, already has parent %d", status.MPI_SOURCE, parent);
+                TIC;
                 MPI_Isend(data, vert, MPI_INT, status.MPI_SOURCE, reject, COMM_GRAPH, send_req+status.MPI_SOURCE);
+                TOC_P(COMM);
                 break;
             default:
                 LOG("get unknown tag: %d from %d", status.MPI_TAG, status.MPI_SOURCE);

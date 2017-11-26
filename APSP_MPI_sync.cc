@@ -83,7 +83,7 @@ int graph_rank;
 int vert;
 int edge;
 
-MPI_Comm graph_comm;
+MPI_Comm COMM_GRAPH;
 
 
 struct Map{
@@ -163,6 +163,12 @@ inline void dump_from_file(const char *file){
     }
 }
 
+inline void create_graph(){
+    MPI_Dist_graph_create(MPI_COMM_WORLD, 1, &world_rank, &map.nb,
+            map.neig.data(), MPI_UNWEIGHTED, MPI_INFO_NULL, false, &COMM_GRAPH);
+    MPI_Comm_rank(COMM_GRAPH, &graph_rank);
+}
+
 inline void floyd(){
 
     MPI_Request *send_req = new MPI_Request[map.nb];
@@ -172,7 +178,7 @@ inline void floyd(){
     while(not_done){
         not_done = 0;
         for(int i=0;i<map.nb;++i){
-            MPI_Isend(map.data, map.vt, MPI_INT, map.neig[i], 1, MPI_COMM_WORLD, &send_req[i]);
+            MPI_Isend(map.data, map.vt, MPI_INT, map.neig[i], 1, COMM_GRAPH, &send_req[i]);
 
             LOG("send to %d", map.neig[i]);
 
@@ -180,7 +186,7 @@ inline void floyd(){
         for(int i=0;i<map.nb;++i){
             TIC;{
 
-            MPI_Recv(buf, map.vt, MPI_INT, map.neig[i], 1, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+            MPI_Recv(buf, map.vt, MPI_INT, map.neig[i], 1, COMM_GRAPH, MPI_STATUS_IGNORE);
  
             }TOC_P(COMM);
             TIC;{
@@ -210,6 +216,7 @@ inline void dump_to_file(const char *file){
     len[world_rank] = str.size();
     
     MPI_File fout;
+    MPI_File_delete(file, MPI_INFO_NULL);
     MPI_File_open(MPI_COMM_WORLD, file, MPI_MODE_WRONLY | MPI_MODE_CREATE, MPI_INFO_NULL, &fout);
 
 
@@ -249,6 +256,8 @@ int main(int argc, char **argv){
     LOG("file read");
 
     map.calc();
+
+    create_graph();
 
     floyd();
     
